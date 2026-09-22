@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
-/* RTL & Arabic Typography Adaptations */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Arabic Typography Adaptations */
 [dir="rtl"] {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Arabic", "Cairo", "Tahoma", sans-serif;
   letter-spacing: normal;
@@ -11,6 +13,7 @@ html {
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* RTL icon flips and adjustments */
@@ -18,7 +21,13 @@ html {
   transform: scaleX(-1);
 }
 
-/* Ensure smooth transition when toggling languages */
-body {
-  transition: direction 0.2s ease, text-align 0.2s ease;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

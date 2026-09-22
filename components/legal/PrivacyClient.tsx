@@ -117,9 +117,15 @@ export function PrivacyClient() {
                   ? 'لا يستخدم هذا الموقع ملفات تعريف الارتباط الإعلانية أو التتبعية. نستخدم فقط ميزة التخزين المحلي في المتصفح (localStorage) لحفظ التفضيلات التشغيلية الضرورية:'
                   : 'This website does not deploy advertising or behavioral tracking cookies. We utilize standard client-side browser local storage (localStorage) solely for essential user experience preferences:'}
               </p>
-              <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 text-xs font-mono text-cyan-300 space-y-1">
-                <div>• <span className="text-slate-400">Key:</span> landcom_language_pref</div>
-                <div>• <span className="text-slate-400">Purpose:</span> {language === 'ar' ? 'حفظ لغة العرض وتوجيه النص (عربي / English)' : 'Stores the visitor’s language and layout direction (English / Arabic)'}</div>
+              <div className="p-4 bg-slate-100 dark:bg-slate-950 rounded-2xl border border-slate-200 dark:border-slate-800 text-xs font-mono space-y-3">
+                <div className="space-y-1">
+                  <div className="text-cyan-700 dark:text-cyan-300 font-bold">• Key: landcom_language_pref</div>
+                  <div className="text-slate-600 dark:text-slate-400 ps-3">Purpose: {language === 'ar' ? 'حفظ لغة العرض وتوجيه النص (عربي / English)' : 'Stores the visitor’s language and layout direction (English / Arabic)'}</div>
+                </div>
+                <div className="space-y-1">
+                  <div className="text-cyan-700 dark:text-cyan-300 font-bold">• Key: landcom_theme_pref</div>
+                  <div className="text-slate-600 dark:text-slate-400 ps-3">Purpose: {language === 'ar' ? 'حفظ مظهر الموقع المفضل (الوضع الداكن / الوضع الفاتح)' : 'Stores the visitor’s color theme preference (Light Mode / Dark Mode)'}</div>
+                </div>
               </div>
               <p className="text-xs text-slate-400">
                 {language === 'ar'

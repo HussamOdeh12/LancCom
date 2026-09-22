@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { LanguageProvider } from '@/context/LanguageContext';
+import { ThemeProvider } from '@/context/ThemeContext';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://landcom.ae'),
@@ -60,11 +61,29 @@ const jsonLd = {
       url: 'https://landcom.ae',
       foundingDate: '2007-05-09',
       description: 'Developing and implementing complex business solutions in Abu Dhabi since 2007. Operating as strategic consultants who understand client needs and deliver integrated solutions.',
+      identifier: [
+        {
+          '@type': 'PropertyValue',
+          name: 'ADED Commercial Licence',
+          value: 'CN-1006129'
+        },
+        {
+          '@type': 'PropertyValue',
+          name: 'ADCCI Membership',
+          value: '228768'
+        },
+        {
+          '@type': 'PropertyValue',
+          name: 'Unified Registration Number',
+          value: '101-2021-100028641'
+        }
+      ],
       address: {
         '@type': 'PostalAddress',
         streetAddress: 'Abu Dhabi Island, Muroor Road, Floor 3, Office 37–38, P.O. Box 58571',
         addressLocality: 'Abu Dhabi',
         addressRegion: 'Abu Dhabi',
+        postalCode: '58571',
         addressCountry: 'AE'
       },
       contactPoint: {
@@ -78,9 +97,10 @@ const jsonLd = {
       }
     },
     {
-      '@type': 'ITService',
+      '@type': 'Service',
       '@id': 'https://landcom.ae/#service',
-      name: 'Information Technology Solutions & Services',
+      name: 'Information Technology Solutions',
+      serviceType: 'Information Technology Solutions',
       provider: {
         '@id': 'https://landcom.ae/#organization'
       },
@@ -164,16 +184,37 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth dark" suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                var theme = localStorage.getItem('landcom_theme_pref');
+                var supportDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (theme === 'light' || (!theme && !supportDark)) {
+                  document.documentElement.classList.remove('dark');
+                  document.documentElement.classList.add('light');
+                  document.documentElement.style.colorScheme = 'light';
+                } else {
+                  document.documentElement.classList.add('dark');
+                  document.documentElement.classList.remove('light');
+                  document.documentElement.style.colorScheme = 'dark';
+                }
+              } catch (e) {}
+            `,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-slate-950 text-slate-100 antialiased font-sans selection:bg-cyan-500 selection:text-slate-950" suppressHydrationWarning>
+      <body className="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased font-sans selection:bg-cyan-500 selection:text-slate-950" suppressHydrationWarning>
         <LanguageProvider>
-          {children}
+          <ThemeProvider>
+            {children}
+          </ThemeProvider>
         </LanguageProvider>
       </body>
     </html>
