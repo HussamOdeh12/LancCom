@@ -78,7 +78,7 @@ export function CoreServices() {
                     }`}>
                       {getServiceIcon(srv.id)}
                     </div>
-                    <span className="text-[11px] font-mono font-bold text-slate-400 dark:text-slate-500">
+                    <span className="text-[11px] font-mono font-bold text-slate-600 dark:text-slate-400">
                       0{idx + 1}
                     </span>
                   </div>
@@ -173,6 +173,7 @@ export function CoreServices() {
                 <Link
                   href={`/services/${selectedService.slug}`}
                   className="w-full py-3 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs sm:text-sm rounded-xl transition-colors shadow-md flex items-center justify-center space-x-2 rtl:space-x-reverse"
+                  aria-label={language === 'ar' ? `صفحة تفاصيل الخدمة الكاملة لـ ${selectedService.titleAr}` : `View full service page for ${selectedService.title}`}
                 >
                   <span>{language === 'ar' ? 'صفحة تفاصيل الخدمة' : 'View Full Service Page'}</span>
                   <ArrowRight className={`w-4 h-4 shrink-0 ${isRTL ? 'rotate-180' : ''}`} />

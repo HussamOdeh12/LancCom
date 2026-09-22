@@ -13,29 +13,31 @@ export function TopBar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
         <div className="flex items-center justify-between">
           {/* Factual Location & National Ownership */}
-          <div className="flex items-center space-x-2 rtl:space-x-reverse text-slate-600 dark:text-slate-300">
-            <MapPin className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400 shrink-0" />
+          <div className="flex items-center space-x-2 rtl:space-x-reverse text-slate-700 dark:text-slate-300">
+            <MapPin className="w-3.5 h-3.5 text-cyan-700 dark:text-cyan-400 shrink-0" />
             <span>{strings.topbar.location}</span>
             <span className="text-slate-300 dark:text-slate-700">•</span>
-            <span className="text-cyan-700 dark:text-cyan-400/90 font-medium">{COMPANY_INFO.ownership}</span>
+            <span className="text-cyan-800 dark:text-cyan-400/90 font-medium">{COMPANY_INFO.ownership}</span>
           </div>
 
           {/* Direct Abu Dhabi Contact Channels */}
           <div className="flex items-center space-x-4 rtl:space-x-reverse">
             <a
               href={`tel:${COMPANY_INFO.contact.telephone.replace(/\s+/g, '')}`}
-              className="flex items-center space-x-1.5 rtl:space-x-reverse text-slate-600 hover:text-cyan-600 dark:text-slate-300 dark:hover:text-cyan-400 transition-colors font-mono"
+              className="flex items-center space-x-1.5 rtl:space-x-reverse text-slate-700 hover:text-cyan-700 dark:text-slate-300 dark:hover:text-cyan-400 transition-colors font-mono"
+              aria-label={`Call LandCom Abu Dhabi office at ${COMPANY_INFO.contact.telephone}`}
               dir="ltr"
             >
-              <Phone className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400 shrink-0" />
+              <Phone className="w-3.5 h-3.5 text-cyan-700 dark:text-cyan-400 shrink-0" />
               <span className="font-semibold text-slate-900 dark:text-white">{COMPANY_INFO.contact.telephone}</span>
             </a>
             <span className="text-slate-300 dark:text-slate-700">|</span>
             <a
               href={`mailto:${COMPANY_INFO.contact.primaryEmail}`}
-              className="flex items-center space-x-1.5 rtl:space-x-reverse text-slate-600 hover:text-cyan-600 dark:text-slate-300 dark:hover:text-cyan-400 transition-colors"
+              className="flex items-center space-x-1.5 rtl:space-x-reverse text-slate-700 hover:text-cyan-700 dark:text-slate-300 dark:hover:text-cyan-400 transition-colors"
+              aria-label={`Email LandCom corporate support at ${COMPANY_INFO.contact.primaryEmail}`}
             >
-              <Mail className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400 shrink-0" />
+              <Mail className="w-3.5 h-3.5 text-cyan-700 dark:text-cyan-400 shrink-0" />
               <span className="font-mono">{COMPANY_INFO.contact.primaryEmail}</span>
             </a>
           </div>

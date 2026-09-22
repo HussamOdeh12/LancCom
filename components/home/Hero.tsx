@@ -29,7 +29,7 @@ export function Hero() {
         {/* Location Badge */}
         <div className="flex justify-center lg:justify-start mb-6">
           <div className="inline-flex items-center space-x-2 rtl:space-x-reverse px-3.5 py-1.5 rounded-full bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-cyan-500/30 text-cyan-800 dark:text-cyan-300 text-xs font-semibold shadow-xs dark:shadow-inner">
-            <MapPin className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400 shrink-0" />
+            <MapPin className="w-3.5 h-3.5 text-cyan-700 dark:text-cyan-400 shrink-0" />
             <span>{strings.hero.locationBadge}</span>
           </div>
         </div>
@@ -39,7 +39,7 @@ export function Hero() {
           <div className="lg:col-span-7 space-y-6 text-center lg:text-start">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight leading-[1.25]">
               {strings.hero.headlinePart1}{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 via-sky-600 to-blue-600 dark:from-cyan-400 dark:via-sky-300 dark:to-blue-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-700 via-sky-700 to-blue-700 dark:from-cyan-400 dark:via-sky-300 dark:to-blue-500">
                 {strings.hero.headlineAccent}
               </span>{' '}
               {strings.hero.headlinePart2}

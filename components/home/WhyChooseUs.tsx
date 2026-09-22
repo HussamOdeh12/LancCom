@@ -19,12 +19,12 @@ export function WhyChooseUs() {
 
   const getWhyIcon = (id: string) => {
     switch (id) {
-      case 'why-abudhabi': return <MapPin className="w-6 h-6 text-cyan-600 dark:text-cyan-400" />;
-      case 'why-team': return <Users className="w-6 h-6 text-blue-600 dark:text-blue-400" />;
-      case 'why-agile': return <Zap className="w-6 h-6 text-amber-600 dark:text-amber-400" />;
-      case 'why-gov': return <Building2 className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />;
-      case 'why-innovation': return <Sparkles className="w-6 h-6 text-purple-600 dark:text-purple-400" />;
-      default: return <Sparkles className="w-6 h-6 text-cyan-600 dark:text-cyan-400" />;
+      case 'why-abudhabi': return <MapPin className="w-6 h-6 text-cyan-700 dark:text-cyan-400" />;
+      case 'why-team': return <Users className="w-6 h-6 text-blue-700 dark:text-blue-400" />;
+      case 'why-agile': return <Zap className="w-6 h-6 text-amber-700 dark:text-amber-400" />;
+      case 'why-gov': return <Building2 className="w-6 h-6 text-emerald-700 dark:text-emerald-400" />;
+      case 'why-innovation': return <Sparkles className="w-6 h-6 text-purple-700 dark:text-purple-400" />;
+      default: return <Sparkles className="w-6 h-6 text-cyan-700 dark:text-cyan-400" />;
     }
   };
 

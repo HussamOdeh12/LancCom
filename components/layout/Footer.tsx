@@ -82,9 +82,9 @@ export function Footer() {
               </div>
               <div>
                 <span className="text-base font-extrabold text-slate-900 dark:text-white tracking-tight" dir="ltr">
-                  LAND<span className="text-cyan-600 dark:text-cyan-400">.</span>COM
+                  LAND<span className="text-cyan-700 dark:text-cyan-400">.</span>COM
                 </span>
-                <span className="block text-[11px] text-slate-500 dark:text-slate-400 font-medium">
+                <span className="block text-[11px] text-slate-600 dark:text-slate-400 font-medium">
                   {COMPANY_INFO.shortName}
                 </span>
               </div>
@@ -173,7 +173,7 @@ export function Footer() {
                   {COMPANY_INFO.contact.primaryEmail}
                 </a>
               </div>
-              <div className="text-xs text-slate-500 dark:text-slate-400 pt-1">
+              <div className="text-xs text-slate-600 dark:text-slate-400 pt-1">
                 <span>P.O. Box: {COMPANY_INFO.headquarters.poBox}</span>
               </div>
             </div>
@@ -181,7 +181,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Legal & Copyright */}
-        <div className="pt-8 border-t border-slate-200 dark:border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="pt-8 border-t border-slate-200 dark:border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-600 dark:text-slate-400">
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
             <span>
               &copy; {new Date().getFullYear()} {COMPANY_INFO.name}. {strings.footer.rights}
@@ -193,11 +193,11 @@ export function Footer() {
           </div>
 
           <div className="flex items-center space-x-4 rtl:space-x-reverse">
-            <Link href="/privacy" className="hover:text-slate-900 dark:hover:text-slate-400 transition-colors">
+            <Link href="/privacy" className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
               {strings.footer.privacy}
             </Link>
             <span>•</span>
-            <Link href="/terms" className="hover:text-slate-900 dark:hover:text-slate-400 transition-colors">
+            <Link href="/terms" className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
               {strings.footer.terms}
             </Link>
             <span>•</span>
@@ -205,7 +205,8 @@ export function Footer() {
               type="button"
               onClick={scrollToTop}
               className="p-2 bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white rounded-lg border border-slate-200 dark:border-slate-800 transition-colors shadow-sm"
-              aria-label="Scroll to top"
+              aria-label={language === 'ar' ? 'العودة إلى أعلى الصفحة' : 'Scroll to top of page'}
+              title={language === 'ar' ? 'العودة لأعلى' : 'Scroll to top'}
             >
               <ArrowUp className="w-4 h-4" />
             </button>

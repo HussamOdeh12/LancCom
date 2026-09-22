@@ -91,11 +91,11 @@ export function Navbar() {
                 <span className="text-lg font-black tracking-tight text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors" dir="ltr">
                   LAND<span className="text-cyan-500 dark:text-cyan-400">.</span>COM
                 </span>
-                <span className="text-[10px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-widest hidden sm:inline-block">
+                <span className="text-[10px] font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-widest hidden sm:inline-block">
                   {language === 'ar' ? 'حلول تقنية المعلومات' : 'IT Solutions'}
                 </span>
               </div>
-              <span className="text-[10px] text-cyan-600 dark:text-cyan-300 font-medium tracking-wide">
+              <span className="text-[10px] text-cyan-700 dark:text-cyan-300 font-medium tracking-wide">
                 {strings.nav.tagline}
               </span>
             </div>
@@ -149,11 +149,11 @@ export function Navbar() {
                           </Link>
                         ))}
 
-                        <div className="col-span-2 pt-2 mt-1 border-t border-slate-200 dark:border-slate-800/80 flex items-center justify-between text-[11px] px-2 text-slate-500 dark:text-slate-400">
+                        <div className="col-span-2 pt-2 mt-1 border-t border-slate-200 dark:border-slate-800/80 flex items-center justify-between text-[11px] px-2 text-slate-600 dark:text-slate-400">
                           <Link
                             href="/services"
                             onClick={() => setServicesDropdownOpen(false)}
-                            className="text-cyan-600 dark:text-cyan-400 hover:underline font-semibold"
+                            className="text-cyan-700 dark:text-cyan-400 hover:underline font-semibold"
                           >
                             {language === 'ar' ? 'عرض جميع الخدمات الثمانية' : 'View All Eight Services'}
                           </Link>

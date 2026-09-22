@@ -20,11 +20,11 @@ export function Breadcrumb({ items, className = '' }: BreadcrumbProps) {
 
   return (
     <nav aria-label="Breadcrumb" className={`py-2 ${className}`}>
-      <ol className="flex flex-wrap items-center gap-1.5 sm:gap-2 text-xs text-slate-500 dark:text-slate-400">
+      <ol className="flex flex-wrap items-center gap-1.5 sm:gap-2 text-xs text-slate-600 dark:text-slate-400">
         <li className="flex items-center">
           <Link
             href="/"
-            className="flex items-center space-x-1 rtl:space-x-reverse text-slate-500 hover:text-cyan-700 dark:text-slate-400 dark:hover:text-cyan-400 transition-colors"
+            className="flex items-center space-x-1 rtl:space-x-reverse text-slate-600 hover:text-cyan-700 dark:text-slate-400 dark:hover:text-cyan-400 transition-colors"
           >
             <Home className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
             <span className="sr-only">{language === 'ar' ? 'الرئيسية' : 'Home'}</span>

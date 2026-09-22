@@ -297,12 +297,14 @@ export function ContactClient() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {/* Name (Required) */}
                       <div>
-                        <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                        <label htmlFor="contact_page_fullname" className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
                           {strings.contact.fullName} <span className="text-cyan-600 dark:text-cyan-400">*</span>
                         </label>
                         <input
+                          id="contact_page_fullname"
                           required
                           type="text"
+                          autoComplete="name"
                           placeholder={language === 'ar' ? "الاسم الكامل" : "Your Full Name"}
                           value={formData.fullName}
                           onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
@@ -312,12 +314,14 @@ export function ContactClient() {
 
                       {/* Work Email (Required) */}
                       <div>
-                        <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                        <label htmlFor="contact_page_email" className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
                           {strings.contact.emailAddress} <span className="text-cyan-600 dark:text-cyan-400">*</span>
                         </label>
                         <input
+                          id="contact_page_email"
                           required
                           type="email"
+                          autoComplete="email"
                           placeholder="name@organization.ae"
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -329,11 +333,13 @@ export function ContactClient() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {/* Company (Optional) */}
                       <div>
-                        <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
-                          {strings.contact.organization} <span className="text-slate-400 dark:text-slate-500 text-[11px]">({language === 'ar' ? 'اختياري' : 'Optional'})</span>
+                        <label htmlFor="contact_page_org" className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                          {strings.contact.organization} <span className="text-slate-600 dark:text-slate-400 text-[11px]">({language === 'ar' ? 'اختياري' : 'Optional'})</span>
                         </label>
                         <input
+                          id="contact_page_org"
                           type="text"
+                          autoComplete="organization"
                           placeholder={language === 'ar' ? "اسم المؤسسة / الشركة" : "Company or Entity Name"}
                           value={formData.organization}
                           onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
@@ -343,11 +349,13 @@ export function ContactClient() {
 
                       {/* Phone (Optional) */}
                       <div>
-                        <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
-                          {strings.contact.phoneNum} <span className="text-slate-400 dark:text-slate-500 text-[11px]">({language === 'ar' ? 'اختياري' : 'Optional'})</span>
+                        <label htmlFor="contact_page_phone" className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                          {strings.contact.phoneNum} <span className="text-slate-600 dark:text-slate-400 text-[11px]">({language === 'ar' ? 'اختياري' : 'Optional'})</span>
                         </label>
                         <input
+                          id="contact_page_phone"
                           type="tel"
+                          autoComplete="tel"
                           placeholder="+971 50 000 0000"
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -358,10 +366,11 @@ export function ContactClient() {
 
                     {/* Service of Interest (8 official services + General Enquiry) */}
                     <div>
-                      <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                      <label htmlFor="contact_page_service" className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
                         {strings.contact.selectedService}
                       </label>
                       <select
+                        id="contact_page_service"
                         value={formData.service}
                         onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                         className="w-full bg-white dark:bg-slate-950 border border-slate-300 dark:border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-cyan-500 shadow-xs"
@@ -379,10 +388,11 @@ export function ContactClient() {
 
                     {/* Message (Required) */}
                     <div>
-                      <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                      <label htmlFor="contact_page_message" className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
                         {strings.contact.message} <span className="text-cyan-600 dark:text-cyan-400">*</span>
                       </label>
                       <textarea
+                        id="contact_page_message"
                         required
                         rows={4}
                         placeholder={strings.contact.messagePlaceholder}
