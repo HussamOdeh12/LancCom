@@ -74,10 +74,12 @@ export function ServiceDetailClient({ service }: ServiceDetailClientProps) {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Service',
+            '@id': `${COMPANY_INFO.domain}/services/${service.slug}#service`,
             name: service.title,
             description: service.description,
             provider: {
               '@type': 'Organization',
+              '@id': 'https://landcom.ae/#organization',
               name: COMPANY_INFO.name,
               url: COMPANY_INFO.domain,
             },

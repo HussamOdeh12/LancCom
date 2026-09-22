@@ -41,33 +41,17 @@ export function AboutClient() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col selection:bg-cyan-500 selection:text-slate-950">
-      {/* Schema.org Organization Structured Data */}
+      {/* Schema.org AboutPage Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'Organization',
-            name: COMPANY_INFO.name,
-            alternateName: COMPANY_INFO.shortName,
-            url: COMPANY_INFO.domain,
-            logo: `${COMPANY_INFO.domain}/logo.png`,
-            foundingDate: '2007-05-09',
-            description: COMPANY_INFO.positioning,
-            address: {
-              '@type': 'PostalAddress',
-              streetAddress: 'Muroor Road, Floor 3, Office 37-38',
-              addressLocality: 'Abu Dhabi',
-              addressRegion: 'Abu Dhabi',
-              postalCode: '58571',
-              addressCountry: 'AE'
-            },
-            contactPoint: {
-              '@type': 'ContactPoint',
-              telephone: COMPANY_INFO.contact.telephone,
-              contactType: 'customer service',
-              areaServed: 'AE',
-              availableLanguage: ['English', 'Arabic']
+            '@type': 'AboutPage',
+            name: 'About LandCom Information Technology Solutions Provider',
+            url: `${COMPANY_INFO.domain}/about`,
+            mainEntity: {
+              '@id': 'https://landcom.ae/#organization'
             }
           })
         }}

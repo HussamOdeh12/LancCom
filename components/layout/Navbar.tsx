@@ -111,6 +111,8 @@ export function Navbar() {
                           ? 'text-cyan-400 bg-slate-900 font-semibold'
                           : 'text-slate-200 hover:text-cyan-400 hover:bg-slate-900/60'
                       }`}
+                      aria-haspopup="true"
+                      aria-expanded={servicesDropdownOpen}
                     >
                       <span>{item.label}</span>
                       <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${servicesDropdownOpen ? 'rotate-180 text-cyan-400' : 'text-slate-400'}`} />
@@ -121,7 +123,7 @@ export function Navbar() {
                         {CORE_SERVICES.map((srv) => (
                           <Link
                             key={srv.id}
-                            href={`/services#${srv.id}`}
+                            href={`/services/${srv.slug}`}
                             onClick={() => setServicesDropdownOpen(false)}
                             className="flex items-start space-x-3 rtl:space-x-reverse p-2.5 rounded-xl hover:bg-slate-800/90 transition-colors group border border-transparent hover:border-slate-700/60"
                           >
@@ -130,10 +132,10 @@ export function Navbar() {
                             </div>
                             <div className="text-start">
                               <div className="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">
-                                {srv.title}
+                                {language === 'ar' ? srv.titleAr : srv.title}
                               </div>
                               <p className="text-[11px] text-slate-400 line-clamp-1 mt-0.5">
-                                {srv.tagline}
+                                {language === 'ar' ? srv.taglineAr : srv.tagline}
                               </p>
                             </div>
                           </Link>

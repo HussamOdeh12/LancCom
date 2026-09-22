@@ -55,8 +55,10 @@ const jsonLd = {
       '@type': 'Organization',
       '@id': 'https://landcom.ae/#organization',
       name: 'LAND.COM Information Technology Solutions Provider',
+      legalName: 'LAND.COM Information Technology Solutions Provider',
       alternateName: 'LandCom Information Technology',
       url: 'https://landcom.ae',
+      foundingDate: '2007-05-09',
       description: 'Developing and implementing complex business solutions in Abu Dhabi since 2007. Operating as strategic consultants who understand client needs and deliver integrated solutions.',
       address: {
         '@type': 'PostalAddress',
