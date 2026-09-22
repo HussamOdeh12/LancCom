@@ -1,0 +1,295 @@
+'use client';
+
+import React, { useState } from 'react';
+import { 
+  Building, 
+  MapPin, 
+  Phone, 
+  Printer,
+  Mail, 
+  Send, 
+  CheckCircle2, 
+  ShieldCheck 
+} from 'lucide-react';
+import { COMPANY_INFO, CORE_SERVICES } from '@/lib/data';
+import { useLanguage } from '@/context/LanguageContext';
+
+export function ContactSection() {
+  const { strings, language } = useLanguage();
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    organization: '',
+    service: 'erp-system',
+    message: '',
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSuccess(true);
+    }, 1000);
+  };
+
+  return (
+    <section id="contact" className="py-20 bg-slate-950 text-white border-t border-slate-900 relative text-start">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <div className="inline-flex items-center space-x-2 rtl:space-x-reverse px-3 py-1 rounded-full bg-cyan-950 border border-cyan-500/30 text-cyan-400 text-xs font-bold uppercase tracking-wider">
+            <Send className="w-3.5 h-3.5 shrink-0" />
+            <span>{strings.contact.sectionTag}</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+            {strings.contact.sectionTitle}
+          </h2>
+          <p className="text-sm sm:text-base text-slate-400 leading-relaxed">
+            {strings.contact.sectionDesc}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          {/* Start 5 cols: Headquarters & Official Channels */}
+          <div className="lg:col-span-5 space-y-6 text-start">
+            <div className="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 space-y-6 shadow-2xl text-start">
+              <div className="flex items-center space-x-3 rtl:space-x-reverse">
+                <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0">
+                  <Building className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white">{strings.contact.hqTitle}</h3>
+                  <div className="text-xs text-cyan-400 font-medium">
+                    {COMPANY_INFO.name}
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-3.5 text-xs sm:text-sm">
+                <div className="flex items-start space-x-3 rtl:space-x-reverse p-3 bg-slate-950 rounded-xl border border-slate-800/80 text-start">
+                  <MapPin className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                  <div>
+                    <div className="font-bold text-white">{strings.contact.address}</div>
+                    <div className="text-slate-300 text-xs mt-0.5">{COMPANY_INFO.headquarters.fullAddress}</div>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-3 rtl:space-x-reverse p-3 bg-slate-950 rounded-xl border border-slate-800/80 text-start">
+                  <Phone className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                  <div>
+                    <div className="font-bold text-white">{strings.contact.telephone}</div>
+                    <a 
+                      href={`tel:${COMPANY_INFO.contact.telephone.replace(/\s+/g, '')}`} 
+                      className="text-cyan-300 font-mono text-xs hover:underline block mt-0.5"
+                      dir="ltr"
+                    >
+                      {COMPANY_INFO.contact.telephone}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-3 rtl:space-x-reverse p-3 bg-slate-950 rounded-xl border border-slate-800/80 text-start">
+                  <Printer className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                  <div>
+                    <div className="font-bold text-white">{strings.contact.fax}</div>
+                    <span className="text-slate-300 font-mono text-xs block mt-0.5" dir="ltr">
+                      {COMPANY_INFO.contact.fax}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-3 rtl:space-x-reverse p-3 bg-slate-950 rounded-xl border border-slate-800/80 text-start">
+                  <Mail className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                  <div>
+                    <div className="font-bold text-white">{strings.contact.email}</div>
+                    <a href={`mailto:${COMPANY_INFO.contact.primaryEmail}`} className="text-cyan-300 font-mono text-xs hover:underline block mt-0.5">
+                      {COMPANY_INFO.contact.primaryEmail}
+                    </a>
+                    <a href={`mailto:${COMPANY_INFO.contact.additionalEmail}`} className="text-slate-400 font-mono text-[11px] hover:underline block mt-0.5">
+                      {COMPANY_INFO.contact.additionalEmail}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-3 rtl:space-x-reverse p-3 bg-slate-950 rounded-xl border border-slate-800/80 text-start">
+                  <Building className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                  <div>
+                    <div className="font-bold text-white">{strings.contact.poBox}</div>
+                    <span className="text-slate-300 text-xs block mt-0.5">
+                      {COMPANY_INFO.headquarters.poBox}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Economic License Note */}
+              <div className="p-4 bg-slate-950 border border-slate-800 rounded-2xl text-xs space-y-1">
+                <div className="text-cyan-300 font-bold flex items-center space-x-1.5 rtl:space-x-reverse">
+                  <ShieldCheck className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                  <span>Abu Dhabi Economic Licence</span>
+                </div>
+                <div className="text-slate-400 text-[11px] font-mono">
+                  Licence No. CN-1006129 • Establishment
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* End 7 cols: Inquiry Form */}
+          <div className="lg:col-span-7 bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl text-start">
+            {isSuccess ? (
+              <div className="py-12 text-center space-y-4 animate-in fade-in duration-200">
+                <div className="w-16 h-16 bg-emerald-500/10 border border-emerald-500/30 rounded-full flex items-center justify-center mx-auto text-emerald-400">
+                  <CheckCircle2 className="w-8 h-8" />
+                </div>
+                <h3 className="text-2xl font-bold text-white">{strings.contact.successTitle}</h3>
+                <p className="text-sm text-slate-300 max-w-lg mx-auto leading-relaxed">
+                  {strings.contact.successDesc}
+                </p>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsSuccess(false);
+                    setFormData({
+                      fullName: '',
+                      email: '',
+                      phone: '',
+                      organization: '',
+                      service: 'erp-system',
+                      message: '',
+                    });
+                  }}
+                  className="mt-4 px-6 py-2.5 bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs rounded-xl border border-slate-700 transition-colors"
+                >
+                  {language === 'ar' ? 'إرسال رسالة أخرى' : 'Send Another Message'}
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-4 text-start">
+                <div className="pb-3 border-b border-slate-800">
+                  <h3 className="text-lg font-bold text-white">
+                    {strings.contact.formTitle}
+                  </h3>
+                  <p className="text-xs text-slate-400 mt-0.5">
+                    {strings.contact.formDesc}
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {/* Full Name */}
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-300 mb-1">
+                      {strings.contact.fullName} <span className="text-cyan-400">*</span>
+                    </label>
+                    <input
+                      required
+                      type="text"
+                      placeholder={language === 'ar' ? "الاسم الكامل" : "Your Full Name"}
+                      value={formData.fullName}
+                      onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                      className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500"
+                    />
+                  </div>
+
+                  {/* Corporate Email */}
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-300 mb-1">
+                      {strings.contact.emailAddress} <span className="text-cyan-400">*</span>
+                    </label>
+                    <input
+                      required
+                      type="email"
+                      placeholder="name@organization.ae"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 font-mono"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {/* Phone Number */}
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-300 mb-1">
+                      {strings.contact.phoneNum}
+                    </label>
+                    <input
+                      type="tel"
+                      placeholder="+971 50 000 0000"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 font-mono"
+                    />
+                  </div>
+
+                  {/* Organization */}
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-300 mb-1">
+                      {strings.contact.organization}
+                    </label>
+                    <input
+                      type="text"
+                      placeholder={language === 'ar' ? "اسم المؤسسة / الشركة" : "Company or Entity Name"}
+                      value={formData.organization}
+                      onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
+                      className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500"
+                    />
+                  </div>
+                </div>
+
+                {/* Relevant Service */}
+                <div>
+                  <label className="block text-xs font-semibold text-slate-300 mb-1">
+                    {strings.contact.selectedService}
+                  </label>
+                  <select
+                    value={formData.service}
+                    onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                    className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-500"
+                  >
+                    {CORE_SERVICES.map((s) => (
+                      <option key={s.id} value={s.id}>
+                        {s.title} — {s.tagline}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Message */}
+                <div>
+                  <label className="block text-xs font-semibold text-slate-300 mb-1">
+                    {strings.contact.message} <span className="text-cyan-400">*</span>
+                  </label>
+                  <textarea
+                    required
+                    rows={4}
+                    placeholder={strings.contact.messagePlaceholder}
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    className="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500"
+                  />
+                </div>
+
+                {/* Submit button */}
+                <div className="pt-2">
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full py-3.5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-black text-sm rounded-xl shadow-xl shadow-cyan-500/20 transition-all flex items-center justify-center space-x-2 rtl:space-x-reverse disabled:opacity-50 active:scale-98"
+                  >
+                    <span>{isSubmitting ? strings.contact.submitting : strings.contact.submit}</span>
+                    <Send className="w-4 h-4 shrink-0" />
+                  </button>
+                </div>
+              </form>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

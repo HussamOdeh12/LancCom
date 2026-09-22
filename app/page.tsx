@@ -5,33 +5,16 @@ import { TopBar } from '@/components/layout/TopBar';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { Hero } from '@/components/home/Hero';
+import { CompanyCredentials } from '@/components/home/CompanyCredentials';
+import { AboutOverview } from '@/components/home/AboutOverview';
 import { CoreServices } from '@/components/home/CoreServices';
-import { ArchitectureExplorer } from '@/components/home/ArchitectureExplorer';
 import { WhyChooseUs } from '@/components/home/WhyChooseUs';
-import { IndustryShowcase } from '@/components/home/IndustryShowcase';
-import { SolutionEstimator } from '@/components/home/SolutionEstimator';
-import { ProjectCaseStudies } from '@/components/home/ProjectCaseStudies';
-import { TechnologyPartners } from '@/components/home/TechnologyPartners';
-import { TestimonialsCertifications } from '@/components/home/TestimonialsCertifications';
-import { FaqSection } from '@/components/home/FaqSection';
-import { ConsultationSection } from '@/components/home/ConsultationSection';
-import { ConsultationModal } from '@/components/modals/ConsultationModal';
+import { SelectedExperience } from '@/components/home/SelectedExperience';
+import { ContactSection } from '@/components/home/ContactSection';
 import { SearchModal } from '@/components/modals/SearchModal';
 
 export default function HomePage() {
-  const [isConsultationModalOpen, setIsConsultationModalOpen] = useState(false);
-  const [selectedServiceForModal, setSelectedServiceForModal] = useState<string | undefined>(undefined);
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
-
-  const handleOpenConsultation = (serviceId?: string) => {
-    setSelectedServiceForModal(serviceId);
-    setIsConsultationModalOpen(true);
-  };
-
-  const handleCloseConsultation = () => {
-    setIsConsultationModalOpen(false);
-    setSelectedServiceForModal(undefined);
-  };
 
   const handleOpenSearch = () => {
     setIsSearchModalOpen(true);
@@ -52,69 +35,42 @@ export default function HomePage() {
       </a>
 
       {/* Global Top Bar */}
-      <TopBar onOpenConsultation={() => handleOpenConsultation()} />
+      <TopBar />
 
       {/* Main Navigation Header */}
-      <Navbar
-        onOpenConsultation={handleOpenConsultation}
-        onOpenSearch={handleOpenSearch}
-      />
+      <Navbar onOpenSearch={handleOpenSearch} />
 
       {/* Main Content Area */}
       <main id="main-content" className="flex-1">
-        {/* Hero Section with Live Telemetry & Partner Marquee */}
-        <Hero onOpenConsultation={handleOpenConsultation} />
+        {/* 1. Hero Section */}
+        <Hero />
 
-        {/* 6 Core Solutions & Deep Architectural Breakdown */}
-        <CoreServices onOpenConsultation={handleOpenConsultation} />
+        {/* 2. Official Registration & Credentials */}
+        <CompanyCredentials />
 
-        {/* Interactive Systems Architecture Blueprint Explorer */}
-        <ArchitectureExplorer onOpenConsultation={() => handleOpenConsultation()} />
+        {/* 3. Corporate Overview / About */}
+        <AboutOverview />
 
-        {/* Strategic Value Proposition & Why LandCom */}
-        <WhyChooseUs onOpenConsultation={() => handleOpenConsultation()} />
+        {/* 4. 8 Core IT Services */}
+        <CoreServices />
 
-        {/* Strategic Industry Verticals Showcase */}
-        <IndustryShowcase onOpenConsultation={() => handleOpenConsultation()} />
+        {/* 5. Why LandCom */}
+        <WhyChooseUs />
 
-        {/* Interactive Scope & BOQ Estimator Tool */}
-        <SolutionEstimator onOpenConsultation={handleOpenConsultation} />
+        {/* 6. Documented Experience & Clients */}
+        <SelectedExperience />
 
-        {/* Featured Case Studies & UAE Enterprise Deliveries */}
-        <ProjectCaseStudies onOpenConsultation={() => handleOpenConsultation()} />
-
-        {/* Global OEM Technology Vendor Ecosystem */}
-        <TechnologyPartners />
-
-        {/* ISO Certifications, Regulatory Alignment & Client Testimonials */}
-        <TestimonialsCertifications />
-
-        {/* Frequently Asked Questions */}
-        <FaqSection />
-
-        {/* High-Conversion Consultation & Abu Dhabi Headquarters Section */}
-        <ConsultationSection />
+        {/* 7. Abu Dhabi Contact & Inquiry */}
+        <ContactSection />
       </main>
 
       {/* Global Enterprise Footer */}
-      <Footer onOpenConsultation={() => handleOpenConsultation()} />
+      <Footer />
 
-      {/* Interactive Modals */}
-      <ConsultationModal
-        isOpen={isConsultationModalOpen}
-        onClose={handleCloseConsultation}
-        defaultService={selectedServiceForModal}
-      />
-
+      {/* Search Modal */}
       <SearchModal
         isOpen={isSearchModalOpen}
         onClose={handleCloseSearch}
-        onSelectService={(id) => {
-          const el = document.getElementById(id);
-          if (el) {
-            el.scrollIntoView({ behavior: 'smooth' });
-          }
-        }}
       />
     </div>
   );

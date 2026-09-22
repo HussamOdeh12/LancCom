@@ -1,96 +1,78 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { 
   MapPin, 
   Phone, 
   Mail, 
-  Clock, 
+  Printer,
   ShieldCheck, 
   ArrowUp, 
   ChevronRight, 
-  Award,
 } from 'lucide-react';
-import { COMPANY_INFO, SERVICES, INDUSTRIES } from '@/lib/data';
+import { COMPANY_INFO, CORE_SERVICES } from '@/lib/data';
 import { useLanguage } from '@/context/LanguageContext';
 
-interface FooterProps {
-  onOpenConsultation: () => void;
-}
-
-export function Footer({ onOpenConsultation }: FooterProps) {
+export function Footer() {
   const { strings, language, isRTL } = useLanguage();
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Arabic translations for industry titles
-  const industryTitleMapAr: Record<string, string> = {
-    'gov-defense': 'الجهات الحكومية والسيادية',
-    'energy-oil-gas': 'قطاع الطاقة والنفط والغاز',
-    'banking-financial': 'القطاع المصرفي والمالي',
-    'healthcare': 'الرعاية الصحية والمستشفيات',
-    'hospitality-realestate': 'الضيافة والعقارات الفاخرة',
-    'education': 'التعليم والجامعات الذكية',
-  };
-
-  const serviceTitleMapAr: Record<string, string> = {
-    'it-infrastructure': 'البنية التحتية والخوادم',
-    'cybersecurity-soc': 'الأمن السيبراني وعمليات SOC',
-    'cloud-datacenter': 'السحابة ومراكز البيانات',
-    'elv-structured-cabling': 'كابلات التيار الخفيف (ELV)',
-    'networking-sdwan': 'شبكات SD-WAN الذكية',
-    'managed-it-services': 'الخدمات المدارة ومركز NOC',
-  };
+  const navLinks = [
+    { href: '/', label: strings.nav.home },
+    { href: '/about', label: strings.nav.about },
+    { href: '/services', label: strings.nav.services },
+    { href: '/experience', label: strings.nav.experience },
+    { href: '/credentials', label: strings.nav.credentials },
+    { href: '/contact', label: strings.nav.contact },
+  ];
 
   return (
     <footer className="bg-slate-950 text-slate-400 border-t border-slate-800/80 pt-16 pb-12 relative overflow-hidden text-start">
-      {/* Subtle Background Glow */}
-      <div className="absolute top-0 start-1/4 w-96 h-96 bg-cyan-600/5 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute bottom-0 end-1/4 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl pointer-events-none"></div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Top Callout Banner with Logical Flex & Spacing */}
+        {/* Top Callout Banner */}
         <div className="bg-gradient-to-r from-slate-900 via-slate-900/90 to-cyan-950/60 border border-slate-800 rounded-2xl p-8 mb-16 flex flex-col lg:flex-row items-center justify-between gap-6 shadow-2xl">
           <div className="space-y-2 text-center lg:text-start">
             <span className="text-xs font-bold text-cyan-400 uppercase tracking-widest flex items-center justify-center lg:justify-start space-x-2 rtl:space-x-reverse">
               <ShieldCheck className="w-4 h-4 text-cyan-400 shrink-0" />
-              <span>{strings.hero.accreditationPill}</span>
+              <span>{COMPANY_INFO.name}</span>
             </span>
             <h3 className="text-xl sm:text-2xl font-bold text-white">
               {language === 'ar' 
-                ? 'جاهز لتطوير وحماية البنية التحتية لتكنولوجيا المعلومات في مؤسستك؟'
-                : 'Ready to Upgrade or Secure Your Organization\'s IT Infrastructure?'}
+                ? 'هل ترغب بمناقشة متطلبات مشروعكم في أبوظبي؟'
+                : 'Looking to Discuss Your Business IT Requirements in Abu Dhabi?'}
             </h3>
             <p className="text-sm text-slate-300 max-w-2xl">
               {language === 'ar'
-                ? 'تواصل مع فريقنا الهندسي بأبوظبي للمسوحات الميدانية، والمناقصات، وجداول الكميات (BOQ)، وعقود الصيانة المدارة على مدار الساعة 24/7.'
-                : 'Connect with our Abu Dhabi engineering team for on-site discovery surveys, RFPs, structured cabling BOQs, and 24/7 SLA maintenance.'}
+                ? 'تواصل مع مستشارينا في أبوظبي لمناقشة أنظمة المؤسسات، التطبيقات الذكية، الشبكات، والخدمات المدارة.'
+                : 'Connect with our team in Abu Dhabi to discuss ERP systems, mobility applications, IT infrastructure, and managed services.'}
             </p>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-4 shrink-0">
-            <button
-              type="button"
-              onClick={onOpenConsultation}
+            <Link
+              href="/contact"
               className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold text-sm rounded-xl shadow-lg shadow-cyan-500/20 transition-all active:scale-98"
             >
-              {strings.hero.requestProposal}
-            </button>
+              {strings.nav.contactCta}
+            </Link>
             <a
-              href={`tel:${COMPANY_INFO.contact.phone.replace(/\s+/g, '')}`}
+              href={`tel:${COMPANY_INFO.contact.telephone.replace(/\s+/g, '')}`}
               className="px-5 py-3 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-sm rounded-xl border border-slate-700 transition-colors flex items-center space-x-2 rtl:space-x-reverse"
+              dir="ltr"
             >
               <Phone className="w-4 h-4 text-cyan-400 shrink-0" />
-              <span>{language === 'ar' ? 'الاتصال بمقر أبوظبي' : 'Call Abu Dhabi HQ'}</span>
+              <span>{COMPANY_INFO.contact.telephone}</span>
             </a>
           </div>
         </div>
 
-        {/* 5-Column Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-14 text-start">
-          {/* Col 1 & 2: Brand Profile & Certifications */}
-          <div className="lg:col-span-2 space-y-5">
+        {/* 4-Column Main Footer Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-14 text-start">
+          {/* Col 1: Brand Profile */}
+          <div className="space-y-4">
             <div className="flex items-center space-x-3 rtl:space-x-reverse">
               <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 p-0.5 shadow-md shadow-cyan-500/20 shrink-0">
                 <div className="w-full h-full bg-slate-950 rounded-[9px] flex items-center justify-center">
@@ -103,138 +85,129 @@ export function Footer({ onOpenConsultation }: FooterProps) {
                   LAND<span className="text-cyan-400">.</span>COM
                 </span>
                 <span className="block text-[11px] text-slate-400 font-medium">
-                  {language === 'ar' ? 'مزود حلول تكنولوجيا المعلومات ذ.م.م' : 'IT Solutions Provider LLC'}
+                  {COMPANY_INFO.shortName}
                 </span>
               </div>
             </div>
 
-            <p className="text-sm text-slate-400 leading-relaxed max-w-md">
-              {strings.footer.companyDesc}
+            <p className="text-sm text-slate-400 leading-relaxed">
+              {strings.footer.description}
             </p>
 
-            {/* Certifications Badge Row */}
-            <div className="grid grid-cols-2 gap-2 pt-2">
-              {COMPANY_INFO.certifications.map((c, idx) => (
-                <div key={idx} className="p-2.5 rounded-lg bg-slate-900 border border-slate-800/80 flex items-start space-x-2 rtl:space-x-reverse">
-                  <Award className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                  <div className="text-start">
-                    <div className="text-xs font-bold text-slate-200">{c.title}</div>
-                    <div className="text-[10px] text-slate-400">{c.desc}</div>
-                  </div>
-                </div>
-              ))}
+            <div className="text-xs text-cyan-300 font-medium pt-1">
+              {COMPANY_INFO.ownership} • {COMPANY_INFO.legalForm}
             </div>
           </div>
 
-          {/* Col 3: Services & Solutions */}
+          {/* Col 2: Eight Core Services */}
           <div className="space-y-4">
             <h4 className="text-xs font-bold uppercase tracking-wider text-cyan-400">
-              {strings.footer.solutionPillars}
+              {strings.footer.servicesTitle}
             </h4>
             <ul className="space-y-2.5 text-sm">
-              {SERVICES.map((s) => (
+              {CORE_SERVICES.map((s) => (
                 <li key={s.id}>
-                  <a
-                    href={`#${s.id}`}
+                  <Link
+                    href={`/services#${s.id}`}
                     className="hover:text-cyan-400 transition-colors flex items-center space-x-1.5 rtl:space-x-reverse group"
                   >
                     <ChevronRight className={`w-3.5 h-3.5 text-slate-600 group-hover:text-cyan-400 transition-all shrink-0 ${isRTL ? 'rotate-180 group-hover:-translate-x-0.5' : 'group-hover:translate-x-0.5'}`} />
-                    <span>{language === 'ar' ? (serviceTitleMapAr[s.id] || s.title) : s.title}</span>
-                  </a>
+                    <span>{s.title}</span>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Col 4: Industries */}
+          {/* Col 3: Quick Navigation */}
           <div className="space-y-4">
             <h4 className="text-xs font-bold uppercase tracking-wider text-cyan-400">
-              {strings.nav.industries}
+              {strings.footer.quickLinks}
             </h4>
             <ul className="space-y-2.5 text-sm">
-              {INDUSTRIES.map((ind) => (
-                <li key={ind.id}>
-                  <a
-                    href="#industries"
+              {navLinks.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
                     className="hover:text-cyan-400 transition-colors flex items-center space-x-1.5 rtl:space-x-reverse group"
                   >
                     <ChevronRight className={`w-3.5 h-3.5 text-slate-600 group-hover:text-cyan-400 transition-all shrink-0 ${isRTL ? 'rotate-180 group-hover:-translate-x-0.5' : 'group-hover:translate-x-0.5'}`} />
-                    <span>{language === 'ar' ? (industryTitleMapAr[ind.id] || ind.name) : ind.name}</span>
-                  </a>
+                    <span>{item.label}</span>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Col 5: UAE Headquarters & Contact */}
+          {/* Col 4: Abu Dhabi Headquarters & Official Details */}
           <div className="space-y-4">
             <h4 className="text-xs font-bold uppercase tracking-wider text-cyan-400">
-              {strings.footer.headquarters}
+              {strings.footer.contactTitle}
             </h4>
             <div className="space-y-3 text-sm">
               <div className="flex items-start space-x-2.5 rtl:space-x-reverse">
                 <MapPin className="w-4 h-4 text-cyan-400 shrink-0 mt-1" />
                 <span className="text-slate-300 text-xs leading-relaxed">
-                  {COMPANY_INFO.headquarters.address}
+                  {COMPANY_INFO.headquarters.fullAddress}
                 </span>
               </div>
               <div className="flex items-center space-x-2.5 rtl:space-x-reverse">
                 <Phone className="w-4 h-4 text-cyan-400 shrink-0" />
                 <a 
-                  href={`tel:${COMPANY_INFO.contact.phone.replace(/\s+/g, '')}`} 
+                  href={`tel:${COMPANY_INFO.contact.telephone.replace(/\s+/g, '')}`} 
                   className="text-slate-200 text-xs hover:text-cyan-400 transition-colors font-medium font-mono"
                   dir="ltr"
                 >
-                  {COMPANY_INFO.contact.phone}
+                  {COMPANY_INFO.contact.telephone}
                 </a>
               </div>
               <div className="flex items-center space-x-2.5 rtl:space-x-reverse">
-                <Mail className="w-4 h-4 text-cyan-400 shrink-0" />
-                <a href={`mailto:${COMPANY_INFO.contact.email}`} className="text-slate-200 text-xs hover:text-cyan-400 transition-colors font-mono">
-                  {COMPANY_INFO.contact.email}
-                </a>
-              </div>
-              <div className="flex items-start space-x-2.5 rtl:space-x-reverse">
-                <Clock className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                <span className="text-slate-400 text-[11px]">
-                  {strings.topbar.hours}
+                <Printer className="w-4 h-4 text-cyan-400 shrink-0" />
+                <span className="text-slate-300 text-xs font-mono" dir="ltr">
+                  Fax: {COMPANY_INFO.contact.fax}
                 </span>
               </div>
-            </div>
-
-            <div className="p-3 bg-slate-900/90 rounded-xl border border-slate-800 text-xs space-y-1">
-              <div className="text-slate-300 font-semibold flex items-center space-x-1.5 rtl:space-x-reverse">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span>{language === 'ar' ? 'طوارئ مركز العمليات (NOC):' : 'NOC Emergency Dispatch:'}</span>
+              <div className="flex items-center space-x-2.5 rtl:space-x-reverse">
+                <Mail className="w-4 h-4 text-cyan-400 shrink-0" />
+                <a href={`mailto:${COMPANY_INFO.contact.primaryEmail}`} className="text-slate-200 text-xs hover:text-cyan-400 transition-colors font-mono">
+                  {COMPANY_INFO.contact.primaryEmail}
+                </a>
               </div>
-              <div className="text-cyan-300 font-mono text-[11px]" dir="ltr">
-                {COMPANY_INFO.contact.mobile}
+              <div className="text-xs text-slate-400 pt-1">
+                <span>P.O. Box: {COMPANY_INFO.headquarters.poBox}</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Legal, Copyright & Back to Top */}
+        {/* Bottom Legal & Copyright */}
         <div className="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
             <span>
-              &copy; {new Date().getFullYear()} {COMPANY_INFO.name}. {strings.footer.allRightsReserved}
+              &copy; {new Date().getFullYear()} {COMPANY_INFO.name}. {strings.footer.rights}
             </span>
             <span className="hidden sm:inline text-slate-800">|</span>
-            <span className="text-slate-400">
-              {language === 'ar' ? 'مرخص رسمياً في أبوظبي، الإمارات العربية المتحدة' : 'Registered in Abu Dhabi, United Arab Emirates'}
+            <span className="text-cyan-400 font-mono">
+              {strings.footer.licenceNotice}
             </span>
           </div>
 
           <div className="flex items-center space-x-4 rtl:space-x-reverse">
+            <Link href="/privacy" className="hover:text-slate-400 transition-colors">
+              {strings.footer.privacy}
+            </Link>
+            <span>•</span>
+            <Link href="/terms" className="hover:text-slate-400 transition-colors">
+              {strings.footer.terms}
+            </Link>
+            <span>•</span>
             <button
               type="button"
               onClick={scrollToTop}
-              className="p-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-cyan-400 border border-slate-800 transition-colors flex items-center space-x-1.5 rtl:space-x-reverse focus:outline-none"
-              aria-label="Scroll back to top"
+              className="p-2 bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white rounded-lg border border-slate-800 transition-colors"
+              aria-label="Scroll to top"
             >
-              <ArrowUp className="w-3.5 h-3.5" />
-              <span className="text-[11px] font-medium">{language === 'ar' ? 'للأعلى' : 'Top'}</span>
+              <ArrowUp className="w-4 h-4" />
             </button>
           </div>
         </div>

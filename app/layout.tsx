@@ -4,51 +4,44 @@ import { LanguageProvider } from '@/context/LanguageContext';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://landcom.ae'),
-  title: 'LandCom IT Solutions | Enterprise IT Systems Integrator Abu Dhabi, UAE',
-  description: 'Enterprise IT Solutions Provider, Systems Integrator & Managed Services Partner in Abu Dhabi, UAE. Delivering IT Infrastructure, Cybersecurity, Cloud, ELV, and Networking.',
+  title: 'LandCom Information Technology | IT Solutions Provider Abu Dhabi, UAE',
+  description: 'LAND.COM Information Technology Solutions Provider in Abu Dhabi, UAE. Developing and implementing business solutions in Abu Dhabi since 2007.',
   keywords: [
+    'LandCom Information Technology',
     'IT Solutions Abu Dhabi',
-    'Systems Integrator UAE',
-    'Enterprise IT Infrastructure',
-    'Cybersecurity Abu Dhabi',
-    'Structured Cabling UAE',
-    'ELV Systems Abu Dhabi',
-    'CCTV SIRA MCC UAE',
-    'Managed IT Services UAE',
-    'Hybrid Cloud Abu Dhabi',
-    'LandCom IT Solutions'
+    'ERP System Abu Dhabi',
+    'Mobility Solutions UAE',
+    'IT Resources Networking Abu Dhabi',
+    'Security Solutions Abu Dhabi',
+    'Tracking Systems UAE',
+    'RFID Solutions UAE',
+    'E-Commerce Web Abu Dhabi',
+    'IT Managed Services Abu Dhabi'
   ],
   authors: [{ name: 'LAND.COM Information Technology Solutions Provider' }],
-  creator: 'LandCom Information Technology LLC',
-  publisher: 'LandCom Information Technology LLC',
+  creator: 'LandCom Information Technology',
+  publisher: 'LandCom Information Technology',
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: 'LandCom IT Solutions | Enterprise IT Systems Integrator Abu Dhabi, UAE',
-    description: 'Leading Abu Dhabi Systems Integrator delivering enterprise IT infrastructure, zero-trust cybersecurity, structured cabling (ELV), and 24/7 managed NOC services.',
+    title: 'LandCom Information Technology | IT Solutions Provider Abu Dhabi, UAE',
+    description: 'LAND.COM Information Technology Solutions Provider. Operating as strategic consultants delivering integrated IT solutions in Abu Dhabi since 2007.',
     url: 'https://landcom.ae',
-    siteName: 'LAND.COM IT Solutions',
+    siteName: 'LandCom Information Technology',
     locale: 'en_AE',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'LandCom IT Solutions | Enterprise IT Systems Integrator Abu Dhabi, UAE',
-    description: 'Enterprise IT Solutions Provider & Systems Integrator in Abu Dhabi, UAE. High-availability compute, cybersecurity, cloud, ELV, and 24/7 NOC support.',
+    title: 'LandCom Information Technology | IT Solutions Provider Abu Dhabi',
+    description: 'Developing and implementing business solutions in Abu Dhabi since 2007.',
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
   },
   alternates: {
     canonical: 'https://landcom.ae',
@@ -62,21 +55,22 @@ const jsonLd = {
       '@type': 'Organization',
       '@id': 'https://landcom.ae/#organization',
       name: 'LAND.COM Information Technology Solutions Provider',
-      alternateName: 'LandCom IT Solutions',
+      alternateName: 'LandCom Information Technology',
       url: 'https://landcom.ae',
-      logo: 'https://landcom.ae/icon.png',
-      description: 'Enterprise IT Solutions Provider, Systems Integrator, and Managed IT Services Partner based in Abu Dhabi, UAE.',
+      description: 'Developing and implementing complex business solutions in Abu Dhabi since 2007. Operating as strategic consultants who understand client needs and deliver integrated solutions.',
       address: {
         '@type': 'PostalAddress',
-        streetAddress: 'Electra Street, Al Markaziyah, P.O. Box 48291',
+        streetAddress: 'Abu Dhabi Island, Muroor Road, Floor 3, Office 37–38, P.O. Box 58571',
         addressLocality: 'Abu Dhabi',
         addressRegion: 'Abu Dhabi',
         addressCountry: 'AE'
       },
       contactPoint: {
         '@type': 'ContactPoint',
-        telephone: '+971-2-674-8890',
-        contactType: 'customer support',
+        telephone: '+971-2-884-8213',
+        faxNumber: '+971-2-884-8214',
+        email: 'Info@landcom.ae',
+        contactType: 'customer service',
         areaServed: 'AE',
         availableLanguage: ['en', 'ar']
       }
@@ -84,7 +78,7 @@ const jsonLd = {
     {
       '@type': 'ITService',
       '@id': 'https://landcom.ae/#service',
-      name: 'Enterprise IT Systems Integration & Managed IT Services',
+      name: 'Information Technology Solutions & Services',
       provider: {
         '@id': 'https://landcom.ae/#organization'
       },
@@ -94,48 +88,70 @@ const jsonLd = {
       },
       hasOfferCatalog: {
         '@type': 'OfferCatalog',
-        name: 'Enterprise IT Solutions',
+        name: 'LandCom Core Services Catalog',
         itemListElement: [
           {
             '@type': 'Offer',
             itemOffered: {
               '@type': 'Service',
-              name: 'Enterprise IT Infrastructure & Systems'
+              name: 'ERP System',
+              description: 'Enterprise resource planning tailored to your business'
             }
           },
           {
             '@type': 'Offer',
             itemOffered: {
               '@type': 'Service',
-              name: 'Advanced Cybersecurity & SOC Defense'
+              name: 'Mobility Solutions',
+              description: 'iOS, Android & cross-platform mobile applications'
             }
           },
           {
             '@type': 'Offer',
             itemOffered: {
               '@type': 'Service',
-              name: 'Structured Cabling & ELV Low Current Systems'
+              name: 'IT Resources & Networking',
+              description: 'Hardware supply, network design and infrastructure'
             }
           },
           {
             '@type': 'Offer',
             itemOffered: {
               '@type': 'Service',
-              name: 'Cloud & Hybrid Data Center Solutions'
+              name: 'Security Solutions',
+              description: 'Access control, CCTV and cybersecurity systems'
             }
           },
           {
             '@type': 'Offer',
             itemOffered: {
               '@type': 'Service',
-              name: 'Enterprise Networking & SD-WAN'
+              name: 'Tracking Systems',
+              description: 'GPS fleet tracking and asset management'
             }
           },
           {
             '@type': 'Offer',
             itemOffered: {
               '@type': 'Service',
-              name: 'Managed IT Services & 24/7 NOC Support'
+              name: 'RFID Solutions',
+              description: 'Radio-frequency identification for inventory & assets'
+            }
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'E-Commerce & Web',
+              description: 'Custom websites, portals and digital commerce'
+            }
+          },
+          {
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: 'IT Managed Services',
+              description: 'End-to-end IT operations and helpdesk support'
             }
           }
         ]
@@ -161,4 +177,3 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
-

@@ -4,546 +4,435 @@ export type Direction = 'ltr' | 'rtl';
 export interface Translations {
   topbar: {
     location: string;
-    hours: string;
-    supportNoc: string;
-    callUs: string;
-    emailUs: string;
+    phone: string;
+    email: string;
   };
   nav: {
     home: string;
+    about: string;
     services: string;
-    architectures: string;
-    industries: string;
-    caseStudies: string;
-    estimator: string;
+    experience: string;
+    credentials: string;
     contact: string;
-    requestConsultation: string;
+    contactCta: string;
     searchPlaceholder: string;
     searchAria: string;
     tagline: string;
-    nesaSiraBadge: string;
-    requestCustomBoq: string;
   };
   hero: {
-    accreditationPill: string;
-    alignedBadge: string;
+    locationBadge: string;
     headlinePart1: string;
     headlineAccent: string;
     headlinePart2: string;
     description: string;
-    requestProposal: string;
-    estimatorBtn: string;
-    telemetryTitle: string;
-    telemetrySubtitle: string;
-    tabs: {
-      network: string;
-      security: string;
-      cloud: string;
+    exploreServices: string;
+    contactUs: string;
+    stats: {
+      established: string;
+      establishedLabel: string;
+      ownership: string;
+      ownershipLabel: string;
+      experience: string;
+      experienceLabel: string;
+      staff: string;
+      staffLabel: string;
     };
-    metrics: {
-      sdwanLatency: string;
-      packetLoss: string;
-      zeroTrustStatus: string;
-      threatsBlocked: string;
-      cloudRto: string;
-      cloudRpo: string;
-      uptimeSla: string;
-      liveStatus: string;
+  };
+  credentials: {
+    sectionTag: string;
+    sectionTitle: string;
+    sectionDesc: string;
+    licenseDetails: string;
+    licenceNo: string;
+    unifiedRegNo: string;
+    unifiedLicNo: string;
+    membershipNo: string;
+    legalForm: string;
+    issueDate: string;
+    expiryDate: string;
+    activitiesTitle: string;
+    activitiesDesc: string;
+  };
+  aboutSection: {
+    sectionTag: string;
+    sectionTitle: string;
+    sectionDesc: string;
+    paragraph1: string;
+    paragraph2: string;
+    readMore: string;
+    points: {
+      consultants: string;
+      experience: string;
+      presence: string;
     };
-    trustBadges: {
-      abuDhabiWarehousing: string;
-      certifiedEngineers: string;
-      rapidDispatch: string;
-      isoCertified: string;
-    };
+  };
+  aboutPage: {
+    title: string;
+    subtitle: string;
+    overviewTitle: string;
+    overviewText1: string;
+    overviewText2: string;
+    strategicTitle: string;
+    strategicText: string;
+    ownershipTitle: string;
+    ownershipText: string;
   };
   services: {
     sectionTag: string;
     sectionTitle: string;
     sectionDesc: string;
-    exploreBlueprint: string;
-    requestBoq: string;
-    deliverables: string;
-    oemVendors: string;
-    slaResponse: string;
-    complianceTag: string;
+    viewService: string;
+    allServices: string;
+    scopeTitle: string;
   };
-  architectures: {
-    sectionTag: string;
-    sectionTitle: string;
-    sectionDesc: string;
-    edgeLayer: string;
-    computeLayer: string;
-    storageLayer: string;
-    securityLayer: string;
-    complianceLayer: string;
-    viewSpecs: string;
-  };
-  whyUs: {
+  whyLandcom: {
     sectionTag: string;
     sectionTitle: string;
     sectionDesc: string;
   };
-  industries: {
+  experience: {
     sectionTag: string;
     sectionTitle: string;
     sectionDesc: string;
+    supportedOrganizations: string;
+    organization: string;
+    scopeOfWork: string;
+    location: string;
   };
-  estimator: {
-    sectionTag: string;
-    sectionTitle: string;
-    sectionDesc: string;
-    step1: string;
-    step2: string;
-    step3: string;
-    usersCount: string;
-    industryLabel: string;
-    selectComponents: string;
-    estimatedSummary: string;
-    turnaroundTime: string;
-    requestFormalProposal: string;
-  };
-  caseStudies: {
-    sectionTag: string;
-    sectionTitle: string;
-    sectionDesc: string;
-    readCaseStudy: string;
-    metricsAchieved: string;
-  };
-  partners: {
-    sectionTag: string;
-    sectionTitle: string;
-    sectionDesc: string;
-    allAlliances: string;
-  };
-  testimonials: {
-    sectionTag: string;
-    sectionTitle: string;
-    sectionDesc: string;
-    auditedAndCertified: string;
-  };
-  faq: {
-    sectionTag: string;
-    sectionTitle: string;
-    sectionDesc: string;
-  };
-  consultation: {
+  contact: {
     sectionTag: string;
     sectionTitle: string;
     sectionDesc: string;
     hqTitle: string;
-    hqSubtitle: string;
-    physicalLocation: string;
-    directTelephone: string;
-    tendersRfp: string;
-    operatingHours: string;
-    criticalDispatch: string;
-    activeStatus: string;
+    address: string;
+    addressVal: string;
+    telephone: string;
+    fax: string;
+    email: string;
+    poBox: string;
+    poBoxVal: string;
     formTitle: string;
-    confidentialNda: string;
+    formDesc: string;
     fullName: string;
-    corporateEmail: string;
-    mobileNumber: string;
+    emailAddress: string;
+    phoneNum: string;
     organization: string;
-    targetSolution: string;
-    expectedTimeline: string;
-    projectDetails: string;
-    projectDetailsPlaceholder: string;
-    ndaCheckbox: string;
-    submitBtn: string;
-    submittingBtn: string;
+    selectedService: string;
+    message: string;
+    messagePlaceholder: string;
+    submit: string;
+    submitting: string;
     successTitle: string;
     successDesc: string;
-    refCode: string;
-    responseWindow: string;
-    assignedTeam: string;
-    submitAnother: string;
   };
   footer: {
-    companyDesc: string;
-    headquarters: string;
+    description: string;
     quickLinks: string;
-    solutionPillars: string;
-    legalCompliance: string;
-    isoStandards: string;
-    emergencyNoc: string;
-    allRightsReserved: string;
-    privacyPolicy: string;
-    termsConditions: string;
-    securityStandards: string;
+    servicesTitle: string;
+    contactTitle: string;
+    licenceNotice: string;
+    rights: string;
+    privacy: string;
+    terms: string;
   };
   common: {
     language: string;
     arabic: string;
     english: string;
-    switchLanguage: string;
-    learnMore: string;
     close: string;
     search: string;
+    viewDetails: string;
+    getInTouch: string;
   };
 }
 
 export const translations: Record<Language, Translations> = {
   en: {
     topbar: {
-      location: 'Abu Dhabi, United Arab Emirates',
-      hours: 'Mon-Fri: 8:00 AM – 5:30 PM (GST)',
-      supportNoc: '24/7 Enterprise NOC Active',
-      callUs: '+971 2 674 8890',
-      emailUs: 'info@landcom.ae',
+      location: 'Abu Dhabi Island, Muroor Road, Floor 3, Office 37–38',
+      phone: '+971 2 884 8213',
+      email: 'Info@landcom.ae',
     },
     nav: {
       home: 'Home',
-      services: 'Services & Solutions',
-      architectures: 'Architectures',
-      industries: 'Industries',
-      caseStudies: 'Case Studies',
-      estimator: 'Scope Estimator',
+      about: 'About',
+      services: 'Services',
+      experience: 'Experience',
+      credentials: 'Credentials',
       contact: 'Contact',
-      requestConsultation: 'Request Consultation',
-      searchPlaceholder: 'Search enterprise services, specs, and architectures...',
-      searchAria: 'Open Search Modal',
-      tagline: 'Abu Dhabi Enterprise Systems Integrator',
-      nesaSiraBadge: 'NESA & SIRA/MCC Certified Implementations',
-      requestCustomBoq: 'Request Custom BOQ',
+      contactCta: 'Contact Us',
+      searchPlaceholder: 'Search services, credentials, or experience...',
+      searchAria: 'Search dialog',
+      tagline: 'Information Technology Solutions Provider',
     },
     hero: {
-      accreditationPill: 'Abu Dhabi, UAE • Enterprise Systems Integrator',
-      alignedBadge: 'NESA & SIRA/MCC Aligned',
-      headlinePart1: 'Architecting',
-      headlineAccent: 'Resilient IT Infrastructure',
-      headlinePart2: '& Advanced Systems for UAE Enterprises',
-      description: 'From hyperconverged data centers and zero-trust cybersecurity to structured cabling (ELV) and 24/7 managed NOC operations — we engineer mission-critical digital systems for government, energy, and corporate leaders across the UAE.',
-      requestProposal: 'Request Technical Proposal',
-      estimatorBtn: 'Scope Estimator Tool',
-      telemetryTitle: 'Enterprise Telemetry & Operations Center',
-      telemetrySubtitle: 'Live Abu Dhabi Core Node Telemetry',
-      tabs: {
-        network: 'SD-WAN Core',
-        security: 'Zero-Trust SOC',
-        cloud: 'Hybrid Sovereign',
+      locationBadge: 'Abu Dhabi, UAE • Established 2007',
+      headlinePart1: 'Information Technology',
+      headlineAccent: 'Solutions Provider',
+      headlinePart2: 'in Abu Dhabi',
+      description: 'Developing and implementing business solutions in Abu Dhabi since 2007. Operating as strategic consultants who understand client needs and deliver integrated IT solutions.',
+      exploreServices: 'Explore Services',
+      contactUs: 'Discuss Your Requirements',
+      stats: {
+        established: '2007',
+        establishedLabel: 'Established in Abu Dhabi',
+        ownership: '100%',
+        ownershipLabel: 'UAE Nationally Owned',
+        experience: '19+ Years',
+        experienceLabel: 'Complex Solutions Experience',
+        staff: '32+',
+        staffLabel: 'IT Staff Deployed in Key Projects',
       },
-      metrics: {
-        sdwanLatency: 'Core Latency',
-        packetLoss: 'Packet Loss',
-        zeroTrustStatus: 'Defense Posture',
-        threatsBlocked: 'Threats Blocked / 24h',
-        cloudRto: 'Failover RTO',
-        cloudRpo: 'Target RPO',
-        uptimeSla: 'SLA Availability',
-        liveStatus: 'Active & Monitored',
+    },
+    credentials: {
+      sectionTag: 'Official Credentials',
+      sectionTitle: 'Licensing & Corporate Information',
+      sectionDesc: 'Officially registered establishment licensed under the Abu Dhabi Department of Economic Development.',
+      licenseDetails: 'Abu Dhabi Economic Licence Details',
+      licenceNo: 'Licence No.',
+      unifiedRegNo: 'Unified Registration No.',
+      unifiedLicNo: 'Unified Licence No.',
+      membershipNo: 'ADCCI Membership',
+      legalForm: 'Legal Form',
+      issueDate: 'Issue Date',
+      expiryDate: 'Expiry Date',
+      activitiesTitle: 'Six Licensed Economic Activities',
+      activitiesDesc: 'Authorized commercial and technical activities in Abu Dhabi:',
+    },
+    aboutSection: {
+      sectionTag: 'About LandCom',
+      sectionTitle: 'Strategic Consultants & Solution Providers',
+      sectionDesc: 'Land.com Solution Provider has been developing and implementing complex business solutions in Abu Dhabi since 2007.',
+      paragraph1: 'We operate as strategic consultants who understand client needs and deliver integrated solutions across enterprise applications, hardware, mobility, security, and managed services.',
+      paragraph2: 'Headquartered on Muroor Road on Abu Dhabi Island, LandCom is a 100% UAE-owned establishment managed by UAE nationals with over 19 years of continuous operational heritage.',
+      readMore: 'Read Full Profile',
+      points: {
+        consultants: 'Strategic IT consultancy and integrated implementations',
+        experience: '19+ years experience delivering for government and enterprise clients',
+        presence: 'Permanent Abu Dhabi Island presence with top UAE national management',
       },
-      trustBadges: {
-        abuDhabiWarehousing: 'Abu Dhabi Warehousing & Spares Depot',
-        certifiedEngineers: '100% Certified On-Site Engineers',
-        rapidDispatch: '< 2-Hour Critical Dispatch SLA',
-        isoCertified: 'ISO 9001 & ISO 27001 Certified',
-      },
+    },
+    aboutPage: {
+      title: 'About LandCom Information Technology',
+      subtitle: 'Solutions Provider in Abu Dhabi since 2007',
+      overviewTitle: 'Corporate Profile',
+      overviewText1: 'Land.com Solution Provider has been developing and implementing complex business solutions in Abu Dhabi since 2007. Operating as strategic consultants who understand client needs and deliver integrated solutions.',
+      overviewText2: 'With over 19 years of dedicated experience, LandCom provides organizations with end-to-end technical capabilities spanning enterprise software, mobility, tracking, RFID, networking, and managed IT services.',
+      strategicTitle: 'Strategic Consultation Model',
+      strategicText: 'Rather than offering generic off-the-shelf packages, LandCom acts as an integrated strategic partner, analyzing specific operational challenges and deploying tailored technology solutions that meet institutional standards.',
+      ownershipTitle: '100% UAE Ownership',
+      ownershipText: 'LandCom is a 100% UAE-owned establishment with top management led by UAE nationals, dedicated to supporting national entities and commercial enterprises throughout the United Arab Emirates.',
     },
     services: {
-      sectionTag: 'Core Systems Integration Capabilities',
-      sectionTitle: 'Turnkey Enterprise IT Solutions & Infrastructure',
-      sectionDesc: 'Engineered for maximum resilience, sovereign compliance, and strict UAE regulatory standards.',
-      exploreBlueprint: 'Explore Technical Blueprint',
-      requestBoq: 'Request BOQ & Scope',
-      deliverables: 'Key Deliverables & Specifications',
-      oemVendors: 'Certified Technology Alliances',
-      slaResponse: 'Guaranteed On-Site SLA',
-      complianceTag: 'Compliance Standards',
+      sectionTag: 'Our Capabilities',
+      sectionTitle: 'Eight Core Services & Solutions',
+      sectionDesc: 'Comprehensive, structured IT services and technology solutions documented in LandCom’s official portfolio.',
+      viewService: 'View Service Details',
+      allServices: 'All Services',
+      scopeTitle: 'Core Scope & Capabilities',
     },
-    architectures: {
-      sectionTag: 'Interactive Reference Architectures',
-      sectionTitle: 'Enterprise IT Topology & Defense Blueprints',
-      sectionDesc: 'Explore how LandCom designs zero-trust security layers, multi-cloud redundancy, and low-voltage structured cabling grids for UAE facilities.',
-      edgeLayer: 'Perimeter & Edge SD-WAN',
-      computeLayer: 'HCI Compute & Virtualization',
-      storageLayer: 'All-Flash SAN & Immutable Backup',
-      securityLayer: 'Zero-Trust & SIEM / SOC Defense',
-      complianceLayer: 'UAE Regulatory & Sovereign Governance',
-      viewSpecs: 'View Layer Architecture Specs',
+    whyLandcom: {
+      sectionTag: 'Why LandCom',
+      sectionTitle: 'Built on Experience & Local Presence',
+      sectionDesc: 'Key reasons why leading government foundations, municipal authorities, and businesses rely on LandCom.',
     },
-    whyUs: {
-      sectionTag: 'Strategic Advantage',
-      sectionTitle: 'Why UAE Enterprises & Government Entities Rely on LandCom',
-      sectionDesc: 'Combining local Abu Dhabi technical mastery with world-class OEM partnerships to eliminate downtime and project delays.',
+    experience: {
+      sectionTag: 'Selected Experience',
+      sectionTitle: 'Organizations We’ve Supported',
+      sectionDesc: 'Documented organizational experience delivering IT solutions, infrastructure, applications, and managed staffing.',
+      supportedOrganizations: 'Documented Clients & Scope',
+      organization: 'Organization',
+      scopeOfWork: 'Delivered Scope of Work',
+      location: 'Location',
     },
-    industries: {
-      sectionTag: 'Sector Solutions',
-      sectionTitle: 'Tailored Architectures for Strategic UAE Industries',
-      sectionDesc: 'Custom-engineered IT infrastructure adhering to industry-specific regulatory mandates across the Emirates.',
-    },
-    estimator: {
-      sectionTag: 'Instant Architecture & Cost Scoping',
-      sectionTitle: 'Interactive Project Scope & BOQ Estimator',
-      sectionDesc: 'Configure your enterprise footprint to receive recommended architectural stacks, BOQ frameworks, and deployment timelines.',
-      step1: '1. Select Organization Scale & Users',
-      step2: '2. Choose Strategic Industry Focus',
-      step3: '3. Select Infrastructure Modules',
-      usersCount: 'Concurrent Enterprise Users',
-      industryLabel: 'Industry Regulatory Framework',
-      selectComponents: 'Required Technology Stacks',
-      estimatedSummary: 'Estimated Solution Architecture Summary',
-      turnaroundTime: 'Estimated Turnaround',
-      requestFormalProposal: 'Generate & Submit Formal BOQ Request',
-    },
-    caseStudies: {
-      sectionTag: 'Verified UAE Deliveries',
-      sectionTitle: 'Enterprise Deployments & Modernization Projects',
-      sectionDesc: 'Real-world case studies showcasing mission-critical infrastructure deployed across Abu Dhabi and UAE.',
-      readCaseStudy: 'Explore Architecture Case Study',
-      metricsAchieved: 'Key Verified Outcomes',
-    },
-    partners: {
-      sectionTag: 'Global OEM Technology Alliances',
-      sectionTitle: 'Direct Tier-1 Partnerships & OEM Certifications',
-      sectionDesc: 'We partner directly with leading global hardware and cybersecurity leaders to guarantee genuine manufacturer warranties, rapid parts replacement, and direct engineering escalation.',
-      allAlliances: 'All Technology Alliances',
-    },
-    testimonials: {
-      sectionTag: 'Compliance & Verified Trust',
-      sectionTitle: 'Certified Quality & Proven UAE Client Satisfaction',
-      sectionDesc: 'Delivering according to audited global quality standards and strict UAE regulatory frameworks.',
-      auditedAndCertified: 'Audited & Certified',
-    },
-    faq: {
-      sectionTag: 'Frequently Asked Questions',
-      sectionTitle: 'Enterprise Solutions & UAE Delivery FAQs',
-      sectionDesc: 'Key insights into our Abu Dhabi operations, compliance standards, and service level agreements.',
-    },
-    consultation: {
-      sectionTag: 'Direct Enterprise Engagement',
-      sectionTitle: 'Consult with Our Abu Dhabi Technical Advisory Team',
-      sectionDesc: 'Whether preparing a government tender, planning a data center migration, or requesting an on-site ELV audit, our certified engineers are ready to assist.',
-      hqTitle: 'Abu Dhabi Headquarters',
-      hqSubtitle: 'Official UAE IT Systems Integrator',
-      physicalLocation: 'Physical Location',
-      directTelephone: 'Direct Telephone',
-      tendersRfp: 'Tenders & RFPs',
-      operatingHours: 'Operating Hours',
-      criticalDispatch: '24/7 Critical NOC Dispatch',
-      activeStatus: 'Active',
-      formTitle: 'Submit Technical RFP or Project Scope',
-      confidentialNda: 'Confidential UAE NDA Protected',
+    contact: {
+      sectionTag: 'Get in Touch',
+      sectionTitle: 'Contact Our Abu Dhabi Office',
+      sectionDesc: 'Reach out to our team to discuss your project requirements or inquire about our services.',
+      hqTitle: 'Headquarters & Official Information',
+      address: 'Office Address',
+      addressVal: 'Abu Dhabi Island, Muroor Road, Floor 3, Office 37–38, Abu Dhabi, UAE',
+      telephone: 'Telephone',
+      fax: 'Fax',
+      email: 'Email',
+      poBox: 'P.O. Box',
+      poBoxVal: '58571, Abu Dhabi, UAE',
+      formTitle: 'Send an Inquiry',
+      formDesc: 'Submit your requirements and our team will get in touch with you.',
       fullName: 'Full Name',
-      corporateEmail: 'Corporate Email',
-      mobileNumber: 'Mobile Number (UAE)',
-      organization: 'Organization / Entity',
-      targetSolution: 'Target Solution Domain',
-      expectedTimeline: 'Expected Timeline',
-      projectDetails: 'Project Scope Details / Requirements',
-      projectDetailsPlaceholder: 'Describe facility size, user count, required hardware brands (e.g. Cisco/Dell/Fortinet), or specific compliance requirements (NESA/SIRA)...',
-      ndaCheckbox: 'Request bilateral mutual Non-Disclosure Agreement (NDA)',
-      submitBtn: 'Submit Technical RFP',
-      submittingBtn: 'Transmitting RFP...',
-      successTitle: 'Consultation Request Confirmed',
-      successDesc: 'Your technical brief has been logged in our Abu Dhabi engineering dispatch queue.',
-      refCode: 'Reference',
-      responseWindow: 'Response Window: Guaranteed < 2 Business Hours',
-      assignedTeam: 'Assigned Team: Abu Dhabi Solution Architecture Division',
-      submitAnother: 'Submit Another Inquiry',
+      emailAddress: 'Email Address',
+      phoneNum: 'Phone Number',
+      organization: 'Organization / Company',
+      selectedService: 'Relevant Service',
+      message: 'Message / Project Details',
+      messagePlaceholder: 'Please describe your requirements...',
+      submit: 'Submit Message',
+      submitting: 'Submitting...',
+      successTitle: 'Thank you for contacting LandCom',
+      successDesc: 'Your inquiry has been received. Our team will review your message and contact you promptly.',
     },
     footer: {
-      companyDesc: 'Abu Dhabi’s premier enterprise IT solutions provider and systems integrator. Designing, building, securing, and maintaining mission-critical digital infrastructure for government, financial, healthcare, energy, and corporate clients across the UAE.',
-      headquarters: 'Abu Dhabi Headquarters',
-      quickLinks: 'Quick Navigation',
-      solutionPillars: 'Enterprise Solutions',
-      legalCompliance: 'Compliance & Accreditations',
-      isoStandards: 'ISO 9001:2015 & ISO/IEC 27001:2022 Certified',
-      emergencyNoc: '24/7 Critical Response NOC Hotline: +971 50 891 2340',
-      allRightsReserved: 'All rights reserved.',
-      privacyPolicy: 'Privacy Policy',
-      termsConditions: 'Terms & Conditions',
-      securityStandards: 'Sovereign Security Framework',
+      description: 'LAND.COM Information Technology Solutions Provider. Developing and implementing business solutions in Abu Dhabi since 2007.',
+      quickLinks: 'Navigation',
+      servicesTitle: 'Eight Core Services',
+      contactTitle: 'Official Contact',
+      licenceNotice: 'Abu Dhabi Economic Licence No. CN-1006129 • Establishment',
+      rights: 'All rights reserved.',
+      privacy: 'Privacy Policy',
+      terms: 'Terms of Use',
     },
     common: {
       language: 'Language',
       arabic: 'العربية',
       english: 'English',
-      switchLanguage: 'تغيير اللغة إلى العربية',
-      learnMore: 'Learn More',
       close: 'Close',
       search: 'Search',
+      viewDetails: 'View Details',
+      getInTouch: 'Get in Touch',
     },
   },
   ar: {
     topbar: {
-      location: 'أبوظبي، الإمارات العربية المتحدة',
-      hours: 'الإثنين - الجمعة: 8:00 ص – 5:30 م (بتوقيت الخليج)',
-      supportNoc: 'مركز عمليات الشبكة (NOC) يعمل على مدار الساعة 24/7',
-      callUs: '+971 2 674 8890',
-      emailUs: 'info@landcom.ae',
+      location: 'جزيرة أبوظبي، طريق المرور، الطابق 3، مكتب 37–38',
+      phone: '+971 2 884 8213',
+      email: 'Info@landcom.ae',
     },
     nav: {
       home: 'الرئيسية',
-      services: 'الخدمات والحلول',
-      architectures: 'الهندسة المعمارية',
-      industries: 'القطاعات الاستراتيجية',
-      caseStudies: 'دراسات الحالة',
-      estimator: 'حاسبة النطاق وتكلفة المشاريع',
+      about: 'عن الشركة',
+      services: 'الخدمات',
+      experience: 'الخبرات',
+      credentials: 'البيانات الرسمية',
       contact: 'اتصل بنا',
-      requestConsultation: 'طلب استشارة هندسية',
-      searchPlaceholder: 'ابحث في حلول تقنية المعلومات، المواصفات والأنظمة...',
-      searchAria: 'فتح نافذة البحث',
-      tagline: 'مزود حلول وتكامل أنظمة تكنولوجيا المعلومات في أبوظبي',
-      nesaSiraBadge: 'حلول معتمدة ومطابقة لمعايير NESA و SIRA/MCC',
-      requestCustomBoq: 'طلب جدول كميات مخصص (BOQ)',
+      contactCta: 'تواصل معنا',
+      searchPlaceholder: 'ابحث في الخدمات، والبيانات الرسمية، والخبرات...',
+      searchAria: 'نافذة البحث',
+      tagline: 'مزود حلول تقنية المعلومات',
     },
     hero: {
-      accreditationPill: 'أبوظبي، الإمارات • تكامل الأنظمة المؤسسية',
-      alignedBadge: 'مطابق لمعايير NESA و SIRA/MCC',
-      headlinePart1: 'تصميم وبناء',
-      headlineAccent: 'بنية تحتية رقمية فائقة المرونة',
-      headlinePart2: 'وأنظمة متقدمة لمؤسسات دولة الإمارات',
-      description: 'من مراكز البيانات فائقة التقارب والأمن السيبراني بنموذج الثقة الصفرية إلى أنظمة التيار الخفيف (ELV) وشبكات الألياف وعمليات الدعم الفني على مدار الساعة 24/7 — نهندس حلولاً تقنية حيوية للجهات الحكومية وقطاعات الطاقة والأعمال في الإمارات.',
-      requestProposal: 'طلب عرض فني وتجاري',
-      estimatorBtn: 'أداة تقدير نطاق المشروع',
-      telemetryTitle: 'مركز المراقبة والعمليات المؤسسية',
-      telemetrySubtitle: 'مؤشرات الأداء المباشرة من مركز شبكة أبوظبي',
-      tabs: {
-        network: 'شبكة SD-WAN الأساسية',
-        security: 'مركز عمليات الأمن (SOC)',
-        cloud: 'السحابة الهجينة السيادية',
+      locationBadge: 'أبوظبي، الإمارات • تأسست عام 2007',
+      headlinePart1: 'مزود حلول',
+      headlineAccent: 'تقنية المعلومات',
+      headlinePart2: 'في أبوظبي',
+      description: 'تطوير وتنفيذ حلول الأعمال المعقدة في أبوظبي منذ عام 2007. نعمل كمستشارين استراتيجيين يفهمون احتياجات العميل ويقدمون حلولاً تقنية متكاملة.',
+      exploreServices: 'استعراض الخدمات',
+      contactUs: 'ناقش متطلباتك معنا',
+      stats: {
+        established: '2007',
+        establishedLabel: 'تأسست في أبوظبي',
+        ownership: '100%',
+        ownershipLabel: 'ملكية وطنية إماراتية بالكامل',
+        experience: '19+ عاماً',
+        experienceLabel: 'خبرة في حلول الأعمال المعقدة',
+        staff: '32+',
+        staffLabel: 'كادر تقني متخصص تم نشره بالمشاريع',
       },
-      metrics: {
-        sdwanLatency: 'زمن الاستجابة',
-        packetLoss: 'فقدان الحزم',
-        zeroTrustStatus: 'حالة الجدار الأمني',
-        threatsBlocked: 'التهديدات المحجوبة / 24 س',
-        cloudRto: 'زمن التعافي (RTO)',
-        cloudRpo: 'نقطة التعافي (RPO)',
-        uptimeSla: 'مستوى التوافر (SLA)',
-        liveStatus: 'نشط ويخضع للمراقبة',
+    },
+    credentials: {
+      sectionTag: 'البيانات الرسمية',
+      sectionTitle: 'الترخيص والمعلومات المؤسسية',
+      sectionDesc: 'منشأة رسمية مرخصة من دائرة التنمية الاقتصادية في أبوظبي.',
+      licenseDetails: 'بيانات الرخصة الاقتصادية - أبوظبي',
+      licenceNo: 'رقم الرخصة',
+      unifiedRegNo: 'الرقم الموحد للمنشأة',
+      unifiedLicNo: 'رقم الرخصة الموحد',
+      membershipNo: 'عضوية غرفة أبوظبي',
+      legalForm: 'الشكل القانوني',
+      issueDate: 'تاريخ الإصدار',
+      expiryDate: 'تاريخ الانتهاء',
+      activitiesTitle: 'الأنشطة الاقتصادية الستة المرخصة',
+      activitiesDesc: 'الأنشطة التجارية والتقنية المعتمدة رسمياً في إمارة أبوظبي:',
+    },
+    aboutSection: {
+      sectionTag: 'عن لاند كوم',
+      sectionTitle: 'مستشارون استراتيجيون ومزودو حلول متكاملة',
+      sectionDesc: 'تعمل لاند كوم في تطوير وتنفيذ حلول الأعمال المعقدة في أبوظبي منذ عام 2007.',
+      paragraph1: 'نعمل كمستشارين استراتيجيين يفهمون احتياجات العملاء ويقدمون حلولاً متكاملة تشمل تطبيقات المؤسسات، والعتاد والشبكات، والتطبيقات الذكية، والأنظمة الأمنية، والخدمات المدارة.',
+      paragraph2: 'يقع مقرنا الرئيسي في طريق المرور بجزيرة أبوظبي، وهي منشأة وطنية بنسبة 100% بإدارة كفاءات وطنية إماراتية وبسجل يمتد لأكثر من 19 عاماً من الخبرة المتواصلة.',
+      readMore: 'الملف المؤسسي الكامل',
+      points: {
+        consultants: 'استشارات تقنية استراتيجية وتنفيذ حلول مخصصة',
+        experience: 'خبرة تمتد لأكثر من 19 عاماً في دعم المؤسسات الحكومية والشركات',
+        presence: 'مقر دائم بجزيرة أبوظبي تحت إدارة وطنية إماراتية',
       },
-      trustBadges: {
-        abuDhabiWarehousing: 'مستودعات وقطع غيار محلية في أبوظبي',
-        certifiedEngineers: 'مهندسون معتمدون 100% في الموقع',
-        rapidDispatch: 'استجابة ميدانية طارئة خلال أقل من ساعتين',
-        isoCertified: 'معتمد وفقاً لـ ISO 9001 و ISO 27001',
-      },
+    },
+    aboutPage: {
+      title: 'عن لاند كوم لتقنية المعلومات',
+      subtitle: 'مزود حلول الأعمال والتقنية في أبوظبي منذ 2007',
+      overviewTitle: 'الملف المؤسسي',
+      overviewText1: 'تعمل شركة لاند كوم كمزود حلول في تطوير وتنفيذ حلول الأعمال المعقدة في أبوظبي منذ عام 2007، بصفتها مستشاراً استراتيجياً يفهم متطلبات العميل ويقدم حلولاً متكاملة.',
+      overviewText2: 'مع أكثر من 19 عاماً من الخبرة المتخصصة، توفر لاند كوم قدرات تقنية شاملة تغطي أنظمة إدارة الموارد، وحلول الأجهزة الذكية، والتتبع، وحلول RFID، والشبكات، والخدمات التقنية المدارة.',
+      strategicTitle: 'نموذج الاستشارات الاستراتيجية',
+      strategicText: 'بدلاً من تقديم حزم جاهزة غير مخصصة، تعمل لاند كوم كشريك استراتيجي يحلل التحديات التشغيلية وينفذ حلولاً تقنية مصممة لتتوافق مع المعايير المؤسسية.',
+      ownershipTitle: 'ملكية وطنية 100%',
+      ownershipText: 'لاند كوم هي منشأة إماراتية بنسبة 100%، وتقود إدارتها العليا كوادر وطنية إماراتية، مكرسة جهودها لدعم الجهات الحكومية والشركات في دولة الإمارات العربية المتحدة.',
     },
     services: {
-      sectionTag: 'قدرات تكامل الأنظمة المتكاملة',
-      sectionTitle: 'حلول تكنولوجيا المعلومات المتكاملة والبنية التحتية المؤسسية',
-      sectionDesc: 'مصممة لتحقيق أقصى درجات الاستمرارية والامتثال للتشريعات السيادية والمعايير التنظيمية لدولة الإمارات.',
-      exploreBlueprint: 'استعراض المخطط المعماري الفني',
-      requestBoq: 'طلب جدول الكميات وتفاصيل النطاق',
-      deliverables: 'المخرجات والمواصفات الفنية الرئيسية',
-      oemVendors: 'الشركاء والتحالفات التكنولوجية المعتمدة',
-      slaResponse: 'اتفاقية مستوى الخدمة المضمونة',
-      complianceTag: 'المعايير التنظيمية والامتثال',
+      sectionTag: 'إمكانياتنا التقنية',
+      sectionTitle: 'الخدمات الثمانية الأساسية',
+      sectionDesc: 'خدمات وحلول تقنية شاملة وموثقة رسمياً في الملف التعريفي للشركة.',
+      viewService: 'تفاصيل الخدمة',
+      allServices: 'كافة الخدمات',
+      scopeTitle: 'نطاق العمل والإمكانيات',
     },
-    architectures: {
-      sectionTag: 'المخططات المعمارية التفاعلية',
-      sectionTitle: 'هندسة الشبكات والأنظمة الدفاعية المؤسسية',
-      sectionDesc: 'اكتشف كيف تصمم لاند كوم طبقات أمان الثقة الصفرية، ومرونة السحابة الهجينة، وتمديدات كابلات التيار الخفيف الذكية للمنشآت في الإمارات.',
-      edgeLayer: 'طبقة الحافة ومحيط SD-WAN',
-      computeLayer: 'الحوسبة فائقة التقارب (HCI) والبيئات الافتراضية',
-      storageLayer: 'مصفوفات التخزين الفلاشية والنسخ الاحتياطي غير القابل للتعديل',
-      securityLayer: 'أمن الثقة الصفرية ومراقبة SIEM / SOC',
-      complianceLayer: 'الحوكمة السيادية والامتثال لمعايير دولة الإمارات',
-      viewSpecs: 'عرض مواصفات الطبقة المعمارية',
+    whyLandcom: {
+      sectionTag: 'لماذا لاند كوم',
+      sectionTitle: 'مرتكزات الخبرة والوجود المحلي',
+      sectionDesc: 'أسباب اختيار المؤسسات الحكومية والشركات الرائدة لشركة لاند كوم.',
     },
-    whyUs: {
-      sectionTag: 'الميزة الاستراتيجية',
-      sectionTitle: 'لماذا تعتمد المؤسسات والجهات الحكومية في الإمارات على لاند كوم',
-      sectionDesc: 'نجمع بين الخبرة الهندسية المحلية في أبوظبي وأرقى الشراكات العالمية مع كبرى الشركات المصنعة لضمان استمرارية الأعمال.',
+    experience: {
+      sectionTag: 'الخبرات المختارة',
+      sectionTitle: 'المؤسسات والجهات التي قدمنا لها الدعم',
+      sectionDesc: 'سجل موثق بالجهات والمؤسسات التي تم تقديم حلول تقنية المعلومات والبنية التحتية والكوادر لها.',
+      supportedOrganizations: 'الجهات ونطاق العمل الموثق',
+      organization: 'الجهة / المؤسسة',
+      scopeOfWork: 'نطاق العمل المنفذ',
+      location: 'الموقع',
     },
-    industries: {
-      sectionTag: 'الحلول القطاعية المتخصصة',
-      sectionTitle: 'بنى تحتية مخصصة للقطاعات الحيوية في دولة الإمارات',
-      sectionDesc: 'تصميم وهندسة بنى تحتية متقدمة تلبي بدقة المتطلبات التشريعية والتنظيمية لكل قطاع في الدولة.',
-    },
-    estimator: {
-      sectionTag: 'التقدير الفوري للتكلفة والنطاق الهندسي',
-      sectionTitle: 'حاسبة النطاق وجدول الكميات (BOQ) التفاعلية',
-      sectionDesc: 'حدد حجم منشأتك ومتطلباتك للحصول على توصيات معمارية فورية، وجداول كميات تقديرية، وجدول زمني للإنجاز.',
-      step1: '1. حدد حجم المنشأة وعدد المستخدمين',
-      step2: '2. اختر القطاع التنظيمي المتخصص',
-      step3: '3. اختر الحزم والأنظمة المطلوبة',
-      usersCount: 'عدد المستخدمين المتزامنين',
-      industryLabel: 'الإطار التنظيمي للقطاع',
-      selectComponents: 'الأنظمة والتقنيات المطلوبة',
-      estimatedSummary: 'ملخص الهيكل المعماري المقترح',
-      turnaroundTime: 'المدة المقدرة للتنفيذ',
-      requestFormalProposal: 'إرسال واستخراج طلب جدول الكميات الرسمي',
-    },
-    caseStudies: {
-      sectionTag: 'مشاريع منفذة وموثقة في الإمارات',
-      sectionTitle: 'إنجازات البنية التحتية ومشاريع التحول الرقمي',
-      sectionDesc: 'دراسات حالة واقعية توضح تنفيذ بنى تحتية حيوية لمؤسسات رائدة في أبوظبي ومختلف إمارات الدولة.',
-      readCaseStudy: 'عرض دراسة الحالة الهندسية',
-      metricsAchieved: 'النتائج المحققة والموثقة',
-    },
-    partners: {
-      sectionTag: 'التحالفات والشراكات التكنولوجية العالمية',
-      sectionTitle: 'شراكات المستوى الأول (Tier-1) واعتمادات المصنعين المباشرة',
-      sectionDesc: 'شراكات مباشرة مع عمالقة التقنية والأمن السيبراني لضمان الضمانات الأصلية للمصنع، وسرعة توفير قطع الغيار، والتصعيد الهندسي المباشر.',
-      allAlliances: 'جميع الشركاء التكنولوجيين',
-    },
-    testimonials: {
-      sectionTag: 'الامتثال والاعتماد الموثوق',
-      sectionTitle: 'جودة معتمدة ورضا معتمد من كبرى مؤسسات الإمارات',
-      sectionDesc: 'التزام كامل بأرقى معايير الجودة العالمية المدققة واللوائح التنظيمية الإماراتية الصارمة.',
-      auditedAndCertified: 'مدقق ومعتمد رسمياً',
-    },
-    faq: {
-      sectionTag: 'الأسئلة الشائعة',
-      sectionTitle: 'الأسئلة المتكررة حول الحلول والتنفيذ في أبوظبي',
-      sectionDesc: 'إجابات شاملة حول عملياتنا في أبوظبي، ومعايير الامتثال، واتفاقيات مستوى الخدمة (SLA).',
-    },
-    consultation: {
-      sectionTag: 'التواصل المباشر مع خبراء الأنظمة',
-      sectionTitle: 'استشر الفريق الهندسي والاستشاري في أبوظبي',
-      sectionDesc: 'سواء كنت بصدد إعداد مناقصة حكومية، أو تخطيط نقل مركز بيانات، أو تدقيق أنظمة التيار الخفيف، مهندسونا المعتمدون جاهزون لمساعدتك.',
-      hqTitle: 'المقر الرئيسي في أبوظبي',
-      hqSubtitle: 'مزود رسمي ومعتمد لحلول وتكامل الأنظمة في الإمارات',
-      physicalLocation: 'الموقع الجغرافي',
-      directTelephone: 'الهاتف المباشر',
-      tendersRfp: 'المناقصات وطلبات العروض (RFP)',
-      operatingHours: 'ساعات العمل الرسمية',
-      criticalDispatch: 'طوارئ مركز العمليات (NOC) على مدار 24/7',
-      activeStatus: 'نشط',
-      formTitle: 'تقديم طلب عرض فني أو نطاق مشروع',
-      confidentialNda: 'محمي باتفاقية سرية المعلومات (NDA) الإماراتية',
+    contact: {
+      sectionTag: 'تواصل معنا',
+      sectionTitle: 'تواصل مع مكتبنا في أبوظبي',
+      sectionDesc: 'تواصل مع فريقنا لمناقشة متطلبات مشروعكم أو الاستفسار عن خدماتنا.',
+      hqTitle: 'المقر الرئيسي والبيانات الرسمية',
+      address: 'عنوان المكتب',
+      addressVal: 'جزيرة أبوظبي، طريق المرور، الطابق 3، مكتب 37–38، أبوظبي، الإمارات',
+      telephone: 'الهاتف',
+      fax: 'الفاكس',
+      email: 'البريد الإلكتروني',
+      poBox: 'صندوق البريد',
+      poBoxVal: '58571، أبوظبي، الإمارات',
+      formTitle: 'إرسال استفسار',
+      formDesc: 'يرجى تزويدنا بمتطلباتكم وسيقوم فريقنا بالتواصل معكم.',
       fullName: 'الاسم الكامل',
-      corporateEmail: 'البريد الإلكتروني للعمل',
-      mobileNumber: 'رقم الهاتف المتحرك (الإمارات)',
-      organization: 'المؤسسة / الجهة',
-      targetSolution: 'مجال الحلول المطلوب',
-      expectedTimeline: 'الجدول الزمني المتوقع',
-      projectDetails: 'تفاصيل ومتطلبات نطاق المشروع',
-      projectDetailsPlaceholder: 'وضح مساحة المنشأة، عدد المستخدمين، العلامات التجارية المفضلة (مثل Cisco/Dell/Fortinet)، أو متطلبات امتثال معينة (NESA/SIRA)...',
-      ndaCheckbox: 'طلب توقيع اتفاقية عدم إفصاح متبادلة لحفظ السرية (NDA)',
-      submitBtn: 'إرسال طلب العرض الفني (RFP)',
-      submittingBtn: 'جاري إرسال الطلب...',
-      successTitle: 'تم استلام طلب الاستشارة بنجاح',
-      successDesc: 'تم تسجيل متطلباتكم الفنية في نظام التوزيع الهندسي في أبوظبي.',
-      refCode: 'الرقم المرجعي',
-      responseWindow: 'نافذة الرد: مضمونة خلال أقل من ساعتي عمل',
-      assignedTeam: 'الفريق المختص: قسم استشارات وتصميم الحلول بأبوظبي',
-      submitAnother: 'تقديم استفسار آخر',
+      emailAddress: 'البريد الإلكتروني',
+      phoneNum: 'رقم الهاتف',
+      organization: 'المؤسسة / الشركة',
+      selectedService: 'الخدمة المطلوبة',
+      message: 'الرسالة / تفاصيل المتطلبات',
+      messagePlaceholder: 'يرجى كتابة تفاصيل متطلباتكم...',
+      submit: 'إرسال الرسالة',
+      submitting: 'جاري الإرسال...',
+      successTitle: 'شكراً لتواصلكم مع لاند كوم',
+      successDesc: 'تم استلام استفساركم بنجاح. سيقوم فريقنا بمراجعة الرسالة والتواصل معكم في أقرب وقت.',
     },
     footer: {
-      companyDesc: 'المزود الرائد في أبوظبي لحلول وتكامل أنظمة تكنولوجيا المعلومات. نقوم بتصميم وبناء وحماية وصيانة البنى التحتية الرقمية الحيوية للجهات الحكومية والمؤسسات المالية والرعاية الصحية والطاقة في جميع أنحاء الإمارات.',
-      headquarters: 'المقر الرئيسي بأبوظبي',
+      description: 'مزود حلول تقنية المعلومات لاند كوم. تطوير وتنفيذ حلول الأعمال في أبوظبي منذ عام 2007.',
       quickLinks: 'روابط سريعة',
-      solutionPillars: 'محاور الحلول المؤسسية',
-      legalCompliance: 'الامتثال والاعتمادات',
-      isoStandards: 'معتمد وفقاً لـ ISO 9001:2015 و ISO/IEC 27001:2022',
-      emergencyNoc: 'الخط الساخن لمركز الاستجابة الطارئة 24/7: +971 50 891 2340',
-      allRightsReserved: 'جميع الحقوق محفوظة.',
-      privacyPolicy: 'سياسة الخصوصية',
-      termsConditions: 'الشروط والأحكام',
-      securityStandards: 'إطار الأمن السيادي',
+      servicesTitle: 'الخدمات الثمانية الأساسية',
+      contactTitle: 'بيانات الاتصال الرسمية',
+      licenceNotice: 'رخصة أبوظبي الاقتصادية رقم CN-1006129 • منشأة فردية',
+      rights: 'جميع الحقوق محفوظة.',
+      privacy: 'سياسة الخصوصية',
+      terms: 'الشروط والأحكام',
     },
     common: {
       language: 'اللغة',
       arabic: 'العربية',
       english: 'English',
-      switchLanguage: 'Switch to English',
-      learnMore: 'المزيد من التفاصيل',
       close: 'إغلاق',
       search: 'بحث',
+      viewDetails: 'عرض التفاصيل',
+      getInTouch: 'تواصل معنا',
     },
   },
 };
