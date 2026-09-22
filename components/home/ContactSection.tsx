@@ -21,20 +21,39 @@ export function ContactSection() {
     email: '',
     phone: '',
     organization: '',
-    service: 'erp-system',
+    service: 'general-enquiry',
     message: '',
   });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+
+  const getServiceLabel = (serviceId: string) => {
+    if (serviceId === 'general-enquiry') {
+      return language === 'ar' ? 'استفسار عام' : 'General Enquiry';
+    }
+    const s = CORE_SERVICES.find((srv) => srv.id === serviceId || srv.slug === serviceId);
+    if (!s) return serviceId;
+    return language === 'ar' ? s.titleAr : s.title;
+  };
+
+  const generateMailtoHref = () => {
+    const subject = encodeURIComponent(
+      `LandCom Inquiry: ${getServiceLabel(formData.service)} - ${formData.organization || formData.fullName}`
+    );
+    const body = encodeURIComponent(
+      `Full Name: ${formData.fullName}\n` +
+      `Organization / Company: ${formData.organization || 'Not provided'}\n` +
+      `Email: ${formData.email}\n` +
+      `Phone: ${formData.phone || 'Not provided'}\n` +
+      `Service of Interest: ${getServiceLabel(formData.service)}\n\n` +
+      `Message / Requirements:\n${formData.message}\n`
+    );
+    return `mailto:${COMPANY_INFO.contact.primaryEmail}?subject=${subject}&body=${body}`;
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-    }, 1000);
+    setIsSuccess(true);
   };
 
   return (
@@ -142,31 +161,55 @@ export function ContactSection() {
           {/* End 7 cols: Inquiry Form */}
           <div className="lg:col-span-7 bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl text-start">
             {isSuccess ? (
-              <div className="py-12 text-center space-y-4 animate-in fade-in duration-200">
-                <div className="w-16 h-16 bg-emerald-500/10 border border-emerald-500/30 rounded-full flex items-center justify-center mx-auto text-emerald-400">
+              <div className="py-8 space-y-6 text-start animate-in fade-in duration-200">
+                <div className="w-16 h-16 bg-emerald-500/10 border border-emerald-500/30 rounded-2xl flex items-center justify-center text-emerald-400">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold text-white">{strings.contact.successTitle}</h3>
-                <p className="text-sm text-slate-300 max-w-lg mx-auto leading-relaxed">
-                  {strings.contact.successDesc}
-                </p>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setIsSuccess(false);
-                    setFormData({
-                      fullName: '',
-                      email: '',
-                      phone: '',
-                      organization: '',
-                      service: 'erp-system',
-                      message: '',
-                    });
-                  }}
-                  className="mt-4 px-6 py-2.5 bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs rounded-xl border border-slate-700 transition-colors"
-                >
-                  {language === 'ar' ? 'إرسال رسالة أخرى' : 'Send Another Message'}
-                </button>
+                
+                <div className="space-y-2">
+                  <h3 className="text-2xl font-bold text-white">
+                    {language === 'ar' ? 'تم تجهيز تفاصيل استفساركم' : 'Inquiry Details Prepared'}
+                  </h3>
+                  <p className="text-sm text-slate-300 leading-relaxed">
+                    {language === 'ar'
+                      ? 'لضمان الاستلام المباشر لدى مكتبنا بأبوظبي، يمكنك إرسال الاستفسار عبر تطبيق البريد الإلكتروني أو التواصل المباشر عبر الهاتف.'
+                      : 'To ensure immediate receipt by our Abu Dhabi office, you can transmit this prepared inquiry via your email client or contact us directly by telephone.'}
+                  </p>
+                </div>
+
+                {/* Composed Summary Box */}
+                <div className="p-4 bg-slate-950 rounded-2xl border border-slate-800 space-y-2 text-xs font-mono text-slate-300">
+                  <div><span className="text-slate-500">To:</span> {COMPANY_INFO.contact.primaryEmail}</div>
+                  <div><span className="text-slate-500">Name:</span> {formData.fullName}</div>
+                  {formData.organization && <div><span className="text-slate-500">Company:</span> {formData.organization}</div>}
+                  <div><span className="text-slate-500">Service:</span> {getServiceLabel(formData.service)}</div>
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
+                  <a
+                    href={generateMailtoHref()}
+                    className="w-full sm:w-auto px-6 py-3.5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-black text-xs sm:text-sm rounded-xl transition-all shadow-md flex items-center justify-center space-x-2 rtl:space-x-reverse"
+                  >
+                    <span>{language === 'ar' ? 'إرسال عبر البريد الإلكتروني (Info@landcom.ae)' : 'Open in Email Client (Info@landcom.ae)'}</span>
+                  </a>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setIsSuccess(false);
+                      setFormData({
+                        fullName: '',
+                        email: '',
+                        phone: '',
+                        organization: '',
+                        service: 'general-enquiry',
+                        message: '',
+                      });
+                    }}
+                    className="w-full sm:w-auto px-5 py-3.5 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs sm:text-sm rounded-xl border border-slate-700 transition-colors"
+                  >
+                    {language === 'ar' ? 'كتابة استفسار جديد' : 'Compose Another Inquiry'}
+                  </button>
+                </div>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4 text-start">
@@ -215,7 +258,7 @@ export function ContactSection() {
                   {/* Phone Number */}
                   <div>
                     <label className="block text-xs font-semibold text-slate-300 mb-1">
-                      {strings.contact.phoneNum}
+                      {strings.contact.phoneNum} <span className="text-slate-500 text-[11px]">({language === 'ar' ? 'اختياري' : 'Optional'})</span>
                     </label>
                     <input
                       type="tel"
@@ -229,7 +272,7 @@ export function ContactSection() {
                   {/* Organization */}
                   <div>
                     <label className="block text-xs font-semibold text-slate-300 mb-1">
-                      {strings.contact.organization}
+                      {strings.contact.organization} <span className="text-slate-500 text-[11px]">({language === 'ar' ? 'اختياري' : 'Optional'})</span>
                     </label>
                     <input
                       type="text"
@@ -251,9 +294,12 @@ export function ContactSection() {
                     onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                     className="w-full bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-500"
                   >
+                    <option value="general-enquiry">
+                      {language === 'ar' ? 'استفسار عام / خدمات عامة' : 'General Enquiry / Corporate Consultation'}
+                    </option>
                     {CORE_SERVICES.map((s) => (
                       <option key={s.id} value={s.id}>
-                        {s.title} — {s.tagline}
+                        {language === 'ar' ? `${s.titleAr} (${s.title})` : `${s.title} — ${s.tagline}`}
                       </option>
                     ))}
                   </select>
@@ -278,10 +324,9 @@ export function ContactSection() {
                 <div className="pt-2">
                   <button
                     type="submit"
-                    disabled={isSubmitting}
-                    className="w-full py-3.5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-black text-sm rounded-xl shadow-xl shadow-cyan-500/20 transition-all flex items-center justify-center space-x-2 rtl:space-x-reverse disabled:opacity-50 active:scale-98"
+                    className="w-full py-3.5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-black text-sm rounded-xl shadow-xl shadow-cyan-500/20 transition-all flex items-center justify-center space-x-2 rtl:space-x-reverse active:scale-98"
                   >
-                    <span>{isSubmitting ? strings.contact.submitting : strings.contact.submit}</span>
+                    <span>{strings.contact.submit}</span>
                     <Send className="w-4 h-4 shrink-0" />
                   </button>
                 </div>

@@ -1,54 +1,28 @@
-'use client';
+import { Metadata } from 'next';
+import { COMPANY_INFO } from '@/lib/data';
+import { ContactClient } from '@/components/contact/ContactClient';
 
-import React from 'react';
-import { TopBar } from '@/components/layout/TopBar';
-import { Navbar } from '@/components/layout/Navbar';
-import { Footer } from '@/components/layout/Footer';
-import { ContactSection } from '@/components/home/ContactSection';
-import { Breadcrumb } from '@/components/ui/Breadcrumb';
-import { Send } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
+export const metadata: Metadata = {
+  title: `Contact Us | ${COMPANY_INFO.shortName} Abu Dhabi`,
+  description: 'Contact LandCom Information Technology Solutions Provider at its Abu Dhabi office for enquiries about its documented IT services and solutions.',
+  alternates: {
+    canonical: `${COMPANY_INFO.domain}/contact`,
+  },
+  openGraph: {
+    title: `Contact Us | ${COMPANY_INFO.name}`,
+    description: 'Contact LandCom Information Technology Solutions Provider at its Abu Dhabi office for enquiries about its documented IT services and solutions.',
+    url: `${COMPANY_INFO.domain}/contact`,
+    siteName: COMPANY_INFO.name,
+    locale: 'en_AE',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `Contact Us | ${COMPANY_INFO.name}`,
+    description: 'Contact LandCom Information Technology Solutions Provider at its Abu Dhabi office for enquiries about its documented IT services and solutions.',
+  },
+};
 
 export default function ContactPage() {
-  const { strings, language } = useLanguage();
-
-  const breadcrumbItems = [
-    { label: language === 'ar' ? 'تواصل معنا' : 'Contact Us' }
-  ];
-
-  return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col selection:bg-cyan-500 selection:text-slate-950">
-      <TopBar />
-      <Navbar />
-
-      <main className="flex-1 text-start">
-        {/* Page Hero */}
-        <section className="py-14 sm:py-18 bg-slate-900 border-b border-slate-800 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b15_1px,transparent_1px),linear-gradient(to_bottom,#1e293b15_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
-            <Breadcrumb items={breadcrumbItems} />
-
-            <div className="max-w-3xl space-y-4">
-              <div className="inline-flex items-center space-x-2 rtl:space-x-reverse px-3 py-1 rounded-full bg-cyan-950 border border-cyan-500/30 text-cyan-400 text-xs font-bold uppercase tracking-wider">
-                <Send className="w-3.5 h-3.5 shrink-0" />
-                <span>{strings.contact.sectionTag}</span>
-              </div>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
-                {strings.contact.sectionTitle}
-              </h1>
-              <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
-                {strings.contact.sectionDesc}
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Full Contact Form & HQ Section */}
-        <ContactSection />
-      </main>
-
-      <Footer />
-    </div>
-  );
+  return <ContactClient />;
 }
-

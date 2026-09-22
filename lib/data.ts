@@ -18,8 +18,8 @@ export interface ServiceItem {
     organizationAr: string;
     scope: string;
     scopeAr: string;
-    location: string;
-    locationAr: string;
+    location?: string;
+    locationAr?: string;
   };
   relatedServiceSlugs: string[];
   icon: string;
@@ -33,8 +33,8 @@ export interface DocumentedClient {
   organizationAr: string;
   scope: string;
   scopeAr: string;
-  location: string;
-  locationAr: string;
+  location?: string;
+  locationAr?: string;
   relatedServiceSlug?: string;
   relatedServiceName?: string;
   relatedServiceNameAr?: string;
@@ -159,9 +159,7 @@ export const CORE_SERVICES: ServiceItem[] = [
       organization: 'SARI Oil Field Services',
       organizationAr: 'ساري لخدمات حقول النفط',
       scope: 'ERP System Implementation',
-      scopeAr: 'تنفيذ وتطبيق نظام تخطيط موارد المؤسسة (ERP)',
-      location: 'Abu Dhabi, UAE',
-      locationAr: 'أبوظبي، الإمارات'
+      scopeAr: 'تنفيذ وتطبيق نظام تخطيط موارد المؤسسة (ERP)'
     },
     relatedServiceSlugs: ['ecommerce-web', 'managed-it-services'],
     metaTitle: 'ERP Systems | LandCom Abu Dhabi',
@@ -197,9 +195,7 @@ export const CORE_SERVICES: ServiceItem[] = [
       organization: 'Al Ain City Municipality',
       organizationAr: 'بلدية مدينة العين',
       scope: 'iPhone, Android & BlackBerry Mobile Applications',
-      scopeAr: 'تطوير تطبيقات الهواتف الذكية (iPhone وAndroid وBlackBerry)',
-      location: 'Al Ain, UAE',
-      locationAr: 'العين، الإمارات'
+      scopeAr: 'تطوير تطبيقات الهواتف الذكية (iPhone وAndroid وBlackBerry)'
     },
     relatedServiceSlugs: ['ecommerce-web', 'tracking-systems'],
     metaTitle: 'Mobility Solutions | LandCom Abu Dhabi',
@@ -235,9 +231,7 @@ export const CORE_SERVICES: ServiceItem[] = [
       organization: 'Al Gharbia Hospitals',
       organizationAr: 'مستشفيات الغربية',
       scope: 'Supply of IT Items & Infrastructure',
-      scopeAr: 'توريد مستلزمات وتجهيزات تقنية المعلومات والبنية التحتية',
-      location: 'Al Dhafra / Western Region, UAE',
-      locationAr: 'منطقة الظفرة / المنطقة الغربية، الإمارات'
+      scopeAr: 'توريد مستلزمات وتجهيزات تقنية المعلومات والبنية التحتية'
     },
     relatedServiceSlugs: ['security-solutions', 'managed-it-services'],
     metaTitle: 'IT Resources & Networking | LandCom Abu Dhabi',
@@ -363,9 +357,7 @@ export const CORE_SERVICES: ServiceItem[] = [
       organization: 'IL Forno Restaurant Group',
       organizationAr: 'مجموعة مطاعم إل فورنو',
       scope: 'Web Development & E-Commerce',
-      scopeAr: 'تطوير الموقع الإلكتروني ومنصة التجارة الرقمية',
-      location: 'UAE',
-      locationAr: 'الإمارات'
+      scopeAr: 'تطوير الموقع الإلكتروني ومنصة التجارة الرقمية'
     },
     relatedServiceSlugs: ['erp-systems', 'mobility-solutions'],
     metaTitle: 'E-Commerce & Web Solutions | LandCom Abu Dhabi',
@@ -401,9 +393,7 @@ export const CORE_SERVICES: ServiceItem[] = [
       organization: 'Khalifa Bin Zayed Al Nahyan Foundation',
       organizationAr: 'مؤسسة خليفة بن زايد آل نهيان للأعمال الإنسانية',
       scope: 'IT Managed Services (32 staff) & Food Distribution System UAE-wide',
-      scopeAr: 'خدمات تقنية المعلومات المدارة (فريق من 32 كادراً) ونظام توزيع المواد الغذائية على مستوى الدولة',
-      location: 'UAE',
-      locationAr: 'الإمارات'
+      scopeAr: 'خدمات تقنية المعلومات المدارة (فريق من 32 كادراً) ونظام توزيع المواد الغذائية على مستوى الدولة'
     },
     relatedServiceSlugs: ['it-resources-networking', 'erp-systems'],
     metaTitle: 'IT Managed Services | LandCom Abu Dhabi',
@@ -427,12 +417,7 @@ export const DOCUMENTED_EXPERIENCE: DocumentedClient[] = [
     organization: 'Securities & Commodities Authority',
     organizationAr: 'هيئة الأوراق المالية والسلع',
     scope: 'Technical Support & IT Resourcing',
-    scopeAr: 'الدعم الفني وتوفير الكوادر التقنية المتخصصة',
-    location: 'UAE',
-    locationAr: 'دولة الإمارات',
-    relatedServiceSlug: 'it-resources-networking',
-    relatedServiceName: 'IT Resources & Networking',
-    relatedServiceNameAr: 'موارد تقنية المعلومات والشبكات'
+    scopeAr: 'الدعم الفني وتوفير الكوادر التقنية المتخصصة'
   },
   {
     id: 'exp-kf',
@@ -440,8 +425,6 @@ export const DOCUMENTED_EXPERIENCE: DocumentedClient[] = [
     organizationAr: 'مؤسسة خليفة بن زايد آل نهيان للأعمال الإنسانية',
     scope: 'IT Managed Services (32 staff) & Food Distribution System UAE-wide',
     scopeAr: 'خدمات تقنية المعلومات المدارة (فريق من 32 كادراً) ونظام توزيع المواد الغذائية على مستوى الدولة',
-    location: 'UAE',
-    locationAr: 'دولة الإمارات',
     relatedServiceSlug: 'managed-it-services',
     relatedServiceName: 'IT Managed Services',
     relatedServiceNameAr: 'خدمات تقنية المعلومات المدارة'
@@ -452,11 +435,9 @@ export const DOCUMENTED_EXPERIENCE: DocumentedClient[] = [
     organizationAr: 'بلدية مدينة العين',
     scope: 'iPhone, Android & BlackBerry Mobile Applications',
     scopeAr: 'تطبيقات الهواتف الذكية (iPhone وAndroid وBlackBerry)',
-    location: 'Al Ain, UAE',
-    locationAr: 'العين، أبوظبي',
     relatedServiceSlug: 'mobility-solutions',
     relatedServiceName: 'Mobility Solutions',
-    relatedServiceNameAr: 'حلول الأجهزة والتطبيقات الذكية'
+    relatedServiceNameAr: 'حلول التطبيقات المتنقلة'
   },
   {
     id: 'exp-algharbia',
@@ -464,8 +445,6 @@ export const DOCUMENTED_EXPERIENCE: DocumentedClient[] = [
     organizationAr: 'مستشفيات الغربية',
     scope: 'Supply of IT Items & Infrastructure',
     scopeAr: 'توريد مستلزمات وتجهيزات تقنية المعلومات والبنية التحتية',
-    location: 'Al Dhafra / Western Region, UAE',
-    locationAr: 'منطقة الظفرة / المنطقة الغربية',
     relatedServiceSlug: 'it-resources-networking',
     relatedServiceName: 'IT Resources & Networking',
     relatedServiceNameAr: 'موارد تقنية المعلومات والشبكات'
@@ -476,8 +455,6 @@ export const DOCUMENTED_EXPERIENCE: DocumentedClient[] = [
     organizationAr: 'ساري لخدمات حقول النفط',
     scope: 'ERP System Implementation',
     scopeAr: 'تنفيذ وتطبيق نظام تخطيط موارد المؤسسة (ERP)',
-    location: 'Abu Dhabi, UAE',
-    locationAr: 'أبوظبي، الإمارات',
     relatedServiceSlug: 'erp-systems',
     relatedServiceName: 'ERP System',
     relatedServiceNameAr: 'نظام تخطيط موارد المؤسسة'
@@ -488,8 +465,6 @@ export const DOCUMENTED_EXPERIENCE: DocumentedClient[] = [
     organizationAr: 'مجموعة مطاعم إل فورنو',
     scope: 'Web Development & E-Commerce',
     scopeAr: 'تطوير الموقع الإلكتروني وتطبيقات التجارة الرقمية',
-    location: 'UAE',
-    locationAr: 'دولة الإمارات',
     relatedServiceSlug: 'ecommerce-web',
     relatedServiceName: 'E-Commerce & Web',
     relatedServiceNameAr: 'التجارة الإلكترونية وحلول الويب'

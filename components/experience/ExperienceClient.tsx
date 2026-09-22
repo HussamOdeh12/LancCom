@@ -121,14 +121,14 @@ export function ExperienceClient() {
                   className="bg-slate-900/90 border border-slate-800 hover:border-cyan-500/40 rounded-3xl p-6 sm:p-8 space-y-6 flex flex-col justify-between transition-all group"
                 >
                   <div className="space-y-5">
-                    {/* Header: Number + Location */}
+                    {/* Header: Number + Verified Badge */}
                     <div className="flex items-center justify-between">
                       <span className="text-xs font-mono font-bold px-2.5 py-0.5 rounded bg-cyan-950 text-cyan-300 border border-cyan-800/50">
                         0{idx + 1}
                       </span>
-                      <div className="flex items-center space-x-1.5 rtl:space-x-reverse text-xs text-slate-400">
-                        <MapPin className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-                        <span>{language === 'ar' ? exp.locationAr : exp.location}</span>
+                      <div className="flex items-center space-x-1.5 rtl:space-x-reverse text-xs text-emerald-400 font-medium">
+                        <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
+                        <span>{strings.experience.verifiedNote}</span>
                       </div>
                     </div>
 
@@ -175,32 +175,26 @@ export function ExperienceClient() {
                       </div>
                     )}
                   </div>
-
-                  {/* Card Footer Verification */}
-                  <div className="pt-4 border-t border-slate-800 flex items-center justify-between text-xs">
-                    <div className="flex items-center space-x-1.5 rtl:space-x-reverse text-emerald-400 font-medium">
-                      <CheckCircle2 className="w-4 h-4 shrink-0" />
-                      <span>{strings.experience.verifiedNote}</span>
-                    </div>
-                  </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* 4. Capability Cross-Reference Grid */}
+        {/* 4. Core Services Exploration */}
         <section className="py-16 bg-slate-900 border-t border-b border-slate-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
             <div className="max-w-3xl space-y-2">
               <span className="text-xs font-bold uppercase tracking-wider text-cyan-400">
-                {language === 'ar' ? 'القدرات والخدمات' : 'Service Taxonomy'}
+                {language === 'ar' ? 'الخدمات الأساسية' : 'Core Services'}
               </span>
               <h2 className="text-2xl sm:text-3xl font-bold text-white">
-                {strings.experience.capabilityCrossTitle}
+                {language === 'ar' ? 'استكشف الخدمات والحلول التقنية' : 'Explore LandCom Core Service Lines'}
               </h2>
               <p className="text-xs sm:text-sm text-slate-400">
-                {strings.experience.capabilityCrossDesc}
+                {language === 'ar'
+                  ? 'تعرف على كافة الحلول والخدمات التقنية الثمانية المعتمدة في الملف التعريفي للشركة:'
+                  : 'Review LandCom’s eight documented technical service offerings and implementation scopes:'}
               </p>
             </div>
 
