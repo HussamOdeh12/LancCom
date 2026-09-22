@@ -108,11 +108,11 @@ export function Footer() {
               {CORE_SERVICES.map((s) => (
                 <li key={s.id}>
                   <Link
-                    href={`/services#${s.id}`}
+                    href={`/services/${s.slug}`}
                     className="hover:text-cyan-400 transition-colors flex items-center space-x-1.5 rtl:space-x-reverse group"
                   >
                     <ChevronRight className={`w-3.5 h-3.5 text-slate-600 group-hover:text-cyan-400 transition-all shrink-0 ${isRTL ? 'rotate-180 group-hover:-translate-x-0.5' : 'group-hover:translate-x-0.5'}`} />
-                    <span>{s.title}</span>
+                    <span>{language === 'ar' ? s.titleAr : s.title}</span>
                   </Link>
                 </li>
               ))}

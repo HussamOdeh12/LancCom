@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { TopBar } from '@/components/layout/TopBar';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
@@ -11,19 +11,8 @@ import { CoreServices } from '@/components/home/CoreServices';
 import { WhyChooseUs } from '@/components/home/WhyChooseUs';
 import { SelectedExperience } from '@/components/home/SelectedExperience';
 import { ContactSection } from '@/components/home/ContactSection';
-import { SearchModal } from '@/components/modals/SearchModal';
 
 export default function HomePage() {
-  const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
-
-  const handleOpenSearch = () => {
-    setIsSearchModalOpen(true);
-  };
-
-  const handleCloseSearch = () => {
-    setIsSearchModalOpen(false);
-  };
-
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col selection:bg-cyan-500 selection:text-slate-950">
       {/* Skip to Main Content Accessibility Link */}
@@ -38,7 +27,7 @@ export default function HomePage() {
       <TopBar />
 
       {/* Main Navigation Header */}
-      <Navbar onOpenSearch={handleOpenSearch} />
+      <Navbar />
 
       {/* Main Content Area */}
       <main id="main-content" className="flex-1">
@@ -66,12 +55,7 @@ export default function HomePage() {
 
       {/* Global Enterprise Footer */}
       <Footer />
-
-      {/* Search Modal */}
-      <SearchModal
-        isOpen={isSearchModalOpen}
-        onClose={handleCloseSearch}
-      />
     </div>
   );
 }
+

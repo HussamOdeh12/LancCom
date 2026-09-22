@@ -169,13 +169,19 @@ export function CoreServices() {
                 </p>
               </div>
 
-              <div className="pt-2">
+              <div className="pt-2 flex flex-col sm:flex-row gap-3">
+                <Link
+                  href={`/services/${selectedService.slug}`}
+                  className="w-full py-3 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs sm:text-sm rounded-xl transition-all shadow-lg shadow-cyan-500/20 flex items-center justify-center space-x-2 rtl:space-x-reverse"
+                >
+                  <span>{language === 'ar' ? 'صفحة تفاصيل الخدمة' : 'View Full Service Page'}</span>
+                  <ArrowRight className={`w-4 h-4 shrink-0 ${isRTL ? 'rotate-180' : ''}`} />
+                </Link>
                 <Link
                   href="/contact"
-                  className="w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold text-xs sm:text-sm rounded-xl transition-all shadow-lg shadow-cyan-500/20 flex items-center justify-center space-x-2 rtl:space-x-reverse"
+                  className="w-full py-3 bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs sm:text-sm rounded-xl transition-all border border-slate-700 flex items-center justify-center space-x-2 rtl:space-x-reverse"
                 >
                   <span>{strings.nav.contactCta}</span>
-                  <ArrowRight className={`w-4 h-4 shrink-0 ${isRTL ? 'rotate-180' : ''}`} />
                 </Link>
               </div>
             </div>

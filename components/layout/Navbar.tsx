@@ -13,7 +13,6 @@ import {
   Globe,
   Headset,
   ChevronDown, 
-  Search, 
   Menu, 
   X, 
   ArrowRight
@@ -22,12 +21,7 @@ import { CORE_SERVICES } from '@/lib/data';
 import { useLanguage } from '@/context/LanguageContext';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
 
-interface NavbarProps {
-  onOpenConsultation?: () => void;
-  onOpenSearch?: () => void;
-}
-
-export function Navbar({ onOpenConsultation, onOpenSearch }: NavbarProps) {
+export function Navbar() {
   const { strings, language, isRTL } = useLanguage();
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -114,7 +108,7 @@ export function Navbar({ onOpenConsultation, onOpenSearch }: NavbarProps) {
                       href={item.href}
                       className={`flex items-center space-x-1 rtl:space-x-reverse px-3.5 py-2 text-sm font-medium rounded-lg transition-colors ${
                         pathname.startsWith('/services')
-                          ? 'text-cyan-400 bg-slate-900'
+                          ? 'text-cyan-400 bg-slate-900 font-semibold'
                           : 'text-slate-200 hover:text-cyan-400 hover:bg-slate-900/60'
                       }`}
                     >
@@ -186,24 +180,11 @@ export function Navbar({ onOpenConsultation, onOpenSearch }: NavbarProps) {
           </nav>
 
           {/* Right Action Group */}
-          <div className="flex items-center space-x-2.5 rtl:space-x-reverse">
-            {/* Search Trigger */}
-            {onOpenSearch && (
-              <button
-                type="button"
-                onClick={onOpenSearch}
-                className="p-2.5 rounded-xl text-slate-300 hover:text-white bg-slate-900/80 hover:bg-slate-800 border border-slate-800 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-500"
-                aria-label={strings.nav.searchAria}
-                title={strings.nav.searchPlaceholder}
-              >
-                <Search className="w-4 h-4" />
-              </button>
-            )}
+          <div className="flex items-center space-x-3 rtl:space-x-reverse">
+            {/* Exactly ONE Desktop Language Switcher */}
+            <LanguageSwitcher variant="navbar" className="hidden lg:inline-flex" />
 
-            {/* Language Switcher in Navbar */}
-            <LanguageSwitcher variant="navbar" className="hidden sm:inline-flex" />
-
-            {/* Primary CTA Button */}
+            {/* Primary Contact Us Button */}
             <Link
               href="/contact"
               className="hidden sm:inline-flex items-center space-x-2 rtl:space-x-reverse px-4 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold text-xs sm:text-sm tracking-wide transition-all shadow-lg shadow-cyan-500/20 hover:shadow-cyan-400/30 active:scale-98 shrink-0"
@@ -216,7 +197,7 @@ export function Navbar({ onOpenConsultation, onOpenSearch }: NavbarProps) {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-xl text-slate-300 hover:text-white bg-slate-900 border border-slate-800 lg:hidden focus:outline-none"
+              className="p-2.5 rounded-xl text-slate-300 hover:text-white bg-slate-900 border border-slate-800 lg:hidden focus:outline-none focus:ring-2 focus:ring-cyan-500"
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -227,17 +208,21 @@ export function Navbar({ onOpenConsultation, onOpenSearch }: NavbarProps) {
 
       {/* Mobile Navigation Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-slate-950 border-b border-slate-800 px-4 pt-3 pb-6 space-y-4 animate-in slide-in-from-top duration-200 text-start">
+        <div className="lg:hidden bg-slate-950 border-b border-slate-800 px-4 pt-4 pb-6 space-y-4 animate-in slide-in-from-top duration-200 text-start">
+          {/* Exactly ONE Mobile Language Switcher */}
           <LanguageSwitcher variant="mobile" />
 
+          {/* Navigation Links */}
           <div className="space-y-1">
             {navLinks.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`block px-3 py-2 text-sm font-medium rounded-lg ${
-                  pathname === item.href ? 'text-cyan-400 bg-slate-900' : 'text-white hover:bg-slate-900'
+                className={`block px-3.5 py-2.5 text-sm font-medium rounded-xl transition-colors ${
+                  pathname === item.href 
+                    ? 'text-cyan-400 bg-slate-900 font-bold' 
+                    : 'text-slate-200 hover:text-white hover:bg-slate-900/60'
                 }`}
               >
                 {item.label}
@@ -245,6 +230,7 @@ export function Navbar({ onOpenConsultation, onOpenSearch }: NavbarProps) {
             ))}
           </div>
 
+          {/* Mobile CTA */}
           <div className="pt-2 border-t border-slate-800">
             <Link
               href="/contact"
@@ -260,3 +246,4 @@ export function Navbar({ onOpenConsultation, onOpenSearch }: NavbarProps) {
     </header>
   );
 }
+

@@ -4,7 +4,6 @@ import React from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { COMPANY_INFO } from '@/lib/data';
 import { useLanguage } from '@/context/LanguageContext';
-import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
 
 export function TopBar() {
   const { strings } = useLanguage();
@@ -13,13 +12,15 @@ export function TopBar() {
     <div className="bg-slate-950 text-slate-300 text-xs border-b border-slate-800/80 hidden md:block">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
         <div className="flex items-center justify-between">
-          {/* Location */}
-          <div className="flex items-center space-x-1.5 rtl:space-x-reverse text-slate-300">
+          {/* Factual Location & National Ownership */}
+          <div className="flex items-center space-x-2 rtl:space-x-reverse text-slate-300">
             <MapPin className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
             <span>{strings.topbar.location}</span>
+            <span className="text-slate-700">•</span>
+            <span className="text-cyan-400/90 font-medium">{COMPANY_INFO.ownership}</span>
           </div>
 
-          {/* Contact & Language Switcher */}
+          {/* Direct Abu Dhabi Contact Channels */}
           <div className="flex items-center space-x-4 rtl:space-x-reverse">
             <a
               href={`tel:${COMPANY_INFO.contact.telephone.replace(/\s+/g, '')}`}
@@ -37,11 +38,10 @@ export function TopBar() {
               <Mail className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
               <span className="font-mono">{COMPANY_INFO.contact.primaryEmail}</span>
             </a>
-            <span className="text-slate-700">|</span>
-            <LanguageSwitcher variant="topbar" />
           </div>
         </div>
       </div>
     </div>
   );
 }
+
