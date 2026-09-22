@@ -45,7 +45,13 @@ export function ContactClient() {
     setIsSubmitted(true);
     const mailtoUrl = generateMailtoHref();
     if (typeof window !== 'undefined') {
-      window.open(mailtoUrl, '_self');
+      try {
+        window.location.assign(mailtoUrl);
+      } catch {
+        const link = document.createElement('a');
+        link.href = mailtoUrl;
+        link.click();
+      }
     }
   };
 

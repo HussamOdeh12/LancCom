@@ -190,6 +190,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{
             __html: `
               try {
+                if (typeof window !== 'undefined' && window.fetch) {
+                  var _origFetch = window.fetch;
+                  var _currentFetch = function() {
+                    return _origFetch.apply(window, arguments);
+                  };
+                  try {
+                    Object.defineProperty(window, 'fetch', {
+                      get: function() { return _currentFetch; },
+                      set: function(val) { _currentFetch = val; },
+                      configurable: true,
+                      enumerable: true
+                    });
+                  } catch (e) {}
+                }
                 var theme = localStorage.getItem('landcom_theme_pref');
                 var supportDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
                 if (theme === 'light' || (!theme && !supportDark)) {
