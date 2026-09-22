@@ -66,7 +66,7 @@ export function ServiceDetailClient({ service }: ServiceDetailClientProps) {
   const approach = language === 'ar' ? service.approachAr : service.approach;
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col selection:bg-cyan-500 selection:text-slate-950">
+    <div className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 flex flex-col selection:bg-cyan-500 selection:text-slate-950">
       {/* JSON-LD Structured Data for Service */}
       <script
         type="application/ld+json"
@@ -97,7 +97,7 @@ export function ServiceDetailClient({ service }: ServiceDetailClientProps) {
 
       <main id="main-content" className="flex-1 text-start">
         {/* 1. Service Hero */}
-        <section className="py-14 sm:py-18 bg-slate-900 border-b border-slate-800 relative overflow-hidden">
+        <section className="py-14 sm:py-18 bg-slate-50 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 relative overflow-hidden">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b15_1px,transparent_1px),linear-gradient(to_bottom,#1e293b15_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
           
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
@@ -105,35 +105,35 @@ export function ServiceDetailClient({ service }: ServiceDetailClientProps) {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-2">
               <div className="lg:col-span-8 space-y-4">
-                <div className="inline-flex items-center space-x-2 rtl:space-x-reverse px-3 py-1 rounded-full bg-cyan-950 border border-cyan-500/30 text-cyan-400 text-xs font-bold uppercase tracking-wider">
+                <div className="inline-flex items-center space-x-2 rtl:space-x-reverse px-3 py-1 rounded-full bg-cyan-100 dark:bg-cyan-950 border border-cyan-200 dark:border-cyan-500/30 text-cyan-700 dark:text-cyan-400 text-xs font-bold uppercase tracking-wider">
                   <Layers className="w-3.5 h-3.5 shrink-0" />
                   <span>{language === 'ar' ? 'نطاق الخدمة المعتمد' : 'Official Service Scope'}</span>
                 </div>
                 
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
                   {title}
                 </h1>
                 
-                <p className="text-base sm:text-lg text-cyan-300/90 font-medium">
+                <p className="text-base sm:text-lg text-cyan-700 dark:text-cyan-300/90 font-medium">
                   {tagline}
                 </p>
 
-                <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl">
+                <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
                   {description}
                 </p>
               </div>
 
               {/* Service Icon Badge */}
               <div className="lg:col-span-4 flex justify-start lg:justify-end">
-                <div className="p-6 rounded-3xl bg-slate-950 border border-slate-800 text-cyan-400 shadow-2xl flex items-center space-x-4 rtl:space-x-reverse">
-                  <div className="p-4 rounded-2xl bg-cyan-950 border border-cyan-500/30">
+                <div className="p-6 rounded-3xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-cyan-600 dark:text-cyan-400 shadow-xl flex items-center space-x-4 rtl:space-x-reverse">
+                  <div className="p-4 rounded-2xl bg-cyan-100 dark:bg-cyan-950 border border-cyan-200 dark:border-cyan-500/30">
                     {getServiceIcon(service.id, "w-10 h-10")}
                   </div>
                   <div>
-                    <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest block font-mono">
+                    <span className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest block font-mono">
                       LAND.COM / IT
                     </span>
-                    <span className="text-xs font-semibold text-slate-300">
+                    <span className="text-xs font-semibold text-slate-700 dark:text-slate-300">
                       Abu Dhabi, UAE
                     </span>
                   </div>
@@ -144,31 +144,31 @@ export function ServiceDetailClient({ service }: ServiceDetailClientProps) {
         </section>
 
         {/* 2. Main Service Content Body */}
-        <section className="py-16 bg-slate-950">
+        <section className="py-16 bg-white dark:bg-slate-950">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
               {/* Left Column: Scope, Features, Delivery Approach */}
               <div className="lg:col-span-8 space-y-10 text-start">
                 {/* Detailed Overview */}
                 <div className="space-y-4">
-                  <span className="text-xs font-bold uppercase tracking-wider text-cyan-400">
+                  <span className="text-xs font-bold uppercase tracking-wider text-cyan-700 dark:text-cyan-400">
                     {language === 'ar' ? 'نظرة عامة على الخدمة' : 'Service Overview'}
                   </span>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-white">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
                     {language === 'ar' ? 'تنسيق الحلول التقنية وإدارتها' : 'Integrated Technical Implementation'}
                   </h2>
-                  <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+                  <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
                     {overview}
                   </p>
                 </div>
 
                 {/* Core Scope & Deliverables */}
-                <div className="p-6 sm:p-8 bg-slate-900 border border-slate-800 rounded-3xl space-y-5">
+                <div className="p-6 sm:p-8 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl space-y-5 shadow-sm">
                   <div className="space-y-1">
-                    <span className="text-xs font-bold text-cyan-400 uppercase tracking-wider">
+                    <span className="text-xs font-bold text-cyan-700 dark:text-cyan-400 uppercase tracking-wider">
                       {language === 'ar' ? 'مخرجات النطاق الفني' : 'Deliverables & Capabilities'}
                     </span>
-                    <h3 className="text-lg sm:text-xl font-bold text-white">
+                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
                       {language === 'ar' ? 'عناصر التنفيذ المعتمدة للخدمة' : 'Supported Scope Elements'}
                     </h3>
                   </div>
@@ -177,10 +177,10 @@ export function ServiceDetailClient({ service }: ServiceDetailClientProps) {
                     {features.map((feat, idx) => (
                       <div
                         key={idx}
-                        className="p-3.5 bg-slate-950 rounded-2xl border border-slate-800 flex items-start space-x-3 rtl:space-x-reverse"
+                        className="p-3.5 bg-white dark:bg-slate-950 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-start space-x-3 rtl:space-x-reverse shadow-xs"
                       >
-                        <CheckCircle2 className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                        <span className="text-xs sm:text-sm text-slate-200 font-medium leading-snug">
+                        <CheckCircle2 className="w-4 h-4 text-cyan-600 dark:text-cyan-400 shrink-0 mt-0.5" />
+                        <span className="text-xs sm:text-sm text-slate-800 dark:text-slate-200 font-medium leading-snug">
                           {feat}
                         </span>
                       </div>
@@ -189,40 +189,40 @@ export function ServiceDetailClient({ service }: ServiceDetailClientProps) {
                 </div>
 
                 {/* Strategic Consulting Approach */}
-                <div className="p-6 sm:p-8 bg-slate-900/60 border border-slate-800 rounded-3xl space-y-4">
+                <div className="p-6 sm:p-8 bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 rounded-3xl space-y-4 shadow-sm">
                   <div className="flex items-center space-x-3 rtl:space-x-reverse">
-                    <div className="p-2.5 rounded-xl bg-cyan-950 border border-cyan-500/30 text-cyan-400 shrink-0">
+                    <div className="p-2.5 rounded-xl bg-cyan-100 dark:bg-cyan-950 border border-cyan-200 dark:border-cyan-500/30 text-cyan-600 dark:text-cyan-400 shrink-0">
                       <Compass className="w-5 h-5" />
                     </div>
-                    <h3 className="text-lg font-bold text-white">
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-white">
                       {language === 'ar' ? 'منهجية التنفيذ والاستشارة' : 'Our Strategic Delivery Methodology'}
                     </h3>
                   </div>
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                     {approach}
                   </p>
                 </div>
 
                 {/* Documented Client Reference (if applicable) */}
                 {service.documentedExperience && (
-                  <div className="p-6 sm:p-8 bg-gradient-to-br from-slate-900 to-cyan-950/30 border border-slate-800 rounded-3xl space-y-4">
+                  <div className="p-6 sm:p-8 bg-slate-50 dark:bg-gradient-to-br dark:from-slate-900 dark:to-cyan-950/30 border border-slate-200 dark:border-slate-800 rounded-3xl space-y-4 shadow-sm">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-2.5 rtl:space-x-reverse">
-                        <Briefcase className="w-5 h-5 text-cyan-400 shrink-0" />
-                        <span className="text-xs font-bold text-cyan-400 uppercase tracking-wider">
+                        <Briefcase className="w-5 h-5 text-cyan-600 dark:text-cyan-400 shrink-0" />
+                        <span className="text-xs font-bold text-cyan-700 dark:text-cyan-400 uppercase tracking-wider">
                           {language === 'ar' ? 'خبرة موثقة في هذا المجال' : 'Documented Client Reference'}
                         </span>
                       </div>
-                      <span className="text-xs text-slate-400 font-mono">
+                      <span className="text-xs text-slate-500 dark:text-slate-400 font-mono">
                         {language === 'ar' ? service.documentedExperience.locationAr : service.documentedExperience.location}
                       </span>
                     </div>
 
                     <div className="space-y-1 pt-1">
-                      <h4 className="text-base sm:text-lg font-bold text-white">
+                      <h4 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
                         {language === 'ar' ? service.documentedExperience.organizationAr : service.documentedExperience.organization}
                       </h4>
-                      <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                      <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                         {language === 'ar' ? service.documentedExperience.scopeAr : service.documentedExperience.scope}
                       </p>
                     </div>
@@ -230,7 +230,7 @@ export function ServiceDetailClient({ service }: ServiceDetailClientProps) {
                     <div className="pt-2">
                       <Link
                         href="/experience"
-                        className="inline-flex items-center space-x-1.5 rtl:space-x-reverse text-xs font-bold text-cyan-400 hover:text-cyan-300 transition-colors"
+                        className="inline-flex items-center space-x-1.5 rtl:space-x-reverse text-xs font-bold text-cyan-700 dark:text-cyan-400 hover:text-cyan-600 dark:hover:text-cyan-300 transition-colors"
                       >
                         <span>{language === 'ar' ? 'عرض سجل الخبرات الموثقة' : 'View documented experience'}</span>
                         <ArrowRight className={`w-3.5 h-3.5 ${isRTL ? 'rotate-180' : ''}`} />
@@ -243,15 +243,15 @@ export function ServiceDetailClient({ service }: ServiceDetailClientProps) {
               {/* Right Column: Quick Contact, Headquarter info & Related Services */}
               <div className="lg:col-span-4 space-y-6">
                 {/* Consultation Card */}
-                <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 space-y-5 text-start">
+                <div className="bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 space-y-5 text-start shadow-sm">
                   <div className="space-y-2">
-                    <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-cyan-950 text-cyan-300 border border-cyan-800/40">
+                    <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-cyan-100 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800/40">
                       {language === 'ar' ? 'أبوظبي، الإمارات' : 'Abu Dhabi Office'}
                     </span>
-                    <h3 className="text-lg font-bold text-white pt-2">
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-white pt-2">
                       {language === 'ar' ? 'طلب استشارة في هذا النطاق' : 'Request Consultation'}
                     </h3>
-                    <p className="text-xs text-slate-400 leading-relaxed">
+                    <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
                       {language === 'ar'
                         ? 'تواصل مع مهندسينا ومستشارينا في أبوظبي لتقييم متطلبات مؤسستكم وبدء التنفيذ.'
                         : 'Connect with our technical consultants in Abu Dhabi to evaluate your operational scope and technical requirements.'}
@@ -269,17 +269,17 @@ export function ServiceDetailClient({ service }: ServiceDetailClientProps) {
 
                     <a
                       href={`tel:${COMPANY_INFO.contact.telephone.replace(/\s+/g, '')}`}
-                      className="w-full py-2.5 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs rounded-xl border border-slate-700 transition-colors flex items-center justify-center space-x-2 rtl:space-x-reverse"
+                      className="w-full py-2.5 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-semibold text-xs rounded-xl border border-slate-300 dark:border-slate-700 transition-colors flex items-center justify-center space-x-2 rtl:space-x-reverse shadow-xs"
                       dir="ltr"
                     >
-                      <Phone className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                      <Phone className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400 shrink-0" />
                       <span>{COMPANY_INFO.contact.telephone}</span>
                     </a>
                   </div>
 
-                  <div className="pt-3 border-t border-slate-800/80 text-[11px] text-slate-400">
+                  <div className="pt-3 border-t border-slate-200 dark:border-slate-800/80 text-[11px] text-slate-500 dark:text-slate-400">
                     <div className="flex items-center space-x-2 rtl:space-x-reverse">
-                      <MapPin className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                      <MapPin className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400 shrink-0" />
                       <span>{language === 'ar' ? 'المكتب: طريق المرور، أبوظبي' : 'Office: Muroor Road, Abu Dhabi'}</span>
                     </div>
                   </div>
@@ -287,8 +287,8 @@ export function ServiceDetailClient({ service }: ServiceDetailClientProps) {
 
                 {/* Related Services */}
                 {relatedServices.length > 0 && (
-                  <div className="bg-slate-900/70 border border-slate-800 rounded-3xl p-6 space-y-4 text-start">
-                    <h3 className="text-xs font-bold uppercase tracking-wider text-cyan-400">
+                  <div className="bg-slate-50 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 space-y-4 text-start shadow-sm">
+                    <h3 className="text-xs font-bold uppercase tracking-wider text-cyan-700 dark:text-cyan-400">
                       {language === 'ar' ? 'خدمات ذات صلة' : 'Related Services'}
                     </h3>
 
@@ -297,17 +297,17 @@ export function ServiceDetailClient({ service }: ServiceDetailClientProps) {
                         <Link
                           key={rel.id}
                           href={`/services/${rel.slug}`}
-                          className="p-3.5 bg-slate-950 rounded-2xl border border-slate-800 hover:border-cyan-500/50 hover:bg-slate-900 transition-all flex items-center justify-between group"
+                          className="p-3.5 bg-white dark:bg-slate-950 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-cyan-500/50 hover:bg-slate-50 dark:hover:bg-slate-900 transition-all flex items-center justify-between group shadow-xs"
                         >
                           <div className="space-y-0.5">
-                            <h4 className="text-xs font-bold text-white group-hover:text-cyan-300 transition-colors">
+                            <h4 className="text-xs font-bold text-slate-900 dark:text-white group-hover:text-cyan-700 dark:group-hover:text-cyan-300 transition-colors">
                               {language === 'ar' ? rel.titleAr : rel.title}
                             </h4>
-                            <p className="text-[11px] text-slate-400 line-clamp-1">
+                            <p className="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-1">
                               {language === 'ar' ? rel.taglineAr : rel.tagline}
                             </p>
                           </div>
-                          <ChevronRight className={`w-4 h-4 text-slate-600 group-hover:text-cyan-400 transition-all shrink-0 ${isRTL ? 'rotate-180 group-hover:-translate-x-0.5' : 'group-hover:translate-x-0.5'}`} />
+                          <ChevronRight className={`w-4 h-4 text-slate-400 dark:text-slate-600 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-all shrink-0 ${isRTL ? 'rotate-180 group-hover:-translate-x-0.5' : 'group-hover:translate-x-0.5'}`} />
                         </Link>
                       ))}
                     </div>
@@ -319,14 +319,14 @@ export function ServiceDetailClient({ service }: ServiceDetailClientProps) {
         </section>
 
         {/* 3. Bottom CTA Section */}
-        <section className="py-16 bg-slate-900 border-t border-slate-800">
+        <section className="py-16 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-slate-950 border border-slate-800 rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8 text-start shadow-xl">
+            <div className="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8 text-start shadow-md dark:shadow-xl">
               <div className="space-y-3 max-w-2xl">
-                <h3 className="text-xl sm:text-2xl font-bold text-white">
+                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
                   {language === 'ar' ? `استكشف جميع خدمات وحلول لاند كوم` : `Explore All LandCom Services & Capabilities`}
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                   {language === 'ar'
                     ? 'اطلع على دليل الخدمات الثمانية المعتمدة لشركة لاند كوم لتقنية المعلومات في أبوظبي.'
                     : 'Browse our complete catalog of eight specialized IT disciplines or contact our team for tailored technical proposals.'}
@@ -336,7 +336,7 @@ export function ServiceDetailClient({ service }: ServiceDetailClientProps) {
               <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full sm:w-auto">
                 <Link
                   href="/services"
-                  className="w-full sm:w-auto px-6 py-3.5 bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs sm:text-sm rounded-xl transition-all border border-slate-700 text-center"
+                  className="w-full sm:w-auto px-6 py-3.5 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-bold text-xs sm:text-sm rounded-xl transition-all border border-slate-300 dark:border-slate-700 text-center shadow-sm"
                 >
                   {strings.services.allServices}
                 </Link>

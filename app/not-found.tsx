@@ -16,21 +16,21 @@ export const metadata = {
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col selection:bg-cyan-500 selection:text-slate-950">
+    <div className="min-h-screen bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 flex flex-col selection:bg-cyan-500 selection:text-slate-950">
       <TopBar />
       <Navbar />
 
       <main id="main-content" className="flex-1 flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-xl w-full text-center space-y-6">
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-cyan-950/60 border border-cyan-500/30 text-cyan-400 font-mono text-3xl font-black">
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-cyan-100 dark:bg-cyan-950/60 border border-cyan-200 dark:border-cyan-500/30 text-cyan-700 dark:text-cyan-400 font-mono text-3xl font-black">
             404
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+          <h1 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white tracking-tight">
             Page Not Found
           </h1>
 
-          <p className="text-slate-400 text-sm sm:text-base leading-relaxed max-w-md mx-auto">
+          <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed max-w-md mx-auto">
             The page you are looking for does not exist or has been moved. Explore our core solutions or return to the main portal.
           </p>
 
@@ -45,9 +45,9 @@ export default function NotFound() {
 
             <Link
               href="/services"
-              className="w-full sm:w-auto px-6 py-3 bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white font-medium text-sm rounded-xl border border-slate-800 transition-colors flex items-center justify-center space-x-2"
+              className="w-full sm:w-auto px-6 py-3 bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white font-medium text-sm rounded-xl border border-slate-200 dark:border-slate-800 transition-colors flex items-center justify-center space-x-2"
             >
-              <Layers className="w-4 h-4 text-cyan-400 shrink-0" />
+              <Layers className="w-4 h-4 text-cyan-600 dark:text-cyan-400 shrink-0" />
               <span>Explore Services</span>
             </Link>
           </div>
