@@ -81,30 +81,27 @@ export function PrivacyClient() {
               </p>
             </div>
 
-            {/* Information Collected */}
+            {/* Information & Mailto Architecture */}
             <div className="p-6 sm:p-8 bg-slate-900/90 border border-slate-800 rounded-3xl space-y-4 shadow-xl">
               <div className="flex items-center space-x-3 rtl:space-x-reverse text-cyan-400">
                 <FileText className="w-5 h-5 shrink-0" />
                 <h2 className="text-lg font-bold text-white">
-                  {language === 'ar' ? '2. البيانات التي يتم جمعها' : '2. Information Collected'}
+                  {language === 'ar' ? '2. آلية التواصل والبيانات' : '2. Communication & Email Architecture'}
                 </h2>
               </div>
               <p className="text-sm text-slate-300 leading-relaxed">
                 {language === 'ar'
-                  ? 'لا يقوم الموقع بجمع أي بيانات شخصية دون علم المستخدم أو موافقته الصريحة. تقتصر البيانات المستلمة حصراً على المعلومات التي يقدمها الزائر طواعية عبر نموذج التواصل المباشر:'
-                  : 'The website does not collect personal information without the user’s active knowledge. Information collected is strictly limited to data voluntarily provided by visitors via the direct inquiry form:'}
+                  ? 'لا يقوم الموقع بجمع أو حفظ أي بيانات شخصية عبر خوادم خلفية أو قواعد بيانات. نموذج التواصل على الموقع يعمل كأداة لإعداد رسالة بريد إلكتروني (mailto link) تفتح تطبيق البريد الإلكتروني الخاص بالمستخدم مباشرة مع تعبئة تفاصيل الاستفسار.'
+                  : 'This website does not transmit or store form submissions through a server backend or database. The contact form functions entirely client-side to prepare a mailto link that opens your local email application with the inquiry details formatted for direct sending.'}
               </p>
-              <ul className="space-y-2 text-sm text-slate-300 list-disc list-inside ps-2">
-                <li>{language === 'ar' ? 'الاسم الكامل للمتصل' : 'Full Name of the contact person'}</li>
-                <li>{language === 'ar' ? 'اسم المؤسسة أو الشركة (اختياري)' : 'Organization or company name (optional)'}</li>
-                <li>{language === 'ar' ? 'عنوان البريد الإلكتروني للعمل' : 'Work or business email address'}</li>
-                <li>{language === 'ar' ? 'رقم الهاتف للتواصل (اختياري)' : 'Contact telephone number (optional)'}</li>
-                <li>{language === 'ar' ? 'مجال الخدمة أو الاستفسار المطلوب' : 'Selected service of interest'}</li>
-                <li>{language === 'ar' ? 'نص الرسالة أو متطلبات المشروع' : 'Inquiry message text and project description'}</li>
-              </ul>
+              <p className="text-sm text-slate-300 leading-relaxed">
+                {language === 'ar'
+                  ? 'عند إرسال الرسالة، يتم التواصل مباشرة عبر بروتوكولات البريد الإلكتروني القياسية بين المستخدم وعنوان البريد الرسمي لشركة لاند كوم (Info@landcom.ae).'
+                  : 'When an email is sent, communication takes place directly via standard email protocols between the sender and LandCom’s official email address (Info@landcom.ae).'}
+              </p>
             </div>
 
-            {/* Local Storage & Cookies */}
+            {/* Local Storage & Preferences */}
             <div className="p-6 sm:p-8 bg-slate-900/90 border border-slate-800 rounded-3xl space-y-4 shadow-xl">
               <div className="flex items-center space-x-3 rtl:space-x-reverse text-cyan-400">
                 <Cookie className="w-5 h-5 shrink-0" />
@@ -114,23 +111,23 @@ export function PrivacyClient() {
               </div>
               <p className="text-sm text-slate-300 leading-relaxed">
                 {language === 'ar'
-                  ? 'لا يستخدم هذا الموقع ملفات تعريف الارتباط الإعلانية أو التتبعية. نستخدم فقط ميزة التخزين المحلي في المتصفح (localStorage) لحفظ التفضيلات التشغيلية الضرورية:'
-                  : 'This website does not deploy advertising or behavioral tracking cookies. We utilize standard client-side browser local storage (localStorage) solely for essential user experience preferences:'}
+                  ? 'لا يستخدم هذا الموقع ملفات تعريف الارتباط الإعلانية أو التتبعية. نستخدم فقط ميزة التخزين المحلي في المتصفح (localStorage) لحفظ التفضيلات الضرورية لتجربة المستخدم:'
+                  : 'This website does not deploy advertising or tracking cookies. Standard browser local storage (localStorage) is used solely to remember essential visitor preferences:'}
               </p>
               <div className="p-4 bg-slate-100 dark:bg-slate-950 rounded-2xl border border-slate-200 dark:border-slate-800 text-xs font-mono space-y-3">
                 <div className="space-y-1">
                   <div className="text-cyan-700 dark:text-cyan-300 font-bold">• Key: landcom_language_pref</div>
-                  <div className="text-slate-600 dark:text-slate-400 ps-3">Purpose: {language === 'ar' ? 'حفظ لغة العرض وتوجيه النص (عربي / English)' : 'Stores the visitor’s language and layout direction (English / Arabic)'}</div>
+                  <div className="text-slate-600 dark:text-slate-400 ps-3">Purpose: {language === 'ar' ? "حفظ خيار اللغة المحددة ('en' أو 'ar')" : "Stores the selected language preference ('en' or 'ar')"}</div>
                 </div>
                 <div className="space-y-1">
                   <div className="text-cyan-700 dark:text-cyan-300 font-bold">• Key: landcom_theme_pref</div>
-                  <div className="text-slate-600 dark:text-slate-400 ps-3">Purpose: {language === 'ar' ? 'حفظ مظهر الموقع المفضل (الوضع الداكن / الوضع الفاتح)' : 'Stores the visitor’s color theme preference (Light Mode / Dark Mode)'}</div>
+                  <div className="text-slate-600 dark:text-slate-400 ps-3">Purpose: {language === 'ar' ? "حفظ خيار المظهر المحدد ('dark' أو 'light')" : "Stores the selected theme preference ('dark' or 'light')"}</div>
                 </div>
               </div>
               <p className="text-xs text-slate-400">
                 {language === 'ar'
                   ? 'يمكنك مسح التخزين المحلي في أي وقت من خلال إعدادات المتصفح الخاص بك دون التأثير على وظائف تصفح الموقع.'
-                  : 'You may clear your browser’s local storage at any time via your browser settings without impacting website accessibility.'}
+                  : 'You may clear your browser’s local storage at any time via your browser settings.'}
               </p>
             </div>
 
@@ -159,23 +156,18 @@ export function PrivacyClient() {
               </div>
             </div>
 
-            {/* Purpose & Retention */}
+            {/* Security in Transit */}
             <div className="p-6 sm:p-8 bg-slate-900/90 border border-slate-800 rounded-3xl space-y-4 shadow-xl">
               <div className="flex items-center space-x-3 rtl:space-x-reverse text-cyan-400">
                 <Database className="w-5 h-5 shrink-0" />
                 <h2 className="text-lg font-bold text-white">
-                  {language === 'ar' ? '5. الغرض من البيانات وأمن النقل' : '5. Data Purpose & Transmission Security'}
+                  {language === 'ar' ? '5. أمان التصفح' : '5. Browsing Security'}
                 </h2>
               </div>
               <p className="text-sm text-slate-300 leading-relaxed">
                 {language === 'ar'
-                  ? 'تُستخدم بيانات الاستفسارات حصرياً من قبل الفريق الفني والإداري لشركة لاند كوم للتواصل مع العميل والرد على متطلبات مشروعه التقني وتقديم الاستشارات المطلوبة.'
-                  : 'Inquiry details are utilized strictly by LandCom’s authorized technical and administrative personnel to review project scopes, answer technical inquiries, and provide professional IT consultations.'}
-              </p>
-              <p className="text-sm text-slate-300 leading-relaxed">
-                {language === 'ar'
-                  ? 'يتم تأمين تصفح الموقع بالكامل عبر بروتوكول التشفير القياسي HTTPS لضمان سرية وسلامة البيانات أثناء النقل.'
-                  : 'All web traffic and communications across landcom.ae are protected using standard TLS/HTTPS encryption in transit.'}
+                  ? 'يتم تأمين تصفح الموقع بالكامل عبر بروتوكول التشفير القياسي HTTPS لضمان سرية وسلامة تصفح الصفحات.'
+                  : 'All web traffic across landcom.ae is delivered using standard TLS/HTTPS encryption in transit.'}
               </p>
             </div>
 

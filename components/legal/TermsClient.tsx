@@ -95,13 +95,13 @@ export function TermsClient() {
               <div className="flex items-center space-x-3 rtl:space-x-reverse text-cyan-400">
                 <AlertCircle className="w-5 h-5 shrink-0" />
                 <h2 className="text-lg font-bold text-white">
-                  {language === 'ar' ? '3. عدم وجود التزام تعاقدي ملزم عبر الموقع' : '3. No Binding Contractual Offer'}
+                  {language === 'ar' ? '3. طبيعة المعلومات المعروضة' : '3. Informational Nature of Content'}
                 </h2>
               </div>
               <p className="text-sm text-slate-300 leading-relaxed">
                 {language === 'ar'
-                  ? 'المعلومات والبيانات المعروضة على صفحات الموقع هي لأغراض تعريفية واستطلاعية فقط، ولا تشكل عرضاً تعاقدياً ملزماً أو التزاماً قانونياً بالأسعار أو الجداول الزمنية. تخضع كافة المشاريع وعقود توريد الأنظمة والخدمات المدارة لاتفاقيات وعقود خطية مستقلة يتم توقيعها واعتمادها رسمياً مع لاند كوم.'
-                  : 'The content presented on this website is for general informational purposes only and does not constitute a formal commercial proposal, contract, or binding service-level guarantee. All technical implementations, hardware procurement, and managed services engagements require standalone formal written contracts executed directly with LandCom.'}
+                  ? 'المحتوى والمعلومات المعروضة على هذا الموقع هي لأغراض تعريفية واستطلاعية عامة، ولا تشكل عرضاً تعاقدياً ملزماً. يتم الاتفاق على تفاصيل المشاريع ونطاق الخدمات مباشرة مع لاند كوم.'
+                  : 'The content presented on this website is for general informational purposes only and does not constitute a binding commercial offer. Specific project requirements and service scopes are agreed upon directly with LandCom.'}
               </p>
             </div>
 
@@ -115,8 +115,8 @@ export function TermsClient() {
               </div>
               <p className="text-sm text-slate-300 leading-relaxed">
                 {language === 'ar'
-                  ? 'كافة النصوص، والشعارات، والتصاميم، والمحتويات المنشورة على هذا الموقع هي ملك لمؤسسة لاند كوم لحلول تقنية المعلومات أو مرخص لها قانوناً، ومحمية بموجب قوانين الملكية الفكرية وحقوق النشر. يُحظر نسخ أو إعادة نشر أي جزء من الموقع دون إذن خطي مسبق.'
-                  : 'All text, visual branding, service descriptions, and documentation published on this website are the proprietary property of LandCom Information Technology Solutions Provider or its respective licensors, protected under applicable intellectual property and copyright laws. Unauthorized reproduction or redistribution is strictly prohibited.'}
+                  ? 'كافة النصوص والشعارات والتصاميم المنشورة على هذا الموقع هي ملك لمؤسسة لاند كوم لحلول تقنية المعلومات أو الجهات المعنية بها، وتخضع للحماية القانونية المقررة.'
+                  : 'All text, trademarks, and design elements published on this website are the property of LandCom Information Technology Solutions Provider or their respective owners, and are protected under applicable laws.'}
               </p>
             </div>
 
@@ -130,8 +130,8 @@ export function TermsClient() {
               </div>
               <p className="text-sm text-slate-300 leading-relaxed">
                 {language === 'ar'
-                  ? 'يلتزم المستخدم بعدم استخدام الموقع بأي طريقة قد تعطل خدماته، أو محاولة الوصول غير المصرح به إلى خوادمه، أو إرسال رسائل احتيالية أو غير مرغوب فيها عبر قنوات ونماذج التواصل المتاحة.'
-                  : 'Users agree not to misuse the website, attempt unauthorized access to infrastructure, disrupt network connectivity, or submit fraudulent inquiries through communication forms.'}
+                  ? 'يلتزم المستخدم باستخدام الموقع للأغراض المشروعة والامتناع عن أي إجراءات قد تعطل عمل الموقع أو تؤثر على أمانه.'
+                  : 'Users agree to use this website in a lawful manner and refrain from any activity that disrupts website availability, accessibility, or security.'}
               </p>
             </div>
 

@@ -102,7 +102,7 @@ export function CredentialsClient() {
                   {COMPANY_INFO.license.unifiedRegistrationNumber}
                 </div>
                 <p className="text-[11px] text-slate-400">
-                  {language === 'ar' ? 'الرقم الموحد للمنشأة' : 'Federal / Unified Establishment ID'}
+                  {language === 'ar' ? 'الرقم الموحد للمنشأة' : 'Unified Registration Number'}
                 </p>
               </div>
 
@@ -116,7 +116,7 @@ export function CredentialsClient() {
                   {COMPANY_INFO.license.unifiedLicenseNumber}
                 </div>
                 <p className="text-[11px] text-slate-400">
-                  {language === 'ar' ? 'رقم الرخصة الموحد' : 'Economic Registry Unified Licence'}
+                  {language === 'ar' ? 'رقم الرخصة الموحد' : 'Unified Licence Number'}
                 </p>
               </div>
 
@@ -144,7 +144,7 @@ export function CredentialsClient() {
                   {language === 'ar' ? 'مؤسسة فردية' : COMPANY_INFO.legalForm}
                 </div>
                 <p className="text-[11px] text-slate-400">
-                  {language === 'ar' ? 'ملكية وطنية بنسبة 100%' : '100% UAE Nationally Owned'}
+                  {language === 'ar' ? 'الشكل القانوني: مؤسسة' : 'Legal Form: Establishment'}
                 </p>
               </div>
 
@@ -158,7 +158,7 @@ export function CredentialsClient() {
                   {COMPANY_INFO.license.establishmentDate}
                 </div>
                 <p className="text-[11px] text-slate-400">
-                  {language === 'ar' ? 'أكثر من 19 عاماً من الخبرة' : '19+ Years Operational Heritage'}
+                  {language === 'ar' ? 'تاريخ التأسيس: 09 مايو 2007' : 'Established: 09 May 2007'}
                 </p>
               </div>
 
@@ -172,7 +172,7 @@ export function CredentialsClient() {
                   {COMPANY_INFO.license.issueDate}
                 </div>
                 <p className="text-[11px] text-slate-400">
-                  {language === 'ar' ? 'تاريخ التجديد / الإصدار الأخير' : 'Latest Licence Renewal'}
+                  {language === 'ar' ? 'تاريخ الإصدار: 27 نوفمبر 2025' : 'Issued: 27 November 2025'}
                 </p>
               </div>
 
@@ -180,15 +180,14 @@ export function CredentialsClient() {
               <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 space-y-2">
                 <div className="flex items-center justify-between text-xs text-slate-400">
                   <span className="font-semibold uppercase tracking-wider">{strings.credentials.expiryDate}</span>
-                  <Calendar className="w-4 h-4 text-emerald-400 shrink-0" />
+                  <Calendar className="w-4 h-4 text-cyan-400 shrink-0" />
                 </div>
-                <div className="text-base sm:text-lg font-bold text-emerald-400 font-mono" dir="ltr">
+                <div className="text-base sm:text-lg font-bold text-cyan-300 font-mono" dir="ltr">
                   {COMPANY_INFO.license.expiryDate}
                 </div>
-                <div className="flex items-center space-x-1 rtl:space-x-reverse text-[11px] text-emerald-400 font-medium">
-                  <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
-                  <span>{language === 'ar' ? 'سارية ومعتمدة رسمياً' : 'Active & Validated'}</span>
-                </div>
+                <p className="text-[11px] text-slate-400">
+                  {language === 'ar' ? 'تاريخ الانتهاء: 26 نوفمبر 2026' : 'Expiry: 26 November 2026'}
+                </p>
               </div>
             </div>
           </div>

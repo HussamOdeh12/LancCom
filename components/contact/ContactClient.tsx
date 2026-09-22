@@ -43,6 +43,10 @@ export function ContactClient() {
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitted(true);
+    const mailtoUrl = generateMailtoHref();
+    if (typeof window !== 'undefined') {
+      window.open(mailtoUrl, '_self');
+    }
   };
 
   const getServiceLabel = (serviceId: string) => {
@@ -160,20 +164,30 @@ export function ContactClient() {
                     {/* Primary & Additional Emails */}
                     <div className="flex items-start space-x-3 rtl:space-x-reverse p-3.5 bg-slate-950 rounded-xl border border-slate-800/80">
                       <Mail className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                      <div className="space-y-1">
-                        <div className="font-bold text-white">{strings.contact.email}</div>
-                        <a 
-                          href={`mailto:${COMPANY_INFO.contact.primaryEmail}`} 
-                          className="text-cyan-300 font-mono text-xs hover:underline block"
-                        >
-                          {COMPANY_INFO.contact.primaryEmail}
-                        </a>
-                        <a 
-                          href={`mailto:${COMPANY_INFO.contact.additionalEmail}`} 
-                          className="text-slate-400 font-mono text-[11px] hover:underline block"
-                        >
-                          {COMPANY_INFO.contact.additionalEmail}
-                        </a>
+                      <div className="space-y-1.5 w-full">
+                        <div className="font-bold text-white text-xs">{strings.contact.email}</div>
+                        <div>
+                          <div className="text-[10px] uppercase font-bold text-slate-400">
+                            {language === 'ar' ? 'البريد الرسمي الأساسي' : 'Primary Corporate Email'}
+                          </div>
+                          <a 
+                            href={`mailto:${COMPANY_INFO.contact.primaryEmail}`} 
+                            className="text-cyan-300 font-mono text-xs hover:underline block"
+                          >
+                            {COMPANY_INFO.contact.primaryEmail}
+                          </a>
+                        </div>
+                        <div className="pt-0.5 border-t border-slate-900">
+                          <div className="text-[10px] uppercase font-bold text-slate-500">
+                            {language === 'ar' ? 'بريد بديل / استفسارات المشاريع' : 'Alternative / Project Inquiries'}
+                          </div>
+                          <a 
+                            href={`mailto:${COMPANY_INFO.contact.additionalEmail}`} 
+                            className="text-slate-400 font-mono text-xs hover:underline block"
+                          >
+                            {COMPANY_INFO.contact.additionalEmail}
+                          </a>
+                        </div>
                       </div>
                     </div>
 
@@ -387,8 +401,8 @@ export function ContactClient() {
                       <Info className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
                       <span>
                         {language === 'ar'
-                          ? 'يتم التعامل مع جميع الاستفسارات بسرية تامة من قبل فريق لاند كوم بأبوظبي.'
-                          : 'Inquiries are received and handled confidentially by LandCom’s team in Abu Dhabi.'}
+                          ? 'تعبئة هذا النموذج تفتح تطبيق البريد الإلكتروني مع تفاصيل الاستفسار المجهزة للإرسال.'
+                          : 'Completing this form will open your email application with the enquiry details prepared for sending to LandCom.'}
                       </span>
                     </div>
                   </form>

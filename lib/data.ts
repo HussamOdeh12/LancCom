@@ -136,25 +136,23 @@ export const CORE_SERVICES: ServiceItem[] = [
     titleAr: 'نظام تخطيط موارد المؤسسة',
     tagline: 'Enterprise resource planning tailored to your business',
     taglineAr: 'تخطيط موارد المؤسسة مصمم خصيصاً ليناسب أعمالكم',
-    description: 'Customized enterprise resource planning solutions designed and implemented to streamline organizational operations, financial workflows, and business processes.',
-    descriptionAr: 'حلول متخصصة لتخطيط موارد المؤسسات مصممة ومنفذة لتنسيق العمليات التشغيلية، والإجراءات الإدارية والمالية بدقة.',
-    overview: 'LandCom designs and implements tailored Enterprise Resource Planning (ERP) systems built around the specific operational structure of each organization. Rather than imposing rigid structures, we coordinate resources, information, and daily business activities within one centralized, reliable platform.',
-    overviewAr: 'تقوم لاند كوم بتصميم وتنفيذ أنظمة تخطيط موارد المؤسسات (ERP) المخصصة بما يتوافق مع الهيكل التشغيلي لكل مؤسسة، وتنسيق الموارد والمعلومات والأنشطة الإدارية ضمن نظام كلي متكامل ومترابط.',
+    description: 'Enterprise resource planning solutions tailored and implemented to align with organizational business requirements.',
+    descriptionAr: 'حلول تخطيط موارد المؤسسات المصممة والمنفذة بما يلائم متطلبات الأعمال.',
+    overview: 'LandCom delivers Enterprise Resource Planning (ERP) systems tailored to organizational business needs, coordinating resources, information, and core activities.',
+    overviewAr: 'تقدم لاند كوم أنظمة تخطيط موارد المؤسسات (ERP) المصممة خصيصاً لتناسب احتياجات الأعمال وتنسيق الموارد والمعلومات والأنشطة.',
     icon: 'Database',
     features: [
-      'Tailored enterprise resource management',
-      'Organizational workflow alignment',
-      'Operational and administrative reporting',
-      'System deployment and user orientation'
+      'Enterprise resource planning tailored to business',
+      'Integrated business solution implementation',
+      'Resource and operational activity coordination'
     ],
     featuresAr: [
-      'إدارة متكاملة ومخصصة لموارد المؤسسة',
-      'مواءمة تدفقات العمل والإجراءات التشغيلية',
-      'إعداد التقارير الإدارية والتشغيلية الموحدة',
-      'تنفيذ النظام وتهيئة المستخدمين وفرق العمل'
+      'تخطيط موارد المؤسسة مصمم خصيصاً للأعمال',
+      'تنفيذ وتطبيق حلول الأعمال المتكاملة',
+      'تنسيق الموارد والأنشطة التشغيلية'
     ],
-    approach: 'Our technical consultants evaluate organizational workflows in detail before deployment, ensuring seamless adaptation to institutional processes and operational requirements in Abu Dhabi.',
-    approachAr: 'يقوم مستشارونا التقنيون بدراسة متطلبات وإجراءات العمل المؤسسي بدقة قبل التنفيذ، لضمان مواءمة النظام مع العمليات التشغيلية ومتطلبات المؤسسة في أبوظبي.',
+    approach: 'We operate as strategic consultants to understand client needs and deploy integrated ERP solutions tailored to business requirements.',
+    approachAr: 'نعمل كمستشارين استراتيجيين لفهم احتياجات العملاء وتقديم حلول ERP متكاملة ومصممة للأعمال.',
     documentedExperience: {
       organization: 'SARI Oil Field Services',
       organizationAr: 'ساري لخدمات حقول النفط',
@@ -172,30 +170,28 @@ export const CORE_SERVICES: ServiceItem[] = [
     titleAr: 'حلول التطبيقات المتنقلة',
     tagline: 'iOS, Android & cross-platform mobile applications',
     taglineAr: 'تطبيقات الهواتف الذكية لأنظمة iOS وAndroid والمنصات المشتركة',
-    description: 'Design, development, and deployment of native and cross-platform mobile applications for smartphones and mobile platforms.',
-    descriptionAr: 'تصميم وتطوير ونشر تطبيقات الأجهزة الذكية الأصلية والمشتركة لتلبية احتياجات المؤسسات وخدمة المتعاملين.',
-    overview: 'LandCom provides end-to-end mobile application engineering covering iOS, Android, and cross-platform technologies. We deliver functional, intuitive mobile interfaces backed by secure system integration to extend organizational capabilities directly to mobile users.',
-    overviewAr: 'تقدم لاند كوم خدمات تطوير وتصميم تطبيقات الأجهزة الذكية لأنظمة iOS وAndroid والمنصات المتعددة، مع واجهات مستخدم سلسة وربط آمن مع الأنظمة الخلفية لتمكين المؤسسات من الوصول إلى مستخدميها بكفاءة.',
+    description: 'Design, development, and deployment of iOS, Android, and cross-platform mobile applications.',
+    descriptionAr: 'تصميم وتطوير وتطبيق تطبيقات الهواتف الذكية لأنظمة iOS وAndroid والمنصات المشتركة.',
+    overview: 'LandCom develops mobile applications across iOS, Android, and cross-platform environments to support organizational and user requirements.',
+    overviewAr: 'تطور لاند كوم تطبيقات الهواتف الذكية لأنظمة iOS وAndroid والمنصات المشتركة لتلبية متطلبات المؤسسات والمستخدمين.',
     icon: 'Smartphone',
     features: [
-      'iOS mobile application development',
-      'Android mobile application development',
-      'Cross-platform mobile solution engineering',
-      'User interface design and backend integration'
+      'iOS mobile applications',
+      'Android mobile applications',
+      'Cross-platform mobile applications'
     ],
     featuresAr: [
-      'تطوير تطبيقات الأجهزة الذكية لنظام iOS',
-      'تطوير تطبيقات الأجهزة الذكية لنظام Android',
-      'هندسة التطبيقات عبر المنصات المشتركة',
-      'تصميم واجهات الاستخدام والربط مع الأنظمة الخلفية'
+      'تطبيقات الهواتف الذكية لنظام iOS',
+      'تطبيقات الهواتف الذكية لنظام Android',
+      'تطبيقات الهواتف الذكية عبر المنصات المشتركة'
     ],
-    approach: 'We prioritize performance, responsive interfaces, and rigorous testing across operating environments, delivering dependable mobile tools that serve governmental and commercial goals.',
-    approachAr: 'نركز على استقرار الأداء، وسلاسة الواجهات، والاختبار الدقيق عبر مختلف البيئات والأجهزة، لتقديم تطبيقات موثوقة تلبي الأهداف الحكومية والتجارية.',
+    approach: 'We understand client needs to develop and deploy tailored mobile applications across leading mobile platforms.',
+    approachAr: 'نعمل على فهم احتياجات العملاء لتطوير وتطبيق تطبيقات متنقلة مخصصة عبر مختلف المنصات.',
     documentedExperience: {
       organization: 'Al Ain City Municipality',
       organizationAr: 'بلدية مدينة العين',
       scope: 'iPhone, Android & BlackBerry Mobile Applications',
-      scopeAr: 'تطوير تطبيقات الهواتف الذكية (iPhone وAndroid وBlackBerry)'
+      scopeAr: 'تطبيقات الهواتف الذكية (iPhone وAndroid وBlackBerry)'
     },
     relatedServiceSlugs: ['ecommerce-web', 'tracking-systems'],
     metaTitle: 'Mobility Solutions | LandCom Abu Dhabi',
@@ -208,25 +204,23 @@ export const CORE_SERVICES: ServiceItem[] = [
     titleAr: 'موارد تقنية المعلومات والشبكات',
     tagline: 'Hardware supply, network design and infrastructure',
     taglineAr: 'توريد العتاد وتصميم وبناء شبكات وتقنيات البنية التحتية',
-    description: 'Professional supply of IT equipment, structured network architecture design, and technical hardware infrastructure deployment.',
-    descriptionAr: 'توريد أجهزة ومعدات تقنية المعلومات، وتصميم البنية التحتية للشبكات السلكية واللاسلكية، وتهيئة المنظومات التقنية.',
-    overview: 'LandCom manages the procurement, supply, design, and physical implementation of enterprise IT equipment and structured network infrastructure. We ensure that facilities are equipped with stable, scalable networking foundations aligned with institutional requirements.',
-    overviewAr: 'تتولى لاند كوم توريد وتصميم وتنفيذ تجهيزات تقنية المعلومات والبنى التحتية لشبكات الاتصال المؤسسية، مع ضمان تزويد المنشآت والمستشفيات والمؤسسات ببنية تحتية مستقرة وقابلة للتوسع.',
+    description: 'Hardware supply, network design, and technical infrastructure provisioning for organizations.',
+    descriptionAr: 'توريد العتاد والأجهزة، وتصميم الشبكات، وتوفير البنية التحتية التقنية للمؤسسات.',
+    overview: 'LandCom provides hardware supply, structured network design, and technical infrastructure solutions for corporate and institutional environments.',
+    overviewAr: 'توفر لاند كوم خدمات توريد الأجهزة والعتاد، وتصميم الشبكات، وحلول البنية التحتية التقنية للمؤسسات.',
     icon: 'Network',
     features: [
-      'IT hardware supply and equipment provisioning',
-      'Network architecture and cabling design',
-      'Network hardware setup and configuration',
-      'On-site technical implementation and deployment'
+      'Hardware supply and equipment provisioning',
+      'Network design and architecture',
+      'IT infrastructure solutions'
     ],
     featuresAr: [
-      'توريد وتأمين أجهزة ومعدات تقنية المعلومات',
-      'تصميم وتخطيط البنية التحتية وكابلات الشبكات',
-      'تركيب وضبط أجهزة وموزعات الشبكات',
-      'التنفيذ الفني الميداني والتشغيل في الموقع'
+      'توريد الأجهزة ومعدات تقنية المعلومات',
+      'تصميم وتخطيط بنية الشبكات',
+      'حلول البنية التحتية لتقنية المعلومات'
     ],
-    approach: 'Our technical teams deliver on-site deployment, rigorous network verification, and hardware integration designed to support institutional continuity.',
-    approachAr: 'تعمل فرقنا الفنية الميدانية على تجهيز وتثبيت البنية التحتية واختبار الشبكات بدقة لضمان استمرارية وكفاءة العمليات المؤسسية.',
+    approach: 'We deliver integrated IT resources and networking infrastructure tailored to client operational environments.',
+    approachAr: 'نقدم حلولاً متكاملة لتوريد الأجهزة والشبكات بما يلائم البيئة التشغيلية للعميل.',
     documentedExperience: {
       organization: 'Al Gharbia Hospitals',
       organizationAr: 'مستشفيات الغربية',
@@ -244,25 +238,23 @@ export const CORE_SERVICES: ServiceItem[] = [
     titleAr: 'الحلول الأمنية',
     tagline: 'Access control, CCTV and cybersecurity systems',
     taglineAr: 'أنظمة التحكم بالدخول، المراقبة التلفزيونية CCTV والحماية السيبرانية',
-    description: 'Physical and digital security installations including biometric access control, CCTV video surveillance, and cybersecurity protection.',
-    descriptionAr: 'تركيب وتكامل أنظمة الأمان المادي والرقمي بما في ذلك التحكم بالدخول، وكاميرات المراقبة التلفزيونية، وحلول الأمن الرقمي.',
-    overview: 'LandCom provides integrated physical and digital security solutions designed to safeguard corporate facilities, data assets, and operational environments. From surveillance installations to access checkpoints, we establish cohesive security measures.',
-    overviewAr: 'تقدم لاند كوم حلولاً أمنية متكاملة تشمل الأمان المادي والرقمي لحماية المنشآت والمرافق المؤسسية وبيانات الأعمال، عبر كاميرات المراقبة، وبوابات الدخول الذكية، وتأمين البيئة الرقمية.',
+    description: 'Access control, CCTV surveillance installations, and cybersecurity systems for organizations.',
+    descriptionAr: 'أنظمة التحكم بالدخول، والمراقبة التلفزيونية (CCTV)، وأنظمة الحماية السيبرانية للمؤسسات.',
+    overview: 'LandCom provides access control systems, CCTV video surveillance, and cybersecurity solutions to safeguard organizational operations.',
+    overviewAr: 'تقدم لاند كوم أنظمة التحكم بالدخول، وكاميرات المراقبة التلفزيونية CCTV، وحلول الحماية السيبرانية لحماية العمليات المؤسسية.',
     icon: 'ShieldCheck',
     features: [
-      'Access control systems and biometric checkpoints',
-      'CCTV video surveillance setups',
-      'Cybersecurity and network defense configurations',
-      'Security systems integration and maintenance'
+      'Access control systems',
+      'CCTV video surveillance systems',
+      'Cybersecurity systems'
     ],
     featuresAr: [
-      'أنظمة التحكم بالدخول والبوابات البيومترية الذكية',
-      'أنظمة ودوائر المراقبة التلفزيونية (CCTV)',
-      'تهيئة أنظمة الحماية الرقمية وأمن الشبكات',
-      'تركيب وتكامل الأنظمة الأمنية وأعمال الصيانة'
+      'أنظمة التحكم بالدخول',
+      'أنظمة المراقبة التلفزيونية CCTV',
+      'أنظمة الحماية السيبرانية'
     ],
-    approach: 'We plan and install security infrastructure following thorough site assessments, ensuring optimal coverage, reliable recording, and controlled physical access.',
-    approachAr: 'نقوم بتخطيط وتركيب الأنظمة الأمنية بعد دراسة تفصيلية للموقع لضمان التغطية المثلى، وجودة التسجيل، والتحكم المنضبط في نقاط الدخول.',
+    approach: 'We deliver integrated security solutions covering physical access, video surveillance, and cybersecurity.',
+    approachAr: 'نقدم حلولاً أمنية متكاملة تشمل التحكم بالدخول والمراقبة التلفزيونية والحماية السيبرانية.',
     relatedServiceSlugs: ['it-resources-networking', 'tracking-systems'],
     metaTitle: 'Security Solutions | LandCom Abu Dhabi',
     metaDescription: 'Access control, CCTV and cybersecurity systems designed and installed by LandCom in Abu Dhabi, UAE.',
@@ -274,25 +266,23 @@ export const CORE_SERVICES: ServiceItem[] = [
     titleAr: 'أنظمة التتبع',
     tagline: 'GPS fleet tracking and asset management',
     taglineAr: 'أنظمة تتبع الأساطيل عبر GPS وإدارة الأصول',
-    description: 'GPS-enabled tracking solutions and vehicle fleet management systems providing real-time location monitoring and asset visibility.',
-    descriptionAr: 'حلول التتبع المعتمدة على نظام تحديد المواقع العالمي (GPS) وإدارة أساطيل المركبات لمتابعة المواقع والأصول اللوجستية بدقة.',
-    overview: 'LandCom implements GPS-based tracking systems that enable organizations to monitor vehicle fleets, transport assets, and logistical operations in real time. We combine tracking hardware with intuitive monitoring interfaces for reliable oversight.',
-    overviewAr: 'توفر لاند كوم أنظمة تتبع متقدمة عبر نظام (GPS) تتيح للمؤسسات متابعة أساطيل السيارات والأصول المنقولة في الوقت الفعلي، مع توفير واجهات مراقبة وتقارير تشغيلية دقيقة.',
+    description: 'GPS fleet tracking and asset management solutions for organizations.',
+    descriptionAr: 'حلول تتبع الأساطيل عبر نظام (GPS) وإدارة الأصول للمؤسسات.',
+    overview: 'LandCom implements GPS fleet tracking and asset management systems to enable organizations to monitor vehicles and assets.',
+    overviewAr: 'تنفذ لاند كوم أنظمة تتبع الأساطيل عبر GPS وإدارة الأصول لتمكين المؤسسات من مراقبة المركبات والأصول.',
     icon: 'Navigation',
     features: [
       'GPS fleet tracking systems',
-      'Real-time vehicle and mobile asset monitoring',
-      'Route tracking and operational reporting',
-      'Tracking hardware installation and setup'
+      'Asset management and tracking',
+      'Vehicle tracking solutions'
     ],
     featuresAr: [
-      'أنظمة تتبع أساطيل المركبات عبر GPS',
-      'مراقبة فورية للمركبات والأصول المتنقلة',
-      'تسجيل المسارات والتقارير التشغيلية اليومية',
-      'تركيب وضبط أجهزة التتبع والبرمجيات المرتبطة'
+      'أنظمة تتبع الأساطيل عبر GPS',
+      'إدارة وتتبع الأصول',
+      'حلول تتبع المركبات'
     ],
-    approach: 'We configure tracking solutions tailored to operational fleets, ensuring continuous telemetry, stable connectivity, and actionable location data.',
-    approachAr: 'نقوم بتهيئة وتثبيت أجهزة التتبع لتلائم متطلبات الأساطيل التشغيلية، مع ضمان استقرار الاتصال ودقة بيانات الموقع والتقارير.',
+    approach: 'We deploy GPS tracking and asset management solutions tailored to organizational vehicle and asset requirements.',
+    approachAr: 'نوفر حلول تتبع الأساطيل وإدارة الأصول بما يتوافق مع متطلبات المؤسسة.',
     relatedServiceSlugs: ['rfid-solutions', 'mobility-solutions'],
     metaTitle: 'Tracking Systems | LandCom Abu Dhabi',
     metaDescription: 'GPS fleet tracking and asset management systems by LandCom in Abu Dhabi, UAE. Real-time location monitoring and reporting.',
@@ -304,25 +294,23 @@ export const CORE_SERVICES: ServiceItem[] = [
     titleAr: 'حلول تحديد الهوية بموجات الراديو',
     tagline: 'Radio-frequency identification for inventory & assets',
     taglineAr: 'تقنية تحديد الهوية بموجات الراديو لإدارة المخزون والأصول',
-    description: 'Radio-frequency identification implementations for automated inventory tracking, asset management, and identification systems.',
-    descriptionAr: 'تطبيق أنظمة تحديد الهوية بموجات الراديو (RFID) لتتبع المخزون بدقة وأتمتة إدارة الأصول والتعريف التلقائي.',
-    overview: 'LandCom deploys Radio-Frequency Identification (RFID) systems designed to automate stock taking, asset auditing, and physical item identification. We integrate RFID tags, readers, and management systems to eliminate manual tracking bottlenecks.',
-    overviewAr: 'تقدم لاند كوم أنظمة تحديد الهوية بموجات الراديو (RFID) لأتمتة عمليات جرد المخزون، وتتبع الأصول الثابتة والمنقولة، والتعريف الآلي بالأصناف لتوفير الوقت والدقة في المتابعة.',
+    description: 'Radio-frequency identification (RFID) solutions for inventory and asset management.',
+    descriptionAr: 'حلول تحديد الهوية بموجات الراديو (RFID) لإدارة المخزون وتتبع الأصول.',
+    overview: 'LandCom delivers RFID solutions designed for organizational inventory management and asset tracking.',
+    overviewAr: 'تقدم لاند كوم حلول تحديد الهوية بموجات الراديو (RFID) لإدارة المخزون وتتبع الأصول في المؤسسات.',
     icon: 'Radio',
     features: [
-      'RFID asset and inventory tracking implementations',
-      'RFID tag and reader hardware integration',
-      'Stock control and identification automation',
-      'System integration with organizational databases'
+      'RFID for inventory management',
+      'RFID for asset management',
+      'Radio-frequency identification solutions'
     ],
     featuresAr: [
-      'تطبيق حلول RFID لتتبع المخزون والأصول المؤسسية',
-      'تكامل الشرائح والملصقات وأجهزة القراءة الإلكترونية',
-      'أتمتة جرد الأصناف والتعريف التلقائي بالمواد',
-      'الربط مع قواعد البيانات والأنظمة الإدارية'
+      'تقنية RFID لإدارة المخزون',
+      'تقنية RFID لإدارة الأصول',
+      'حلول تحديد الهوية بموجات الراديو'
     ],
-    approach: 'Our specialists evaluate physical facility layouts and item handling procedures to deploy the appropriate RFID tags and readers for high-accuracy reading.',
-    approachAr: 'يقوم خبراؤنا بدراسة بيئة العمل وطبيعة المواد والأصول لاختيار وتثبيت القارئات والشرائح المناسبة لتحقيق أعلى درجات دقة القراءة.',
+    approach: 'We implement RFID technology tailored to inventory and asset management requirements.',
+    approachAr: 'نقدم حلول تقنية RFID المخصصة لتلبية متطلبات إدارة المخزون والأصول.',
     relatedServiceSlugs: ['tracking-systems', 'erp-systems'],
     metaTitle: 'RFID Solutions | LandCom Abu Dhabi',
     metaDescription: 'Radio-frequency identification (RFID) for inventory and asset management by LandCom in Abu Dhabi, UAE.',
@@ -334,25 +322,23 @@ export const CORE_SERVICES: ServiceItem[] = [
     titleAr: 'التجارة الإلكترونية وحلول الويب',
     tagline: 'Custom websites, portals and digital commerce',
     taglineAr: 'مواقع إلكترونية مخصصة، بوابات رقمية ومنصات تجارة إلكترونية',
-    description: 'Custom corporate websites, organizational web portals, and digital commerce platforms built for business operations.',
-    descriptionAr: 'تصميم وتطوير المواقع المؤسسية المخصصة، والبوابات الرقمية، ومنصات التجارة الإلكترونية لخدمة العمليات التجارية.',
-    overview: 'LandCom creates bespoke corporate web portals, institutional websites, and digital commerce systems. We focus on structured information architecture, responsive user interfaces, and dependable back-end functionality.',
-    overviewAr: 'تطور لاند كوم بوابات الويب المؤسسية، والمواقع التفاعلية، ومنظومات التجارة الرقمية، مع التركيز على تنظيم المحتوى، وسرعة التصفح، والتكامل التقني المتين.',
+    description: 'Custom corporate websites, organizational portals, and digital commerce solutions.',
+    descriptionAr: 'مواقع إلكترونية مخصصة، وبوابات رقمية، وحلول التجارة الإلكترونية للمؤسسات.',
+    overview: 'LandCom develops custom websites, corporate web portals, and digital commerce solutions tailored to business requirements.',
+    overviewAr: 'تطور لاند كوم مواقع إلكترونية مخصصة وبوابات ويب ومنصات تجارة إلكترونية تلائم متطلبات الأعمال.',
     icon: 'Globe',
     features: [
-      'Custom website design and development',
-      'Corporate portals and content systems',
-      'Digital commerce platforms and storefronts',
-      'Web application maintenance and support'
+      'Custom websites',
+      'Corporate and institutional portals',
+      'Digital commerce solutions'
     ],
     featuresAr: [
-      'تصميم وتطوير المواقع المؤسسية المخصصة',
-      'تطوير البوابات الرقمية وأنظمة إدارة المحتوى',
-      'منصات التجارة الرقمية والخدمات التفاعلية',
-      'الصيانة والدعم الفني المستمر لتطبيقات الويب'
+      'مواقع إلكترونية مخصصة',
+      'بوابات إلكترونية ومؤسسية',
+      'حلول التجارة الرقمية'
     ],
-    approach: 'We structure web interfaces around clarity, cross-device responsiveness, and seamless organizational branding.',
-    approachAr: 'نحرص على بناء واجهات ويب واضحة ومتجاوبة مع مختلف الأجهزة والشاشات بما يعزز الحضور المؤسسي ويخدم العمليات بكفاءة.',
+    approach: 'We build tailored websites, web portals, and e-commerce platforms designed for client business needs.',
+    approachAr: 'نعمل على تطوير مواقع إلكترونية وبوابات رقمية وحلول تجارة إلكترونية تلبي احتياجات أعمال العملاء.',
     documentedExperience: {
       organization: 'IL Forno Restaurant Group',
       organizationAr: 'مجموعة مطاعم إل فورنو',
@@ -370,25 +356,23 @@ export const CORE_SERVICES: ServiceItem[] = [
     titleAr: 'خدمات تقنية المعلومات المُدارة',
     tagline: 'End-to-end IT operations and helpdesk support',
     taglineAr: 'إدارة متكاملة للعمليات التقنية ودعم مكاتب المساعدة الفنية',
-    description: 'End-to-end IT operations management, technical resourcing, and helpdesk support services for organizations.',
-    descriptionAr: 'إدارة شاملة لعمليات تقنية المعلومات، وتوفير الكوادر الفنية المتخصصة، وخدمات الدعم الفني ومكاتب المساعدة.',
-    overview: 'LandCom delivers complete IT managed services, providing organizations with skilled technical personnel, dedicated helpdesk support, and ongoing IT operational management. We have a verified track record deploying up to 32+ IT personnel on major national projects.',
-    overviewAr: 'تقدم لاند كوم خدمات تقنية المعلومات المدارة بالكامل، بما يشمل تزويد المؤسسات بالكوادر الفنية المتخصصة، ودعم مكاتب المساعدة، وإدارة العمليات التقنية اليومية، مع سجل موثق في نشر أكثر من 32 كادراً تقنياً في مشاريع وطنية كبرى.',
+    description: 'End-to-end IT operations management, technical staffing, and helpdesk support.',
+    descriptionAr: 'إدارة متكاملة لعمليات تقنية المعلومات، وتوفير الكوادر الفنية، ودعم مكاتب المساعدة.',
+    overview: 'LandCom provides end-to-end IT operations management and helpdesk support, with documented capability deploying 32+ IT staff on major projects.',
+    overviewAr: 'تقدم لاند كوم خدمات إدارة عمليات تقنية المعلومات ودعم مكاتب المساعدة، مع قدرة موثقة في توفير 32+ كادراً تقنياً في مشاريع كبرى.',
     icon: 'Headset',
     features: [
-      'End-to-end IT operations management',
-      'Dedicated technical staffing and project resourcing',
-      'Helpdesk and operational technical support',
-      'Ongoing systems support and maintenance'
+      'End-to-end IT operations',
+      'Helpdesk and technical support',
+      'Technical staffing (32+ IT staff deployed in key projects)'
     ],
     featuresAr: [
-      'إدارة شاملة ومستمرة لعمليات تقنية المعلومات',
-      'توفير الكوادر والفرق الفنية المتخصصة للمشاريع (32+ كادراً)',
-      'دعم مكاتب المساعدة الفنية للمستخدمين',
-      'أعمال الدعم الفني والصيانة المستمرة للأنظمة'
+      'إدارة متكاملة لعمليات تقنية المعلومات',
+      'دعم مكاتب المساعدة والدعم الفني',
+      'توفير الكوادر التقنية (32+ كادراً متخصصاً في مشاريع رئيسية)'
     ],
-    approach: 'We assign dedicated, qualified IT professionals to oversee organizational systems, resolve daily technical inquiries, and ensure continuous operational readiness.',
-    approachAr: 'نوفر كفاءات وكوادر تقنية مؤهلة للإشراف على الأنظمة ومتابعة متطلبات الدعم الفني اليومي وضمان استمرارية وكفاءة البيئة التشغيلية.',
+    approach: 'We provide strategic IT managed services and technical support teams tailored to organizational operations.',
+    approachAr: 'نوفر خدمات مدارة لتقنية المعلومات وفرق دعم فني مخصصة لمساندة العمليات المؤسسية.',
     documentedExperience: {
       organization: 'Khalifa Bin Zayed Al Nahyan Foundation',
       organizationAr: 'مؤسسة خليفة بن زايد آل نهيان للأعمال الإنسانية',

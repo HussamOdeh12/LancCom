@@ -64,11 +64,6 @@ export function WhyChooseUs() {
                   {language === 'ar' ? item.descriptionAr : item.description}
                 </p>
               </div>
-
-              <div className="pt-4 mt-4 border-t border-slate-900/80 flex items-center text-[11px] font-semibold text-cyan-400 space-x-1.5 rtl:space-x-reverse">
-                <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-                <span>{language === 'ar' ? 'معتمد وموثق' : 'Official LandCom Foundation'}</span>
-              </div>
             </div>
           ))}
         </div>

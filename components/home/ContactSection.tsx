@@ -9,7 +9,8 @@ import {
   Mail, 
   Send, 
   CheckCircle2, 
-  ShieldCheck 
+  ShieldCheck,
+  Info 
 } from 'lucide-react';
 import { COMPANY_INFO, CORE_SERVICES } from '@/lib/data';
 import { useLanguage } from '@/context/LanguageContext';
@@ -54,6 +55,10 @@ export function ContactSection() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSuccess(true);
+    const mailtoUrl = generateMailtoHref();
+    if (typeof window !== 'undefined') {
+      window.open(mailtoUrl, '_self');
+    }
   };
 
   return (
@@ -123,14 +128,24 @@ export function ContactSection() {
 
                 <div className="flex items-start space-x-3 rtl:space-x-reverse p-3 bg-slate-950 rounded-xl border border-slate-800/80 text-start">
                   <Mail className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                  <div>
-                    <div className="font-bold text-white">{strings.contact.email}</div>
-                    <a href={`mailto:${COMPANY_INFO.contact.primaryEmail}`} className="text-cyan-300 font-mono text-xs hover:underline block mt-0.5">
-                      {COMPANY_INFO.contact.primaryEmail}
-                    </a>
-                    <a href={`mailto:${COMPANY_INFO.contact.additionalEmail}`} className="text-slate-400 font-mono text-[11px] hover:underline block mt-0.5">
-                      {COMPANY_INFO.contact.additionalEmail}
-                    </a>
+                  <div className="space-y-1.5 w-full">
+                    <div className="font-bold text-white text-xs">{strings.contact.email}</div>
+                    <div>
+                      <div className="text-[10px] uppercase font-bold text-slate-400">
+                        {language === 'ar' ? 'البريد الرسمي الأساسي' : 'Primary Corporate Email'}
+                      </div>
+                      <a href={`mailto:${COMPANY_INFO.contact.primaryEmail}`} className="text-cyan-300 font-mono text-xs hover:underline block">
+                        {COMPANY_INFO.contact.primaryEmail}
+                      </a>
+                    </div>
+                    <div className="pt-0.5 border-t border-slate-900">
+                      <div className="text-[10px] uppercase font-bold text-slate-500">
+                        {language === 'ar' ? 'بريد بديل / استفسارات المشاريع' : 'Alternative / Project Inquiries'}
+                      </div>
+                      <a href={`mailto:${COMPANY_INFO.contact.additionalEmail}`} className="text-slate-400 font-mono text-xs hover:underline block">
+                        {COMPANY_INFO.contact.additionalEmail}
+                      </a>
+                    </div>
                   </div>
                 </div>
 
@@ -329,6 +344,15 @@ export function ContactSection() {
                     <span>{strings.contact.submit}</span>
                     <Send className="w-4 h-4 shrink-0" />
                   </button>
+                </div>
+
+                <div className="text-[11px] text-slate-400 flex items-center space-x-1.5 rtl:space-x-reverse pt-1">
+                  <Info className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                  <span>
+                    {language === 'ar'
+                      ? 'تعبئة هذا النموذج تفتح تطبيق البريد الإلكتروني مع تفاصيل الاستفسار المجهزة للإرسال.'
+                      : 'Completing this form will open your email application with the enquiry details prepared for sending to LandCom.'}
+                  </span>
                 </div>
               </form>
             )}
