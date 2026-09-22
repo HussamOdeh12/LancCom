@@ -35,6 +35,9 @@ export interface DocumentedClient {
   scopeAr: string;
   location: string;
   locationAr: string;
+  relatedServiceSlug?: string;
+  relatedServiceName?: string;
+  relatedServiceNameAr?: string;
 }
 
 export interface LicensedActivity {
@@ -426,7 +429,10 @@ export const DOCUMENTED_EXPERIENCE: DocumentedClient[] = [
     scope: 'Technical Support & IT Resourcing',
     scopeAr: 'الدعم الفني وتوفير الكوادر التقنية المتخصصة',
     location: 'UAE',
-    locationAr: 'دولة الإمارات'
+    locationAr: 'دولة الإمارات',
+    relatedServiceSlug: 'it-resources-networking',
+    relatedServiceName: 'IT Resources & Networking',
+    relatedServiceNameAr: 'موارد تقنية المعلومات والشبكات'
   },
   {
     id: 'exp-kf',
@@ -435,7 +441,10 @@ export const DOCUMENTED_EXPERIENCE: DocumentedClient[] = [
     scope: 'IT Managed Services (32 staff) & Food Distribution System UAE-wide',
     scopeAr: 'خدمات تقنية المعلومات المدارة (فريق من 32 كادراً) ونظام توزيع المواد الغذائية على مستوى الدولة',
     location: 'UAE',
-    locationAr: 'دولة الإمارات'
+    locationAr: 'دولة الإمارات',
+    relatedServiceSlug: 'managed-it-services',
+    relatedServiceName: 'IT Managed Services',
+    relatedServiceNameAr: 'خدمات تقنية المعلومات المدارة'
   },
   {
     id: 'exp-alain-muni',
@@ -444,7 +453,10 @@ export const DOCUMENTED_EXPERIENCE: DocumentedClient[] = [
     scope: 'iPhone, Android & BlackBerry Mobile Applications',
     scopeAr: 'تطبيقات الهواتف الذكية (iPhone وAndroid وBlackBerry)',
     location: 'Al Ain, UAE',
-    locationAr: 'العين، أبوظبي'
+    locationAr: 'العين، أبوظبي',
+    relatedServiceSlug: 'mobility-solutions',
+    relatedServiceName: 'Mobility Solutions',
+    relatedServiceNameAr: 'حلول الأجهزة والتطبيقات الذكية'
   },
   {
     id: 'exp-algharbia',
@@ -453,7 +465,10 @@ export const DOCUMENTED_EXPERIENCE: DocumentedClient[] = [
     scope: 'Supply of IT Items & Infrastructure',
     scopeAr: 'توريد مستلزمات وتجهيزات تقنية المعلومات والبنية التحتية',
     location: 'Al Dhafra / Western Region, UAE',
-    locationAr: 'منطقة الظفرة / المنطقة الغربية'
+    locationAr: 'منطقة الظفرة / المنطقة الغربية',
+    relatedServiceSlug: 'it-resources-networking',
+    relatedServiceName: 'IT Resources & Networking',
+    relatedServiceNameAr: 'موارد تقنية المعلومات والشبكات'
   },
   {
     id: 'exp-sari',
@@ -462,7 +477,10 @@ export const DOCUMENTED_EXPERIENCE: DocumentedClient[] = [
     scope: 'ERP System Implementation',
     scopeAr: 'تنفيذ وتطبيق نظام تخطيط موارد المؤسسة (ERP)',
     location: 'Abu Dhabi, UAE',
-    locationAr: 'أبوظبي، الإمارات'
+    locationAr: 'أبوظبي، الإمارات',
+    relatedServiceSlug: 'erp-systems',
+    relatedServiceName: 'ERP System',
+    relatedServiceNameAr: 'نظام تخطيط موارد المؤسسة'
   },
   {
     id: 'exp-ilforno',
@@ -471,7 +489,10 @@ export const DOCUMENTED_EXPERIENCE: DocumentedClient[] = [
     scope: 'Web Development & E-Commerce',
     scopeAr: 'تطوير الموقع الإلكتروني وتطبيقات التجارة الرقمية',
     location: 'UAE',
-    locationAr: 'دولة الإمارات'
+    locationAr: 'دولة الإمارات',
+    relatedServiceSlug: 'ecommerce-web',
+    relatedServiceName: 'E-Commerce & Web',
+    relatedServiceNameAr: 'التجارة الإلكترونية وحلول الويب'
   }
 ];
 

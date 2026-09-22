@@ -48,10 +48,12 @@ export interface Translations {
     unifiedLicNo: string;
     membershipNo: string;
     legalForm: string;
+    establishedDate: string;
     issueDate: string;
     expiryDate: string;
     activitiesTitle: string;
     activitiesDesc: string;
+    corporateFacts: string;
   };
   aboutSection: {
     sectionTag: string;
@@ -94,10 +96,16 @@ export interface Translations {
     sectionTag: string;
     sectionTitle: string;
     sectionDesc: string;
+    introStatement: string;
     supportedOrganizations: string;
     organization: string;
     scopeOfWork: string;
     location: string;
+    relatedService: string;
+    viewService: string;
+    verifiedNote: string;
+    capabilityCrossTitle: string;
+    capabilityCrossDesc: string;
   };
   contact: {
     sectionTag: string;
@@ -186,18 +194,20 @@ export const translations: Record<Language, Translations> = {
     },
     credentials: {
       sectionTag: 'Official Credentials',
-      sectionTitle: 'Licensing & Corporate Information',
-      sectionDesc: 'Officially registered establishment licensed under the Abu Dhabi Department of Economic Development.',
+      sectionTitle: 'Company Credentials',
+      sectionDesc: 'LandCom company registration, Abu Dhabi Economic Licence details and documented licensed activities.',
       licenseDetails: 'Abu Dhabi Economic Licence Details',
       licenceNo: 'Licence No.',
       unifiedRegNo: 'Unified Registration No.',
       unifiedLicNo: 'Unified Licence No.',
       membershipNo: 'ADCCI Membership',
       legalForm: 'Legal Form',
-      issueDate: 'Issue Date',
-      expiryDate: 'Expiry Date',
-      activitiesTitle: 'Six Licensed Economic Activities',
-      activitiesDesc: 'Authorized commercial and technical activities in Abu Dhabi:',
+      establishedDate: 'Established',
+      issueDate: 'Issued',
+      expiryDate: 'Expiry',
+      activitiesTitle: 'Licensed Activities',
+      activitiesDesc: 'Documented economic and technical activities authorized under the Abu Dhabi Economic Licence:',
+      corporateFacts: 'Key Corporate Facts',
     },
     aboutSection: {
       sectionTag: 'About LandCom',
@@ -234,16 +244,22 @@ export const translations: Record<Language, Translations> = {
     whyLandcom: {
       sectionTag: 'Why LandCom',
       sectionTitle: 'Built on Experience & Local Presence',
-      sectionDesc: 'Key reasons why leading government foundations, municipal authorities, and businesses rely on LandCom.',
+      sectionDesc: 'Key reasons why government foundations, municipal authorities, and businesses rely on LandCom.',
     },
     experience: {
       sectionTag: 'Selected Experience',
-      sectionTitle: 'Organizations We’ve Supported',
-      sectionDesc: 'Documented organizational experience delivering IT solutions, infrastructure, applications, and managed staffing.',
-      supportedOrganizations: 'Documented Clients & Scope',
+      sectionTitle: 'Selected Experience',
+      sectionDesc: 'A selection of organizations and solution engagements documented in LandCom’s official company profile.',
+      introStatement: 'Since 2007, LandCom has been engaged across government entities, municipal bodies, healthcare facilities, and commercial organizations in Abu Dhabi and the UAE to deliver tailored enterprise software, infrastructure supplies, mobile applications, and managed IT staffing.',
+      supportedOrganizations: 'Documented Engagements',
       organization: 'Organization',
-      scopeOfWork: 'Delivered Scope of Work',
+      scopeOfWork: 'Documented Scope of Work',
       location: 'Location',
+      relatedService: 'Related Official Service',
+      viewService: 'Explore Service',
+      verifiedNote: 'Documented in Official Profile',
+      capabilityCrossTitle: 'Alignment with Core Capabilities',
+      capabilityCrossDesc: 'Every documented engagement aligns directly with one or more of LandCom’s eight core technical service lines.',
     },
     contact: {
       sectionTag: 'Get in Touch',
@@ -329,19 +345,21 @@ export const translations: Record<Language, Translations> = {
       },
     },
     credentials: {
-      sectionTag: 'البيانات الرسمية',
-      sectionTitle: 'الترخيص والمعلومات المؤسسية',
-      sectionDesc: 'منشأة رسمية مرخصة من دائرة التنمية الاقتصادية في أبوظبي.',
-      licenseDetails: 'بيانات الرخصة الاقتصادية - أبوظبي',
+      sectionTag: 'الترخيص والاعتمادات',
+      sectionTitle: 'البيانات والاعتمادات الرسمية',
+      sectionDesc: 'بيانات التسجيل التجاري والرخصة الاقتصادية الصادرة عن دائرة التنمية الاقتصادية في أبوظبي والأنشطة المرخصة.',
+      licenseDetails: 'بيانات الرخصة الاقتصادية في أبوظبي',
       licenceNo: 'رقم الرخصة',
-      unifiedRegNo: 'الرقم الموحد للمنشأة',
+      unifiedRegNo: 'رقم التسجيل الموحد',
       unifiedLicNo: 'رقم الرخصة الموحد',
-      membershipNo: 'عضوية غرفة أبوظبي',
+      membershipNo: 'عضوية غرفة تجارة وصناعة أبوظبي',
       legalForm: 'الشكل القانوني',
+      establishedDate: 'تاريخ التأسيس',
       issueDate: 'تاريخ الإصدار',
       expiryDate: 'تاريخ الانتهاء',
-      activitiesTitle: 'الأنشطة الاقتصادية الستة المرخصة',
-      activitiesDesc: 'الأنشطة التجارية والتقنية المعتمدة رسمياً في إمارة أبوظبي:',
+      activitiesTitle: 'الأنشطة المرخصة',
+      activitiesDesc: 'الأنشطة الاقتصادية والتقنية المعتمدة رسمياً ضمن رخصة أبوظبي الاقتصادية:',
+      corporateFacts: 'حقائق مؤسسية رئيسية',
     },
     aboutSection: {
       sectionTag: 'عن لاند كوم',
@@ -378,16 +396,22 @@ export const translations: Record<Language, Translations> = {
     whyLandcom: {
       sectionTag: 'لماذا لاند كوم',
       sectionTitle: 'مرتكزات الخبرة والوجود المحلي',
-      sectionDesc: 'أسباب اختيار المؤسسات الحكومية والشركات الرائدة لشركة لاند كوم.',
+      sectionDesc: 'أسباب اختيار المؤسسات الحكومية والشركات لشركة لاند كوم.',
     },
     experience: {
       sectionTag: 'الخبرات المختارة',
-      sectionTitle: 'المؤسسات والجهات التي قدمنا لها الدعم',
-      sectionDesc: 'سجل موثق بالجهات والمؤسسات التي تم تقديم حلول تقنية المعلومات والبنية التحتية والكوادر لها.',
-      supportedOrganizations: 'الجهات ونطاق العمل الموثق',
+      sectionTitle: 'سجل الخبرات الموثق',
+      sectionDesc: 'سجل للجهات والمؤسسات وحلول الأعمال الموثقة في الملف التعريفي الرسمي لشركة لاند كوم.',
+      introStatement: 'منذ عام 2007، عملت لاند كوم مع جهات ومؤسسات حكومية وبلدية وصحية ومؤسسات أعمال في أبوظبي والإمارات لتنفيذ أنظمة برمجية وبنى تحتية وشبكية وتطبيقات أجهزة ذكية وخدمات تقنية مدارة.',
+      supportedOrganizations: 'المشاريع والخبرات الموثقة',
       organization: 'الجهة / المؤسسة',
       scopeOfWork: 'نطاق العمل المنفذ',
       location: 'الموقع',
+      relatedService: 'الخدمة الرسمية المرتبطة',
+      viewService: 'استعراض تفاصيل الخدمة',
+      verifiedNote: 'موثق في الملف التعريفي الرسمي',
+      capabilityCrossTitle: 'التوافق مع الخدمات والقدرات الأساسية',
+      capabilityCrossDesc: 'تتوافق جميع المشاريع والخبرات الموثقة مع واحدة أو أكثر من الخدمات التقنية الثمانية الأساسية لشركة لاند كوم.',
     },
     contact: {
       sectionTag: 'تواصل معنا',
