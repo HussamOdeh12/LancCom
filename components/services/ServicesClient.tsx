@@ -117,7 +117,7 @@ export function ServicesClient() {
               <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
                 {language === 'ar'
                   ? 'استعرض تفاصيل ومخرجات النطاقات التقنية الثمانية الرسمية لشركة لاند كوم.'
-                  : 'Explore the full scope, technical methodology, and documented experience for each of our eight core disciplines.'}
+                  : 'Explore the full scope, technical capabilities, and documented experience for each of our eight core disciplines.'}
               </p>
             </div>
 

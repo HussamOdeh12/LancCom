@@ -195,7 +195,7 @@ export function ServiceDetailClient({ service }: ServiceDetailClientProps) {
                       <Compass className="w-5 h-5" />
                     </div>
                     <h3 className="text-lg font-bold text-slate-900 dark:text-white">
-                      {language === 'ar' ? 'منهجية التنفيذ والاستشارة' : 'Our Strategic Delivery Methodology'}
+                      {language === 'ar' ? 'النهج الاستشاري والتنفيذي' : 'Consulting & Implementation Approach'}
                     </h3>
                   </div>
                   <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
