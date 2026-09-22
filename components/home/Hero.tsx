@@ -53,7 +53,7 @@ export function Hero() {
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
               <Link
                 href="/contact"
-                className="w-full sm:w-auto px-7 py-3.5 bg-gradient-to-r from-cyan-500 via-cyan-400 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-black text-sm rounded-xl shadow-lg shadow-cyan-500/20 dark:shadow-xl dark:shadow-cyan-500/25 transition-all hover:scale-[1.02] active:scale-98 flex items-center justify-center space-x-2 rtl:space-x-reverse"
+                className="w-full sm:w-auto px-7 py-3.5 bg-gradient-to-r from-cyan-500 via-cyan-400 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-black text-sm rounded-xl shadow-lg shadow-cyan-500/20 dark:shadow-xl dark:shadow-cyan-500/25 transition-[transform,box-shadow,background-image] hover:scale-[1.02] active:scale-98 flex items-center justify-center space-x-2 rtl:space-x-reverse"
               >
                 <span>{strings.hero.contactUs}</span>
                 <ArrowRight className={`w-4 h-4 shrink-0 ${isRTL ? 'rotate-180' : ''}`} />
@@ -61,7 +61,7 @@ export function Hero() {
 
               <Link
                 href="/services"
-                className="w-full sm:w-auto px-6 py-3.5 bg-white dark:bg-slate-900/90 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 hover:text-cyan-700 dark:hover:text-cyan-300 font-bold text-sm rounded-xl border border-slate-300 dark:border-slate-700/80 shadow-xs transition-all flex items-center justify-center space-x-2 rtl:space-x-reverse"
+                className="w-full sm:w-auto px-6 py-3.5 bg-white dark:bg-slate-900/90 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 hover:text-cyan-700 dark:hover:text-cyan-300 font-bold text-sm rounded-xl border border-slate-300 dark:border-slate-700/80 shadow-xs transition-colors flex items-center justify-center space-x-2 rtl:space-x-reverse"
               >
                 <Layers className="w-4 h-4 text-cyan-600 dark:text-cyan-400 shrink-0" />
                 <span>{strings.hero.exploreServices}</span>

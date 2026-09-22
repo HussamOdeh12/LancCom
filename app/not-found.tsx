@@ -1,18 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
-import { Home, ArrowLeft, Layers } from 'lucide-react';
+import { Home, Layers } from 'lucide-react';
 import { TopBar } from '@/components/layout/TopBar';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
-
-export const metadata = {
-  title: '404 - Page Not Found | LAND.COM Information Technology',
-  description: 'The requested page could not be found on LandCom Information Technology portal.',
-  robots: {
-    index: false,
-    follow: false,
-  }
-};
 
 export default function NotFound() {
   return (

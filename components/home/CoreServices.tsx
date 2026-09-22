@@ -63,7 +63,7 @@ export function CoreServices() {
                 key={srv.id}
                 id={srv.id}
                 onClick={() => setSelectedService(srv)}
-                className={`cursor-pointer rounded-2xl p-5 sm:p-6 transition-all duration-300 flex flex-col justify-between border relative group text-start ${
+                className={`cursor-pointer rounded-2xl p-5 sm:p-6 transition-[background-color,border-color,box-shadow] duration-200 flex flex-col justify-between border relative group text-start ${
                   isSelected
                     ? 'bg-white dark:bg-slate-950 border-cyan-500 shadow-lg dark:shadow-xl shadow-cyan-500/10 ring-1 ring-cyan-500/40'
                     : 'bg-white dark:bg-slate-950/70 hover:bg-slate-50 dark:hover:bg-slate-950 border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 shadow-xs'
@@ -71,7 +71,7 @@ export function CoreServices() {
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <div className={`p-3 rounded-xl transition-all ${
+                    <div className={`p-3 rounded-xl transition-colors duration-200 ${
                       isSelected
                         ? 'bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/30'
                         : 'bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-cyan-700 dark:text-cyan-400 group-hover:border-cyan-500/30 group-hover:scale-105'
@@ -172,14 +172,14 @@ export function CoreServices() {
               <div className="pt-2 flex flex-col sm:flex-row gap-3">
                 <Link
                   href={`/services/${selectedService.slug}`}
-                  className="w-full py-3 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs sm:text-sm rounded-xl transition-all shadow-md flex items-center justify-center space-x-2 rtl:space-x-reverse"
+                  className="w-full py-3 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-xs sm:text-sm rounded-xl transition-colors shadow-md flex items-center justify-center space-x-2 rtl:space-x-reverse"
                 >
                   <span>{language === 'ar' ? 'صفحة تفاصيل الخدمة' : 'View Full Service Page'}</span>
                   <ArrowRight className={`w-4 h-4 shrink-0 ${isRTL ? 'rotate-180' : ''}`} />
                 </Link>
                 <Link
                   href="/contact"
-                  className="w-full py-3 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-bold text-xs sm:text-sm rounded-xl transition-all border border-slate-300 dark:border-slate-700 shadow-xs flex items-center justify-center space-x-2 rtl:space-x-reverse"
+                  className="w-full py-3 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-900 dark:text-white font-bold text-xs sm:text-sm rounded-xl transition-colors border border-slate-300 dark:border-slate-700 shadow-xs flex items-center justify-center space-x-2 rtl:space-x-reverse"
                 >
                   <span>{strings.nav.contactCta}</span>
                 </Link>

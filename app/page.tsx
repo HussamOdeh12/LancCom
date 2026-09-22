@@ -12,7 +12,7 @@ import { ContactSection } from '@/components/home/ContactSection';
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col selection:bg-cyan-500 selection:text-slate-950">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 flex flex-col selection:bg-cyan-500 selection:text-slate-950">
       {/* Skip to Main Content Accessibility Link */}
       <a
         href="#main-content"

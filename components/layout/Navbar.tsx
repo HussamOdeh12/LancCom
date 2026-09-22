@@ -22,6 +22,17 @@ import { useLanguage } from '@/context/LanguageContext';
 import { LanguageSwitcher } from '@/components/ui/LanguageSwitcher';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
 
+const SERVICE_ICON_MAP: Record<string, React.ReactNode> = {
+  'erp-system': <Database className="w-4 h-4 text-cyan-500 dark:text-cyan-400 shrink-0" />,
+  'mobility-solutions': <Smartphone className="w-4 h-4 text-blue-500 dark:text-blue-400 shrink-0" />,
+  'it-resources-networking': <Network className="w-4 h-4 text-teal-500 dark:text-teal-400 shrink-0" />,
+  'security-solutions': <ShieldCheck className="w-4 h-4 text-emerald-500 dark:text-emerald-400 shrink-0" />,
+  'tracking-systems': <Navigation className="w-4 h-4 text-sky-500 dark:text-sky-400 shrink-0" />,
+  'rfid-solutions': <Radio className="w-4 h-4 text-indigo-500 dark:text-indigo-400 shrink-0" />,
+  'ecommerce-web': <Globe className="w-4 h-4 text-amber-500 dark:text-amber-400 shrink-0" />,
+  'it-managed-services': <Headset className="w-4 h-4 text-purple-500 dark:text-purple-400 shrink-0" />,
+};
+
 export function Navbar() {
   const { strings, language, isRTL } = useLanguage();
   const pathname = usePathname();
@@ -30,23 +41,19 @@ export function Navbar() {
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 20);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const serviceIconMap: Record<string, React.ReactNode> = {
-    'erp-system': <Database className="w-4 h-4 text-cyan-500 dark:text-cyan-400 shrink-0" />,
-    'mobility-solutions': <Smartphone className="w-4 h-4 text-blue-500 dark:text-blue-400 shrink-0" />,
-    'it-resources-networking': <Network className="w-4 h-4 text-teal-500 dark:text-teal-400 shrink-0" />,
-    'security-solutions': <ShieldCheck className="w-4 h-4 text-emerald-500 dark:text-emerald-400 shrink-0" />,
-    'tracking-systems': <Navigation className="w-4 h-4 text-sky-500 dark:text-sky-400 shrink-0" />,
-    'rfid-solutions': <Radio className="w-4 h-4 text-indigo-500 dark:text-indigo-400 shrink-0" />,
-    'ecommerce-web': <Globe className="w-4 h-4 text-amber-500 dark:text-amber-400 shrink-0" />,
-    'it-managed-services': <Headset className="w-4 h-4 text-purple-500 dark:text-purple-400 shrink-0" />,
-  };
 
   const navLinks = [
     { href: '/', label: strings.nav.home },
@@ -59,7 +66,7 @@ export function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-40 w-full transition-all duration-300 ${
+      className={`sticky top-0 z-40 w-full transition-[background-color,border-color,box-shadow] duration-200 ${
         isScrolled
           ? 'bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800/90 shadow-lg dark:shadow-xl dark:shadow-black/20'
           : 'bg-white/80 dark:bg-slate-950/80 backdrop-blur-sm border-b border-slate-200/80 dark:border-slate-800/40'
@@ -129,7 +136,7 @@ export function Navbar() {
                             className="flex items-start space-x-3 rtl:space-x-reverse p-2.5 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800/90 transition-colors group border border-transparent hover:border-slate-200 dark:hover:border-slate-700/60"
                           >
                             <div className="p-2 rounded-lg bg-slate-100 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-cyan-600 dark:text-cyan-400 mt-0.5 group-hover:scale-105 group-hover:border-cyan-500/30 transition-all shrink-0">
-                              {serviceIconMap[srv.id]}
+                              {SERVICE_ICON_MAP[srv.id]}
                             </div>
                             <div className="text-start">
                               <div className="text-xs font-bold text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors">

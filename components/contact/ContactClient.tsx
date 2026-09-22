@@ -185,7 +185,7 @@ export function ContactClient() {
                         </div>
                         <div className="pt-0.5 border-t border-slate-100 dark:border-slate-900">
                           <div className="text-[10px] uppercase font-bold text-slate-500">
-                            {language === 'ar' ? 'بريد بديل / استفسارات المشاريع' : 'Alternative / Project Inquiries'}
+                            {language === 'ar' ? 'بريد إضافي' : 'Additional Email'}
                           </div>
                           <a 
                             href={`mailto:${COMPANY_INFO.contact.additionalEmail}`} 

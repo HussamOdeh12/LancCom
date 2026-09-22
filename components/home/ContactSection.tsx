@@ -146,7 +146,7 @@ export function ContactSection() {
                     </div>
                     <div className="pt-0.5 border-t border-slate-200 dark:border-slate-900">
                       <div className="text-[10px] uppercase font-bold text-slate-500">
-                        {language === 'ar' ? 'بريد بديل / استفسارات المشاريع' : 'Alternative / Project Inquiries'}
+                        {language === 'ar' ? 'بريد إضافي' : 'Additional Email'}
                       </div>
                       <a href={`mailto:${COMPANY_INFO.contact.additionalEmail}`} className="text-slate-600 dark:text-slate-400 font-mono text-xs hover:underline block">
                         {COMPANY_INFO.contact.additionalEmail}
@@ -209,7 +209,7 @@ export function ContactSection() {
                 <div className="flex flex-col sm:flex-row items-center gap-3 pt-2">
                   <a
                     href={generateMailtoHref()}
-                    className="w-full sm:w-auto px-6 py-3.5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-black text-xs sm:text-sm rounded-xl transition-all shadow-md flex items-center justify-center space-x-2 rtl:space-x-reverse"
+                    className="w-full sm:w-auto px-6 py-3.5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-black text-xs sm:text-sm rounded-xl transition-[transform,box-shadow] shadow-md flex items-center justify-center space-x-2 rtl:space-x-reverse"
                   >
                     <span>{language === 'ar' ? 'إرسال عبر البريد الإلكتروني (Info@landcom.ae)' : 'Open in Email Client (Info@landcom.ae)'}</span>
                   </a>
@@ -345,7 +345,7 @@ export function ContactSection() {
                 <div className="pt-2">
                   <button
                     type="submit"
-                    className="w-full py-3.5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-black text-sm rounded-xl shadow-xl shadow-cyan-500/20 transition-all flex items-center justify-center space-x-2 rtl:space-x-reverse active:scale-98"
+                    className="w-full py-3.5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-black text-sm rounded-xl shadow-xl shadow-cyan-500/20 transition-[transform,box-shadow] flex items-center justify-center space-x-2 rtl:space-x-reverse active:scale-98"
                   >
                     <span>{strings.contact.submit}</span>
                     <Send className="w-4 h-4 shrink-0" />

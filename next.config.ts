@@ -8,6 +8,9 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: false,
   },
+  experimental: {
+    optimizePackageImports: ['lucide-react'],
+  },
   // Allow access to remote image placeholder.
   images: {
     remotePatterns: [
@@ -20,7 +23,6 @@ const nextConfig: NextConfig = {
     ],
   },
   output: 'standalone',
-  transpilePackages: ['motion'],
   async headers() {
     return [
       {

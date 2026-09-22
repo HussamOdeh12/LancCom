@@ -38,11 +38,11 @@ export function SelectedExperience() {
           {DOCUMENTED_EXPERIENCE.map((item, idx) => (
             <div
               key={item.id}
-              className="bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between text-start group shadow-sm hover:shadow-md"
+              className="bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 rounded-2xl p-6 transition-[border-color,box-shadow] duration-200 flex flex-col justify-between text-start group shadow-sm hover:shadow-md"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-cyan-600 dark:text-cyan-400 group-hover:border-cyan-500/30 transition-all">
+                  <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-cyan-600 dark:text-cyan-400 group-hover:border-cyan-500/30 transition-colors duration-200">
                     <Building2 className="w-5 h-5" />
                   </div>
                   <span className="text-[11px] font-mono font-bold text-slate-400 dark:text-slate-500">

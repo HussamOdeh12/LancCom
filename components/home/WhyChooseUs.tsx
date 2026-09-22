@@ -49,12 +49,12 @@ export function WhyChooseUs() {
           {WHY_LANDCOM.map((item, idx) => (
             <div
               key={item.id}
-              className={`bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800/80 hover:border-cyan-500/40 rounded-2xl p-6 transition-all duration-300 hover:shadow-lg dark:hover:shadow-xl shadow-xs group flex flex-col justify-between text-start ${
+              className={`bg-slate-50 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800/80 hover:border-cyan-500/40 rounded-2xl p-6 transition-[border-color,box-shadow] duration-200 hover:shadow-lg dark:hover:shadow-xl shadow-xs group flex flex-col justify-between text-start ${
                 idx === 4 ? 'md:col-span-2 lg:col-span-1' : ''
               }`}
             >
               <div>
-                <div className="p-3 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 inline-block mb-4 group-hover:scale-105 group-hover:border-cyan-500/30 transition-all shadow-xs">
+                <div className="p-3 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 inline-block mb-4 group-hover:scale-105 group-hover:border-cyan-500/30 transition-[transform,border-color] duration-200 shadow-xs">
                   {getWhyIcon(item.id)}
                 </div>
                 <h3 className="text-base font-bold text-slate-900 dark:text-white mb-2.5 group-hover:text-cyan-600 dark:group-hover:text-cyan-300 transition-colors">
